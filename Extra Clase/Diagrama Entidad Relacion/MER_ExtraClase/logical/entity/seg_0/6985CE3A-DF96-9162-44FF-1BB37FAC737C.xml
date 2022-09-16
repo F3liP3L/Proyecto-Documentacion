@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6985CE3A-DF96-9162-44FF-1BB37FAC737C" name="Cliente">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:10:07 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigoCliente" id="35BE3EAC-4C69-2093-F142-FD2F0B352D8F">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 04:06:55 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Usuario" id="0C1F83A0-1AFD-151D-4AC8-0DE4111EDB82">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:10:16 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="servicioConsumido" id="A826C12E-A921-0EDB-9D02-CCBDC2E7C4A8">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:10:48 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo" id="29817572-C2B2-4EE8-06D3-2787EA6D2F22">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:14:27 UTC</createdTime>
+<generatorID>9CCEEABB-A907-8CF0-FB24-79DF0E3F6D36</generatorID>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<referedAttribute>C9CCD741-3E02-57D5-BFCE-3F11E5A2B65A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8697EF19-520A-CE1D-5545-8C71EC41038A" name="Cliente PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 04:07:10 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>35BE3EAC-4C69-2093-F142-FD2F0B352D8F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

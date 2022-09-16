@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="39F15E4A-367A-4D3D-DA43-C490A9CB0D76" name="Servicio">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:15:22 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="84582C34-90D4-37E1-C10A-1D538EF02469">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:15:30 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="EE670912-C290-5904-44D8-61BEA329DD39">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:16:18 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="674955C3-25AD-B312-D0B7-EA8BBD29757D">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:18:48 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estado" id="C1B0C909-E4FA-2C3C-2238-9DC1D600A472">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:19:06 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipoSubservicio" id="CC478368-E6C6-83CB-AD39-552DD07233A0">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:19:26 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5C19FC17-562E-317C-5875-834B30AE4D3C" name="Servicio PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:16:07 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>84582C34-90D4-37E1-C10A-1D538EF02469</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

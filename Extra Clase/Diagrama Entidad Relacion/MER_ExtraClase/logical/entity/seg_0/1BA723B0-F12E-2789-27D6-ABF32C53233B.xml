@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1BA723B0-F12E-2789-27D6-ABF32C53233B" name="Pregunta">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:50:11 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="ACD2EDD3-7437-DD95-6A18-B3D4FA8C6AB3">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:50:21 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="605AF0E6-6440-0F5E-D627-75EE6D6BAC77">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:50:39 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="servicio" id="13870169-A25C-2DC6-F653-4A5513797401">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:51:13 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="respuesta" id="0D2BD35E-7311-FDA0-46D6-26104994D0D4">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:51:39 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cliente" id="0D980DFD-5679-BD1D-19B4-8E12C859B0F5">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 03:52:08 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo1" id="4DEE097D-DB8E-A142-3069-35237FDF4608">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 04:01:37 UTC</createdTime>
+<generatorID>CFFBC26C-BEA4-1FD2-8772-5D27050C8E8C</generatorID>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<referedAttribute>84582C34-90D4-37E1-C10A-1D538EF02469</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigoCliente" id="A29B3DAC-026F-506A-4B9C-5E475B690189">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 04:07:26 UTC</createdTime>
+<generatorID>9A53ED84-C9A2-074F-2E97-646126B33D48</generatorID>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<referedAttribute>35BE3EAC-4C69-2093-F142-FD2F0B352D8F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B4168FCD-B190-E650-F47E-5346F8B34082" name="Pregunta PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-09-16 04:01:37 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<engineerTo>
+<item key="323450DF-4B26-4ECA-FEB4-427F9C8C6530" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4DEE097D-DB8E-A142-3069-35237FDF4608</attributeRef>
+<attributeRef>ACD2EDD3-7437-DD95-6A18-B3D4FA8C6AB3</attributeRef>
+<attributeRef>A29B3DAC-026F-506A-4B9C-5E475B690189</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
