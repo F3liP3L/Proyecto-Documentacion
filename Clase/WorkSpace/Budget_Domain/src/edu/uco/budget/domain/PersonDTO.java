@@ -8,8 +8,6 @@ import java.util.UUID;
 import static edu.uco.budget.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.budget.crosscutting.helper.StringHelper.EMPTY;
 
-
-
 public class PersonDTO {
 	
 	private UUID id;
