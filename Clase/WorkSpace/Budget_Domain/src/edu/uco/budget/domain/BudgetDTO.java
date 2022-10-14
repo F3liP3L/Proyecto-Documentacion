@@ -4,6 +4,9 @@ import java.util.UUID;
 
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getNewUUID;
+import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.budget.domain.builder.PersonDTOBuilder.getPersonDTOBuilder;
+import static edu.uco.budget.domain.builder.YearDTOBuilder.getYearDTOBuilder;
 
 public final class BudgetDTO {
 	
@@ -13,8 +16,8 @@ public final class BudgetDTO {
 	
 	public BudgetDTO() {
 		setId(getNewUUID());
-		// setPerson(person);
-		// setYear(year);
+		setPerson(getPersonDTOBuilder().build());
+		setYear(getYearDTOBuilder().build());
 	}
 	
 	public BudgetDTO(final UUID id, final PersonDTO person, final YearDTO year) {
@@ -23,7 +26,7 @@ public final class BudgetDTO {
 		setYear(year);
 	}
 	
-	public static final BudgetDTO create (final UUID id, final PersonDTO person, final YearDTO year) {
+	public static final BudgetDTO create(final UUID id, final PersonDTO person, final YearDTO year) {
 		return new BudgetDTO(id, person, year);
 	}
 	
@@ -37,13 +40,13 @@ public final class BudgetDTO {
 		return person;
 	}
 	public void setPerson(PersonDTO person) {
-		this.person = person;
+		this.person = getDefaultIfNull(person, getPersonDTOBuilder().build());
 	}
 	public YearDTO getYear() {
 		return year;
 	}
 	public void setYear(YearDTO year) {
-		this.year = year;
+		this.year = getDefaultIfNull(year, getYearDTOBuilder().build());
 	}
 	
 }
