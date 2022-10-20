@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="pais-departamento" directorySegmentName="seg_0" id="66AFD021-4CF2-8D11-A3CB-FE4DED9F6DFF">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-20 22:27:23 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<engineerTo>
+<item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
+</engineerTo>
+<sourcePk>71989A45-893B-B6B4-E744-AE2ABD7B6A0C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>217FBC60-0285-489F-B422-E519CDD99076</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>CA0C9621-D3F5-4237-C667-4D0B347559A2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

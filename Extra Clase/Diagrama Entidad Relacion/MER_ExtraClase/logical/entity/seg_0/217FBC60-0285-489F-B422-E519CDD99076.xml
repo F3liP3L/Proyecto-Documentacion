@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="217FBC60-0285-489F-B422-E519CDD99076" name="pais">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-20 22:25:36 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<engineerTo>
+<item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="4C487C7B-1E91-374C-64BC-FD33DF8D54E5">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-20 22:25:45 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<engineerTo>
+<item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="5093B263-FA32-1625-174F-4A34A56309FF">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-20 22:26:07 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<engineerTo>
+<item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="71989A45-893B-B6B4-E744-AE2ABD7B6A0C" name="pais PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-20 22:26:06 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<engineerTo>
+<item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4C487C7B-1E91-374C-64BC-FD33DF8D54E5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
