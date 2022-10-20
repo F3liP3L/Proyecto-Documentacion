@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>edu.uco.budget</groupId>
-  <artifactId>Budget_Service</artifactId>
+  <groupId>edu.uco.quickjob</groupId>
+  <artifactId>Quickjob_Data</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Budget_Service</name>
-  <description>Componente encargado de asegurar la logica de negocio de la aplicacion Budget, garantizando que cada caso de uso cumpla con las restricciones definidas.</description>
+  <name>Quickjob_Data</name>
+  <description>Componente que posee la estrategia que brinda acesso a los datos, donde se encuentra toda la instrumentacion necesaria para llevar a cabo una operacion de consulta o actualizacion de datos en una fuente de informacion determinada.</description>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -19,18 +19,13 @@
   </build>
   <dependencies>
   	<dependency>
-    	<groupId>edu.uco.budget</groupId>
-  	    <artifactId>Budget_Data</artifactId>
-  	    <version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  	    <groupId>edu.uco.budget</groupId>
-  		<artifactId>Budget_Domain</artifactId>
+  		<groupId>edu.uco.quickjob</groupId>
+  		<artifactId>Quickjob_Domain</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   	<dependency>
-		<groupId>edu.uco.budget</groupId>
-  		<artifactId>Budget_Crosscutting</artifactId>
+  		<groupId>edu.uco.quickjob</groupId>
+  		<artifactId>Quickjob_Crosscutting</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>
