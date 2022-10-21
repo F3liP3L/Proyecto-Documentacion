@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C8706A3E-4AB8-1317-F61E-4EB99F07E79A" name="respuesta">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>36D76A8E-7694-F7AD-4A2F-A21EA6DF5266</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="B553EB24-A659-1C3E-9C09-38FFC066FD0E">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>6FE239BA-7CF1-52E4-84F2-F44E4CDBE193</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="D8AF6BFD-1993-7EA5-2BA1-D46AD404A195">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>499A5937-D2FF-521E-DD8B-36543A1F9A63</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pregunta_codigo" id="E22C8018-5D35-727A-552F-7B22EB0DCC8E">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>D60B758A-EA16-AC69-C30F-B3B062B9F81B</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8300C90A-CFD7-1AF6-8CDE-721A7C00FD7F" referredColumn="746EE432-4DC3-5CB4-61ED-E1E2B0BBC3C0"/>
+</associations>
+</Column>
+<Column name="prestador_servicio_codigo" id="9370163F-AC7D-3ABA-61D4-AA83E5BC9FC2">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>29959115-9A87-3DA2-DE3B-AE08749A88ED</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9E23C8D2-884A-E921-550F-49E15348686B" referredColumn="8150A7BE-25F0-67DC-59EE-C13922704844"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2E1BA89A-42D5-8825-E88C-542025AC284E" name="respuesta_PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>C0B42367-835A-89CA-DF93-C5C7F05009EA</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B553EB24-A659-1C3E-9C09-38FFC066FD0E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD1A0F5C-A2BB-FF8B-34DB-AA13699B0DEF" name="respuesta_pregunta_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>572D0211-39F7-4035-6789-839C408FA2BE</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E22C8018-5D35-727A-552F-7B22EB0DCC8E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="074EBD06-737B-F630-4C7E-AC7DAD96009D" name="respuesta_prestador_servicio_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>CD5E0606-4019-97BF-5322-0D6EBE94BFB5</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9370163F-AC7D-3ABA-61D4-AA83E5BC9FC2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

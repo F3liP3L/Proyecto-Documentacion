@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1A817504-3938-A073-2D6D-C3575D99D19D" name="calificacion">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:21:29 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="77A221F0-BE4B-E561-E00C-0A2F05C4BD83">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:21:39 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="puntuacion" id="DC0953C8-1ECF-1B94-6683-4250BAEAA2AA">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:21:55 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo1" id="1309B5B4-D9C8-7C6C-D510-912CCAEFD830">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:27:40 UTC</createdTime>
+<generatorID>A629BAF9-8E77-F13E-4DD0-D4BA36206D39</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<referedAttribute>49648701-92C8-9E6E-4CF1-052DA4B9D425</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo2" id="6835A4B0-71D2-B95F-348F-2938F55B63C6">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:28:03 UTC</createdTime>
+<generatorID>05C98A37-4ADC-0B35-2120-8AC4BF7524CC</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<referedAttribute>18220E35-37EE-46A3-B244-0A3E82F8B17D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A28B04B9-983D-AFE7-4EDF-2395141C02DB" name="calificacion PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:21:53 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>77A221F0-BE4B-E561-E00C-0A2F05C4BD83</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

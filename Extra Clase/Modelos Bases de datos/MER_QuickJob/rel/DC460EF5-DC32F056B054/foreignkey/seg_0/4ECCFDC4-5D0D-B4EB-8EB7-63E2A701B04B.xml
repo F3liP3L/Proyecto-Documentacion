@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="4ECCFDC4-5D0D-B4EB-8EB7-63E2A701B04B" containerWithKeyObject="8985A548-AAA7-4F73-ACE8-FF7E26F97213" localFKIndex="F2A13AC1-14A6-4D31-3D53-BF8714F546E0" name="prestadorServicios_ofrece_servicio_prestador_servicio_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>B67E4BB2-48E2-D4D0-4C63-51D7C9FBA148</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<referredTableLongName>prestador_servicio</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>64EA65A3-056A-2F2B-3675-F4765A4AE1BF</referredTableID>
+<keyObject>F218433C-1209-9343-82E4-8407C79E1F72</keyObject>
+<referredKeyID>F218433C-1209-9343-82E4-8407C79E1F72</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

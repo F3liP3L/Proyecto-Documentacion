@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2FB1035A-90E9-62FA-08ED-C50C66CB09A1" name="cliente_usa_servicio">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cliente_codigo" id="1C7670E2-2C1A-1A07-1C77-725090EC75C8">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="42404A2D-9DD5-D38D-AA4A-DAAC62770EF0" referredColumn="029A5C72-E5C5-2F47-B956-15CC5E0A5AB8"/>
+</associations>
+</Column>
+<Column name="servicio_codigo" id="D78B0630-B1A5-CBCE-CA8F-2521D7141749">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="32F503C7-4CCE-D12D-5436-BED83914443B" referredColumn="7C4E442E-B865-E5FC-2592-5234ED20F63E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EFB49EAE-0D18-CBD2-2EBE-7AE205E5125E" name="cliente_usa_servicio_PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C7670E2-2C1A-1A07-1C77-725090EC75C8"/>
+<colUsage columnID="D78B0630-B1A5-CBCE-CA8F-2521D7141749"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D6283C89-54AD-267F-8DD2-54F407C7F67D" name="cliente_usa_servicio_cliente_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>9FCBC0AD-30E1-AC32-8F89-DD4BEE6F686E</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C7670E2-2C1A-1A07-1C77-725090EC75C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="71941E15-B082-BFB6-1789-E2FD397AD3DF" name="cliente_usa_servicio_servicio_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>9FCBC0AD-30E1-AC32-8F89-DD4BEE6F686E</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D78B0630-B1A5-CBCE-CA8F-2521D7141749"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

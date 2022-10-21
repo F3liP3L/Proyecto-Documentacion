@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="calificacion_pertenece_servicio" directorySegmentName="seg_0" id="05C98A37-4ADC-0B35-2120-8AC4BF7524CC">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:28:03 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<sourcePk>E23B39D8-61D8-B47C-359C-994DF20B32F9</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>58DDA010-CFFE-D7E4-DB2C-8B06F9AF068B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1A817504-3938-A073-2D6D-C3575D99D19D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
