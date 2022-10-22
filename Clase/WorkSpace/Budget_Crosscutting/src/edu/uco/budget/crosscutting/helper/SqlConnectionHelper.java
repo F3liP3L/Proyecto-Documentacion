@@ -21,4 +21,10 @@ public final class SqlConnectionHelper {
 		}
 	}
 
+	
+	public static final void closeConnection(final Connection connection) {
+		if(connectionIsOpen(connection)) {
+			
+		}
+	}
 }

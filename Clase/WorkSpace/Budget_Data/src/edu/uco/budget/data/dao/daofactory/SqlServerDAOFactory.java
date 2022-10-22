@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import edu.uco.budget.crosscutting.helper.SqlConnectionHelper;
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
@@ -43,6 +44,13 @@ public final class SqlServerDAOFactory extends DAOFactory{
 	@Override
 	public void initTransaction() {
 		// TODO Auto-generated method stub
+		/*
+		try {
+			//SqlConnectionHelper // initTransaccion(connection).
+		} catch() {
+			//
+		}
+		*/
 		
 	}
 

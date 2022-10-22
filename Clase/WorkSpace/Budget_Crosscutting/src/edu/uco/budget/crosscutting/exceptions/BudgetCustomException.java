@@ -1,6 +1,6 @@
 package edu.uco.budget.crosscutting.exceptions;
 
-public class BudgetExceptions extends RuntimeException {
+public class BudgetCustomException extends RuntimeException {
 
 	private static final long serialVersionUID = -7479231409956934620L;
 	
@@ -8,7 +8,7 @@ public class BudgetExceptions extends RuntimeException {
 	private String message;
 	private String technicalMessage;
 	
-	protected BudgetExceptions(Exception excepcionRaiz, String message, String technicalMessage) {
+	protected BudgetCustomException(Exception excepcionRaiz, String message, String technicalMessage) {
 		super();
 		this.excepcionRaiz = excepcionRaiz;
 		this.message = message;
