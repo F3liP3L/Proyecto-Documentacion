@@ -1,0 +1,175 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3277DCAC-E06A-7B53-1867-083F98471EFF" name="Usuario">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>FD5DFB4E-6C28-635F-F6AB-9000ACEDDE76</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="84496CC4-A5A4-9BE6-96B7-8C61DE729417">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>BC89457A-084F-2CC2-22AB-1D00DBD6A546</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="4E6202FD-F86A-2683-33F7-B70578155809">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>56BEEFFF-3F0F-F23E-207F-0009E7C8A384</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellido" id="1E91A06C-5486-FAAA-645C-AAADCFEF4403">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>CFFEEA1C-8DBB-D3EA-07EB-A08FEDADD53B</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="105BC746-70E9-ADCE-D13A-1099FE573E37">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>CFF03679-EC04-6840-C3B7-35A897755C38</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="identificacion" id="EB7531AF-BE22-412B-891D-289C3DBBB2F0">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>9A086FFE-C64D-FB0D-1A60-D0920289EA1A</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipoIdentificacion" id="E815016A-287C-CA72-E478-9EC7BC55707C">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>F4B93C11-166D-8B83-A17E-0AC6CA7D4D76</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="3019E76F-B955-5D10-095F-8F9CF59EFF5A">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>37EA9AA7-D6D6-F2FB-6438-887C360364A2</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="documento_identificacion_codigo" id="AE5B96BB-8F0E-6DD9-C614-C88FB38C59A4">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>563017BB-E339-8CC6-A38F-8AD36D130689</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1E99AD28-1E77-8D7D-6363-822665A50E6A" referredColumn="F749A32E-AB4F-17DF-B3D7-ECFC36FD157D"/>
+</associations>
+</Column>
+<Column name="ciudad_id" id="E2959DCE-BFB2-618A-1D22-CA642A1491F1">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>96352616-135F-4DED-38D7-857D9515E8C1</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="588E3779-3D45-67AE-64D1-8C51459DF4FC" referredColumn="A4D1D1FA-849F-A891-9818-138182994E09"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F65D5B5B-376D-92B3-5D98-F04EB3E532AB" name="Usuario_PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>8240C322-0CCA-A8FC-899C-04FADF4E3902</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="84496CC4-A5A4-9BE6-96B7-8C61DE729417"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BEFEEA5A-E268-7A13-E7E7-DAAE892F4C05" name="Usuario__IDX">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>C817F71B-47DE-7282-D68D-7815FEC41E55</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="AE5B96BB-8F0E-6DD9-C614-C88FB38C59A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6E6C2D30-6DCA-1F8E-89AD-C77F8C4652AE" name="Usuario_ciudad_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>7B12B8F1-C65B-6C72-4534-E9E01F3E5005</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E2959DCE-BFB2-618A-1D22-CA642A1491F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="20641290-97E1-668D-F029-BA8F76E96A4E" name="Usuario_documento_identificacion_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>C817F71B-47DE-7282-D68D-7815FEC41E55</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AE5B96BB-8F0E-6DD9-C614-C88FB38C59A4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

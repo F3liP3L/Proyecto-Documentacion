@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D4F4470F-EC99-9FAE-64B6-DB87E8F6AD3A" containerWithKeyObject="6F2F7DBC-DF63-85D9-B103-BF215413D26D" localFKIndex="CB29394B-5375-844F-1F64-24A2755B2813" name="documento_identificacion_TipoIdentificacion_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>E017F980-E2BD-85AB-F4FE-E4526A1BEB73</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<referredTableLongName>TipoIdentificacion</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>80B8F00E-9AEB-9034-D52B-73CC7600D71A</referredTableID>
+<keyObject>F216EF07-3A4C-E04F-AB65-DD92B18ED4BD</keyObject>
+<referredKeyID>F216EF07-3A4C-E04F-AB65-DD92B18ED4BD</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>codigo</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

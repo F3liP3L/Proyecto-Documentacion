@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="347FBDD9-7191-66B5-1950-A258E762C7ED" name="TipoSubservicio">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>1DDE46DF-6CB3-5A45-B05F-E07D8EFB1769</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="B88AE646-D6E7-7854-DE22-F38D1B576AE6">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>E4E51826-0F72-C194-85CC-A71DB505719C</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="EDAC5835-CC84-9C09-3F88-330616E78605">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>11A9AA0B-474C-A290-8FF3-E1B63B249512</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="BE4944AF-4D02-798D-356D-D9E5F2F856D7">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>28FAD34C-627D-4847-B17E-23368C0138FD</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado" id="7A9EC7F5-B25E-662C-C68F-95FE90D289ED">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>35A77ECE-840C-0197-ED2F-4697F82789CE</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoServicio_codigo" id="12FDEBDA-94BF-CBDE-9473-46D1D87D8856">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 01:24:39 UTC</createdTime>
+<generatorID>B9223394-7EFA-BF6A-CFAB-610EAF2AA3FD</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DBD9E6F0-B25F-D688-A0D0-9DF3591F4529" referredColumn="F7627955-7D3F-2DA3-3719-1FAEAB1132BC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="63A2EB4F-AD7A-7335-089C-77065F3F8AA2" name="TipoSubservicio_PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="B88AE646-D6E7-7854-DE22-F38D1B576AE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8D6F01C8-B623-2780-EA65-917FDAAFF6B8" name="TipoSubservicio_codigo_UN">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 01:24:39 UTC</createdTime>
+<generatorID>CB8E490A-4EE9-46F4-9129-5E68F20D98CB</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B88AE646-D6E7-7854-DE22-F38D1B576AE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D831BEF6-ACE4-3877-7386-1C53DB3C591C" name="TipoSubservicio_TipoServicio_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 01:24:39 UTC</createdTime>
+<generatorID>DBBAECFD-D6D5-B77E-388E-6D99CC5CF011</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12FDEBDA-94BF-CBDE-9473-46D1D87D8856"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

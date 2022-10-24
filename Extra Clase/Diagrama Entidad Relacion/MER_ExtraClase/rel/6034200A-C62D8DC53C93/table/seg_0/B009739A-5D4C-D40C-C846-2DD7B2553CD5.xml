@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B009739A-5D4C-D40C-C846-2DD7B2553CD5" name="departamento">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>CA0C9621-D3F5-4237-C667-4D0B347559A2</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="0492D408-8FD2-416F-CF10-2A51FBCC39E7">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>3943D265-06B1-49E1-F04E-6B76E1B46DC1</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="3C2473F8-0145-6B89-9912-2C4ED6253BD9">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>3008E3ED-80F6-6830-F7D6-5C39A06BBC44</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pais_id" id="4E7D33FE-6BCC-334E-911D-2B0CA8C0162C">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>3265B405-A5FD-9723-A267-DA6C9DB01243</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B0EBB3E9-B24D-0A84-73C1-FE63172849B0" referredColumn="571FEA58-17CB-6177-0ED7-B6DB762EF804"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ACDA9D18-F568-C238-C248-DD3FE4597819" name="departamento_PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>58B67234-66ED-355B-FD44-EF26DC940057</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0492D408-8FD2-416F-CF10-2A51FBCC39E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="12AF503B-3ABA-D268-9519-5FB3931C1126" name="departamento_pais_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>66AFD021-4CF2-8D11-A3CB-FE4DED9F6DFF</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E7D33FE-6BCC-334E-911D-2B0CA8C0162C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

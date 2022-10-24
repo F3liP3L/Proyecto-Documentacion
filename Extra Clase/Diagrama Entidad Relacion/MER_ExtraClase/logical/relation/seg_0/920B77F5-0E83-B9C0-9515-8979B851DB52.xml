@@ -2,7 +2,7 @@
 <Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_16" directorySegmentName="seg_0" id="920B77F5-0E83-B9C0-9515-8979B851DB52">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:47:33 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>

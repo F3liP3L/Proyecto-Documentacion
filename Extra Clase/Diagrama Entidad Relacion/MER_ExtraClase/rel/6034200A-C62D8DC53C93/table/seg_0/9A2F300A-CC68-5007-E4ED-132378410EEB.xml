@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9A2F300A-CC68-5007-E4ED-132378410EEB" name="Comentario">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>53218C1F-F5BE-CAAA-B3D1-3362E9F22653</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="67A8F581-1B3E-8C85-8333-3A81BBB1B40A">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>D6413487-5DB7-0525-500B-831F4F6D9B27</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="185D1B6F-ADEB-C6B7-F50F-5F020864F608">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>5CE6A42E-13D6-6B00-E2EF-3E26F11EDFA0</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="3824091D-B690-F1AF-DA2D-7B037F528C4E">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>366BD297-D5C7-D59A-8A26-747415FED0DB</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fechaPublicacion" id="E8050180-58BF-6B7E-BCCC-2E5957E620D7">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>78E9A069-39DE-7E7B-2A74-4559C5277E81</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Servicio_codigo" id="658E73AB-50F9-6C7A-C89A-DD8CEF1E7F0D">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>D2F6306A-E3FE-DBDB-6502-04E7DA1E8D38</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C02F21B4-B642-4159-AEDD-59E961BD0E5A" referredColumn="87CCBFAC-109C-947D-7D48-56E8BBB9CF7C"/>
+</associations>
+</Column>
+<Column name="cliente_codigo" id="A9D822AC-245C-B147-BDFD-C13FE10D853A">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 01:24:39 UTC</createdTime>
+<generatorID>4DD4B4CE-D95F-36B0-42DB-41BF1A285940</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="865675D9-1619-1A3A-C413-3BB28403BCA2" referredColumn="963E14F0-5C6D-F63C-566D-157EA2CA8127"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A31654AB-1479-88FF-9F0C-B5BB962D4E28" name="Comentario_PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>D283D65A-622A-630A-DEBA-00973A4E72CC</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67A8F581-1B3E-8C85-8333-3A81BBB1B40A"/>
+<colUsage columnID="A9D822AC-245C-B147-BDFD-C13FE10D853A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D8CC4017-9F7D-CE00-D9C1-584E741A6643" name="Comentario_Cliente_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>1F657A5E-5ED4-0E14-19B0-B8A2966222F2</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A9D822AC-245C-B147-BDFD-C13FE10D853A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6DC65752-DAD5-6F7E-34D2-AFE43B096D96" name="Comentario_Servicio_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>721EAD35-1FCC-184D-4CC4-B3BF6A519C7E</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="658E73AB-50F9-6C7A-C89A-DD8CEF1E7F0D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

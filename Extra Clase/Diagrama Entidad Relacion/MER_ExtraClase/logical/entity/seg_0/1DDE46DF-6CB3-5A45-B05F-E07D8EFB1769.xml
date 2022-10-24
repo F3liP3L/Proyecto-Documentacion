@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1DDE46DF-6CB3-5A45-B05F-E07D8EFB1769" name="TipoSubservicio">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:27:22 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -18,7 +18,7 @@
 <Attribute name="codigo" id="E4E51826-0F72-C194-85CC-A71DB505719C">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:27:34 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -31,7 +31,7 @@
 <Attribute name="nombre" id="11A9AA0B-474C-A290-8FF3-E1B63B249512">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:27:49 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -44,7 +44,7 @@
 <Attribute name="descripcion" id="28FAD34C-627D-4847-B17E-23368C0138FD">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:28:11 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -57,7 +57,7 @@
 <Attribute name="estado" id="35A77ECE-840C-0197-ED2F-4697F82789CE">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:28:27 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -67,18 +67,34 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="tipoServicio" id="3D58F8FA-A2F8-2E6A-51D4-1816B1A442AE">
+<Attribute name="codigo1" id="B9223394-7EFA-BF6A-CFAB-610EAF2AA3FD">
 <createdBy>ANDRES</createdBy>
-<createdTime>2022-09-16 20:28:35 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<createdTime>2022-10-21 00:27:53 UTC</createdTime>
+<generatorID>DBBAECFD-D6D5-B77E-388E-6D99CC5CF011</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
+<referedAttribute>835869D0-F5C3-CB85-43F1-365D3F5B5C96</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CB8E490A-4EE9-46F4-9129-5E68F20D98CB" name="TipoSubservicio PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:28:04 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<engineerTo>
+<item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E4E51826-0F72-C194-85CC-A71DB505719C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

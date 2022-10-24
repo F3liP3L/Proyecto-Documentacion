@@ -121,7 +121,7 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id" id="96352616-135F-4DED-38D7-857D9515E8C1">
+<Attribute name="codigo2" id="96352616-135F-4DED-38D7-857D9515E8C1">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-10-20 22:33:28 UTC</createdTime>
 <generatorID>7B12B8F1-C65B-6C72-4534-E9E01F3E5005</generatorID>
@@ -134,7 +134,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

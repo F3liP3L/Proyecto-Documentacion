@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C3DEF31D-A651-E8EB-4B89-3B3E6ECDD4A7" name="Cliente">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>04D946D8-26D9-6EE9-D648-E1BC825A53C4</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usuario" id="69BD5F77-B2F9-8A05-2FC2-F4D94BB2FC13">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>DC8EE0F1-D033-F39D-29C1-0A84FEE056F5</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="servicioConsumido" id="2A07F194-4C43-F335-01BF-42A40E4CA243">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>464294AF-4F23-2CD8-8927-82A603A28D46</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Usuario_codigo" id="963E14F0-5C6D-F63C-566D-157EA2CA8127">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>5679D227-585B-39C1-E7D4-BCE0425AA005</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A320AEFF-CE0C-8E1B-8996-361172C0E59F" referredColumn="84496CC4-A5A4-9BE6-96B7-8C61DE729417"/>
+</associations>
+</Column>
+<Column name="serviciosConsumidos" id="3DB0F3AB-2ED1-83F2-A0C4-8D3C175AC229">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 01:24:39 UTC</createdTime>
+<generatorID>5EC79C6E-D6BE-7E9B-047E-6476E1319163</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FF156CAA-5EC9-8F6A-EAAD-EC3701036AAF" name="Cliente_PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>31524C0C-828B-899B-9B7E-9B0B96DEB6CF</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="963E14F0-5C6D-F63C-566D-157EA2CA8127"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EB390FA2-128B-EFD9-7A2F-9BC13C1FDE08" name="Cliente__IDX">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>7BA5F3AA-8375-7DD3-3EE4-6458FC16E315</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="963E14F0-5C6D-F63C-566D-157EA2CA8127"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="63B728BB-36A4-FCBA-E6EA-51BD7E55336E" name="Cliente_Usuario_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>7BA5F3AA-8375-7DD3-3EE4-6458FC16E315</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="963E14F0-5C6D-F63C-566D-157EA2CA8127"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

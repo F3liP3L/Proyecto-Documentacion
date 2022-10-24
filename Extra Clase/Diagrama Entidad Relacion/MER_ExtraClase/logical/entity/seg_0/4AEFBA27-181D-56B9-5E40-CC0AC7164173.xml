@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4AEFBA27-181D-56B9-5E40-CC0AC7164173" name="Pregunta">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:41:40 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -18,7 +18,7 @@
 <Attribute name="codigo" id="0227D188-9EFE-16B5-7F17-08929856AF63">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:41:50 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -31,7 +31,7 @@
 <Attribute name="descripcion" id="FA30A5FE-7FA4-7D8D-A2F1-5989B29DA5A3">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:42:09 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -44,7 +44,7 @@
 <Attribute name="servicio" id="6D2C3EDD-FD81-872D-8A69-1F35C8782E50">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:42:41 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -57,7 +57,7 @@
 <Attribute name="respuesta" id="DCBB7E0B-8B8B-6309-33DB-A9EA1C1DF1EA">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:42:58 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -70,7 +70,7 @@
 <Attribute name="cliente" id="D31B4E49-44FC-AB93-C676-CA4BD814B22E">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:43:13 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -80,26 +80,11 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="codigoCliente" id="573D4BF3-3F90-9A58-9E7B-4C174844CE38">
-<createdBy>ANDRES</createdBy>
-<createdTime>2022-09-16 20:44:12 UTC</createdTime>
-<generatorID>9E9B636A-6802-40B8-CEE0-AE65DD672DC5</generatorID>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
-<engineerTo>
-<item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
-</engineerTo>
-<referedAttribute>D4639D36-80D4-6DED-A297-BEAD092D9212</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="codigo1" id="7768AA82-4C7E-10E1-0AB9-6F9626AD5B85">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:44:30 UTC</createdTime>
 <generatorID>8D175EB0-E4B8-6A29-0242-7CB5E928CF0C</generatorID>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
@@ -108,17 +93,17 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="codigo11" id="1545A822-9BDF-742F-DA75-FC6FC9BE765B">
+<Attribute name="codigo2" id="7FA7BCFB-03CE-5062-D2E7-395FBE224F7D">
 <createdBy>ANDRES</createdBy>
-<createdTime>2022-09-16 20:44:30 UTC</createdTime>
-<generatorID>8D175EB0-E4B8-6A29-0242-7CB5E928CF0C</generatorID>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<createdTime>2022-10-21 01:04:51 UTC</createdTime>
+<generatorID>9E9B636A-6802-40B8-CEE0-AE65DD672DC5</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
-<referedAttribute>3102A75F-0E3D-18AD-59DA-D9C5181F5E3D</referedAttribute>
+<referedAttribute>5679D227-585B-39C1-E7D4-BCE0425AA005</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -130,16 +115,15 @@
 <identifier id="E211EA7E-A11C-4381-C2F7-3FE49B7CF1BE" name="Pregunta PK">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-09-16 20:42:08 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase</ownerDesignName>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>0227D188-9EFE-16B5-7F17-08929856AF63</attributeRef>
-<attributeRef>573D4BF3-3F90-9A58-9E7B-4C174844CE38</attributeRef>
 <attributeRef>7768AA82-4C7E-10E1-0AB9-6F9626AD5B85</attributeRef>
-<attributeRef>1545A822-9BDF-742F-DA75-FC6FC9BE765B</attributeRef>
+<attributeRef>7FA7BCFB-03CE-5062-D2E7-395FBE224F7D</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id" id="4C487C7B-1E91-374C-64BC-FD33DF8D54E5">
+<Attribute name="codigo" id="4C487C7B-1E91-374C-64BC-FD33DF8D54E5">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-10-20 22:25:45 UTC</createdTime>
 <ownerDesignName>MER_ExtraClase.</ownerDesignName>

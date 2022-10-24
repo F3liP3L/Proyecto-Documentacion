@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id" id="3943D265-06B1-49E1-F04E-6B76E1B46DC1">
+<Attribute name="codigo" id="3943D265-06B1-49E1-F04E-6B76E1B46DC1">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-10-20 22:23:32 UTC</createdTime>
 <ownerDesignName>MER_ExtraClase.</ownerDesignName>
@@ -41,7 +41,7 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id1" id="3265B405-A5FD-9723-A267-DA6C9DB01243">
+<Attribute name="codigo1" id="3265B405-A5FD-9723-A267-DA6C9DB01243">
 <createdBy>ANDRES</createdBy>
 <createdTime>2022-10-20 22:27:23 UTC</createdTime>
 <generatorID>66AFD021-4CF2-8D11-A3CB-FE4DED9F6DFF</generatorID>
@@ -54,7 +54,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

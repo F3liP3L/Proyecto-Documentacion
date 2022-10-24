@@ -67,33 +67,20 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="tipoSubservicio" id="70D9E525-50F7-7801-AE8A-D875918B953B">
+<Attribute name="codigo1" id="CAFFA9DF-56E2-2441-4C71-5D200E07FA34">
 <createdBy>ANDRES</createdBy>
-<createdTime>2022-09-16 20:26:55 UTC</createdTime>
+<createdTime>2022-10-21 00:28:13 UTC</createdTime>
+<generatorID>FEBB9426-E473-FBC2-A2BD-EA2C2922F2C0</generatorID>
 <ownerDesignName>MER_ExtraClase.</ownerDesignName>
 <engineerTo>
 <item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
 </engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="codigo1" id="3102A75F-0E3D-18AD-59DA-D9C5181F5E3D">
-<createdBy>ANDRES</createdBy>
-<createdTime>2022-09-16 20:31:10 UTC</createdTime>
-<generatorID>84018D40-02BC-D60B-F50E-B9721979486B</generatorID>
-<ownerDesignName>MER_ExtraClase.</ownerDesignName>
-<engineerTo>
-<item key="6034200A-A749-44A7-48F1-C62D8DC53C93" value="true"/>
-</engineerTo>
-<referedAttribute>835869D0-F5C3-CB85-43F1-365D3F5B5C96</referedAttribute>
+<referedAttribute>E4E51826-0F72-C194-85CC-A71DB505719C</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -107,7 +94,6 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>760FFAA5-533A-CC1F-F090-6E3FCD637CE3</attributeRef>
-<attributeRef>3102A75F-0E3D-18AD-59DA-D9C5181F5E3D</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

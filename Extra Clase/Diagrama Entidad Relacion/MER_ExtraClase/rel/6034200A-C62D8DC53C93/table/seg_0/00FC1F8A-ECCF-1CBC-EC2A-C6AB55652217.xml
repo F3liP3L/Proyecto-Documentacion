@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="00FC1F8A-ECCF-1CBC-EC2A-C6AB55652217" name="Calificacion">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>FCA137AB-A209-F8E6-3E7E-5D267F339520</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="A05CC6E9-E4AD-E61D-4364-808949A3E3BE">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>EECA0EE2-3A84-6BB4-F5FC-E58D2E81BD42</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="puntuacion" id="C2C7E819-2645-36D1-77AB-79A6762B43A1">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>1A2C9F9E-368A-28C7-5B23-C49E361BE621</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Servicio_codigo" id="310FFEA0-CD10-FBA7-91AE-0AF3B226F754">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>C457BC3A-19EA-A894-BDB1-7F15593F7FF8</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="88252782-47C8-C7CD-8A3D-42CE24273C0C" referredColumn="87CCBFAC-109C-947D-7D48-56E8BBB9CF7C"/>
+</associations>
+</Column>
+<Column name="cliente_codigo1" id="7B625B72-3C02-2998-577F-983C2D615866">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 01:24:39 UTC</createdTime>
+<generatorID>3E113E5E-F88F-1D8B-2612-575796D9FCCC</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F06C4E2A-FA75-3573-B21C-67FCCDB5F2E6" referredColumn="963E14F0-5C6D-F63C-566D-157EA2CA8127"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A8A651FE-1AA8-D96F-F83F-AA3F2AA3EC9F" name="Calificacion_PK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>4E3E4461-60EF-3652-56D7-A44BCA62A595</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A05CC6E9-E4AD-E61D-4364-808949A3E3BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8AC103C7-E74D-E080-0734-34226632BD56" name="Calificacion_Cliente_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>5DD2EB3E-1934-3824-30D8-E81F31A9C2DD</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B625B72-3C02-2998-577F-983C2D615866"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55B7CB50-A3D0-E1C4-AB61-E311EDB3F549" name="Calificacion_Servicio_FK">
+<createdBy>ANDRES</createdBy>
+<createdTime>2022-10-21 00:10:16 UTC</createdTime>
+<generatorID>F4C7E284-504F-C96D-14F8-1EC1260B6852</generatorID>
+<ownerDesignName>MER_ExtraClase.</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="310FFEA0-CD10-FBA7-91AE-0AF3B226F754"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
