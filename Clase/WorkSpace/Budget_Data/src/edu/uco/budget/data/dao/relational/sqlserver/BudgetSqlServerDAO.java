@@ -70,7 +70,6 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 				sqlBuilder.append("WHERE Bu.id = ? ");
 				setWhere = false;
 				parameters.add(budget.getIdAsString());
-
 			}
 			
 			if(UUIDHelper.isDefaultUUID(budget.getYear().getId())) {

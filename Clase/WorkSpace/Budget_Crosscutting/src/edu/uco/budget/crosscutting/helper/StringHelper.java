@@ -21,5 +21,9 @@ public class StringHelper {
 	public static final String applyTrim(String value) {
 		return getDefaultString(value).trim();
 	}
-
+	
+	public static final boolean isEmpty(String value) {
+		return applyTrim(value) == EMPTY;
+	}
+	
 }
