@@ -5,6 +5,7 @@ import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
 import edu.uco.budget.data.enumeration.DAOFactoryType;
+import edu.uco.budget.crosscutting.exceptions.BudgetDAOFactoryCassandraExceptions;
 
 public abstract class DAOFactory {
 	
@@ -17,7 +18,7 @@ public abstract class DAOFactory {
 			daoFactory = new SqlServerDAOFactory();
 			break;
 			case CASSANDRA: 
-				throw new RuntimeException(Messages.DAOFactory.TECHNICAL_CASSANDRA_NOT_IMPLEMENTED);
+				throw BudgetDAOFactoryCassandraExceptions.create(Messages.DAOFactory.TECHNICAL_CASSANDRA_NOT_IMPLEMENTED);
 			case MARIADB:
 				throw new RuntimeException(Messages.DAOFactory.TECHNICAL_MARIADB_NOT_IMPLEMENTED);
 			case MONGODB:

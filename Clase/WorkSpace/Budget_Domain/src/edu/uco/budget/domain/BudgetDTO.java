@@ -2,11 +2,13 @@ package edu.uco.budget.domain;
 
 import java.util.UUID;
 
+
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.budget.domain.builder.PersonDTOBuilder.getPersonDTOBuilder;
 import static edu.uco.budget.domain.builder.YearDTOBuilder.getYearDTOBuilder;
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 public final class BudgetDTO {
 	
@@ -47,6 +49,10 @@ public final class BudgetDTO {
 	}
 	public void setYear(YearDTO year) {
 		this.year = getDefaultIfNull(year, getYearDTOBuilder().build());
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 	
 }

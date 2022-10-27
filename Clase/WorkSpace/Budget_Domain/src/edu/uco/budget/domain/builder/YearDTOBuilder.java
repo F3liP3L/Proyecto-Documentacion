@@ -1,5 +1,7 @@
 package edu.uco.budget.domain.builder;
 
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
+
 import java.util.UUID;
 
 import edu.uco.budget.domain.YearDTO;
@@ -12,6 +14,7 @@ public class YearDTOBuilder {
 	private YearDTOBuilder() {
 		super();
 	}
+	
 	
 	public static final YearDTOBuilder getYearDTOBuilder() {
 		return new YearDTOBuilder();
@@ -29,7 +32,6 @@ public class YearDTOBuilder {
 
 	public final YearDTO build() {
 		return YearDTO.create(id, yearNumber);
-	}
-	
+	}	
 	
 }

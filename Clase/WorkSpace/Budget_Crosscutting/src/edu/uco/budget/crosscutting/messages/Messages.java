@@ -31,6 +31,20 @@ public class Messages {
 		public static final String TECHNICAL_CONNECTION_IS_NULL = "Connection is null";
 		public static final String TECHNICAL_CONNECTION_IS_CLOSED = "Connection is closed";
 		
+		
+	}
+	
+	public static class BudgetSqlServerDAO {
+		
+		private BudgetSqlServerDAO() {
+			super();
+		}
+		
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_BUDGET = " ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET = "There was an unexpected problem trying to create";
+		
+		
 	}
 	
 }

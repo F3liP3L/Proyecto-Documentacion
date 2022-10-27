@@ -1,7 +1,10 @@
 package edu.uco.budget.data.dao.daofactory;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
+import edu.uco.budget.crosscutting.helper.SqlConnectionHelper;
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
@@ -19,12 +22,35 @@ public final class SqlServerDAOFactory extends DAOFactory{
 
 	@Override
 	protected void openConnection() {
-		connection = null;
+		String connectionUrl = "jdbc:sqlserver://rg-wf.database.windows.net:1433;" 
+				+ "database=db-budget;user=userDmlBudget;" 
+				+ "password=us3rDmlBudg3t;" 
+				+ "encrypt=true;" 
+				+ "trustServerCertificate=false;" 
+				+ "hostNameInCertificate=*.database.windows.net;"
+				+ "loginTimeout=30";     
+		
+		try (Connection connection = DriverManager.getConnection(connectionUrl)) {
+            // Code here.
+        }
+        // Handle any errors that may have occurred.
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+		
+		
 	}
 
 	@Override
 	public void initTransaction() {
 		// TODO Auto-generated method stub
+		/*
+		try {
+			//SqlConnectionHelper // initTransaccion(connection).
+		} catch() {
+			//
+		}
+		*/
 		
 	}
 

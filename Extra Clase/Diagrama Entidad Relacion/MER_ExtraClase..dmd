@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="MER_ExtraClase." id="FC085721-EAAA-6770-0CCC-5213FA11E1B0" version="3.5">
-<createdBy>ANDRES</createdBy>
-<createdTime>2022-10-14 20:07:53 UTC</createdTime>
-<ownerDesignName>MER_ExtraClase.</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>FC085721-EAAA-6770-0CCC-5213FA11E1B0</designId>
-</OSDM_Design>
