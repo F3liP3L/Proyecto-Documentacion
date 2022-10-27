@@ -1,10 +1,10 @@
-package edu.uco.budget.crosscutting.helper;
+package edu.uco.quickjob.crosscutting.helper;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException;
-import edu.uco.budget.crosscutting.messages.Messages;
+import edu.uco.quickjob.crosscutting.exception.data.CrosscuttingCustomException;
+import edu.uco.quickjob.crosscutting.messages.Messages;
 
 public final class SqlConnectionHelper {
 	

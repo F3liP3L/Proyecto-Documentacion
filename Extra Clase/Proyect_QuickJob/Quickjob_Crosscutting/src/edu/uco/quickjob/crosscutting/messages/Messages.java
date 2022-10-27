@@ -1,4 +1,4 @@
-package edu.uco.budget.crosscutting.messages;
+package edu.uco.quickjob.crosscutting.messages;
 
 public class Messages {
 	
@@ -12,6 +12,7 @@ public class Messages {
 			super();
 		}
 		
+		public static final String TECHNICAL_SQLSERVER_NOT_IMPLEMENTED = "DAOFactory for SQLServer is not implemented yet";
 		public static final String TECHNICAL_MONGODB_NOT_IMPLEMENTED = "DAOFactory for MongoDB is not implemented yet";
 		public static final String TECHNICAL_CASSANDRA_NOT_IMPLEMENTED = "DAOFactory for Cassandra is not implemented yet";
 		public static final String TECHNICAL_MARIADB_NOT_IMPLEMENTED = "DAOFactory for MariaDB is not implemented yet";
@@ -61,14 +62,9 @@ public class Messages {
 		}
 		
 		public static final String TECHNICAL_PROBLEM_CREATE_BUDGET = "There was a problem trying to create the desired budget in SQLServerDAOFactory with id = ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET = "There was an unexpected problem trying to create the budget in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET = "There was an unexpected problem trying to create the budget in SQLServerDAOFactory";
 		public static final String TECHNICAL_PROBLEM_UPDATE_BUDGET = "There was a problem trying to update the desired budget in SQL Server DAOFactory with id = ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was an unexpected problem trying to update the budget in SQLServerDAOFactory with id = ";
-		public static final String TECHNICAL_PROBLEM_DELETE_BUDGET = "There was a problem trying to delete the desired budget in SQL Server DAOFactory with id = ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET = "There was an unexpected problem trying to delete the budget in SQLServerDAOFactory with id = ";
-		public static final String TECHNICAL_PROBLEM_SELECT_BUDGET = "There was a problem trying to select the desired budget in SQL Server DAOFactory with id = ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SELECT_BUDGET = "There was an unexpected problem trying to select the budget in SQLServerDAOFactory";
-		
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was an unexpected problem trying to create the budget in SQLServerDAOFactory";
 		
 	}
 	
