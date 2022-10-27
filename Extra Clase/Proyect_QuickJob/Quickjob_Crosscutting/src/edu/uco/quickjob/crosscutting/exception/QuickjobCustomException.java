@@ -1,18 +1,19 @@
-package edu.uco.budget.crosscutting.exceptions;
+package edu.uco.quickjob.crosscutting.exception;
 
-import edu.uco.budget.crosscutting.exceptions.enumeration.LayerException;
-import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
-import static edu.uco.budget.crosscutting.helper.StringHelper.applyTrim;
-import static edu.uco.budget.crosscutting.helper.StringHelper.isEmpty;
+import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
+import static edu.uco.quickjob.crosscutting.helper.StringHelper.isEmpty;
 
-public class BudgetCustomException extends RuntimeException {
+import edu.uco.quickjob.crosscutting.exception.enumeration.LayerException;
+
+public class QuickjobCustomException extends RuntimeException {
 	
 	private static final long serialVersionUID = -61839141971946281L;
 	
 	private LayerException layer;
 	private String userMessage;
 	
-	protected BudgetCustomException(final String userMessage, final String technicalMessage,
+	protected QuickjobCustomException(final String userMessage, final String technicalMessage,
 			final Throwable rootException, final LayerException layer) {
 		super(applyTrim(technicalMessage), getDefaultIfNull(rootException, new Exception()));
 		setUserMessage(userMessage);

@@ -1,18 +1,18 @@
 package edu.uco.budget.data.dao.relational.sqlserver;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import edu.uco.budget.data.dao.BudgetDAO;
-import edu.uco.budget.data.dao.relational.DAORelational;
-import edu.uco.budget.domain.BudgetDTO;
+import edu.uco.budget.crosscutting.exception.data.DataCustomException;
 import edu.uco.budget.crosscutting.helper.ObjectHelper;
 import edu.uco.budget.crosscutting.helper.UUIDHelper;
 import edu.uco.budget.crosscutting.messages.Messages;
+import edu.uco.budget.data.dao.BudgetDAO;
+import edu.uco.budget.data.dao.relational.DAORelational;
+import edu.uco.budget.domain.BudgetDTO;
 
 public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO {
 
@@ -33,10 +33,11 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 			preparedStatement.executeUpdate();
 			
 		} catch(final SQLException exception) {
-			String message = Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_CREATE_BUDGET;
-			// throw 
+			String message = Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_CREATE_BUDGET.concat(budget.getIdAsString());
+			throw DataCustomException.createTechnicalException(message, exception); 
 		} catch (final Exception exception) {
-			// TODO 
+			String message = Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET.concat(budget.getIdAsString());
+			throw DataCustomException.createTechnicalException(message ,exception);
 		}
 	}
 
@@ -87,13 +88,14 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 		sqlBuilder.append("Order By Pe.idCard ASC, ");
 		sqlBuilder.append("         Ye.year ASC ");
 		
-		
+		/*
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder)){
 			
 			for (int index = 0; index < parameters.size(); index++) {
 				preparedStatement.setObject(index + 1, parameters.get(index));
 			}
-		}
+		} catch (
+		*/
 		return null;
 	}
 
@@ -110,7 +112,12 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 			preparedStatement.setString(2, budget.getYear().getIdAsString());
 			preparedStatement.setString(3, budget.getPerson().getIdAsString());
 			
-			preparedStatement.executeUpdate()
+			preparedStatement.executeUpdate();
+		} catch (SQLException exception ) {
+			String message = Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_UPDATE_BUDGET.concat(budget.getIdAsString());
+			throw DataCustomException.createTechnicalException(message, exception);
+		} catch (Exception exception) {
+			throw DataCustomException.createTechnicalException(Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET, exception);
 		}
 	}
 
@@ -118,13 +125,14 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 	public final void delete(UUID id) {
 		
 		final var sqlDelete = "DELETE FROM Budget WHERE id = ?";
-		final var idAsString = 
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sqlDelete)) {
-			preparedStatement.setString(1, budget.getIdAsString());
-			
-		}
-		
+			preparedStatement.setString(1, id.toString());
+		} catch(SQLException exception) {
+			throw DataCustomException.createTechnicalException("ERROR", exception);
+		} catch (Exception exception) {
+			throw DataCustomException.createTechnicalException(null, exception);
+		}	
 	}
 
 }

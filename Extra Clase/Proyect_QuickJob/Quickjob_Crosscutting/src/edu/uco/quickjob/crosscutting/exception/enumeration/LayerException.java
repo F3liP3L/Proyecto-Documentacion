@@ -1,4 +1,4 @@
-package edu.uco.budget.crosscutting.exceptions.enumeration;
+package edu.uco.quickjob.crosscutting.exception.enumeration;
 
 public enum LayerException {
 	

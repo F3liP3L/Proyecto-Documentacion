@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException;
+import edu.uco.budget.crosscutting.exception.data.DataCustomException;
 import edu.uco.budget.crosscutting.helper.SqlConnectionHelper;
+import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
@@ -22,54 +25,43 @@ public final class SqlServerDAOFactory extends DAOFactory{
 
 	@Override
 	protected void openConnection() {
-		String connectionUrl = "jdbc:sqlserver://rg-wf.database.windows.net:1433;" 
+		String connectionSql =  "jdbc:sqlserver://rg-wf.database.windows.net:1433;" 
 				+ "database=db-budget;user=userDmlBudget;" 
 				+ "password=us3rDmlBudg3t;" 
 				+ "encrypt=true;" 
 				+ "trustServerCertificate=false;" 
-				+ "hostNameInCertificate=*.database.windows.net;"
-				+ "loginTimeout=30";     
-		
-		try (Connection connection = DriverManager.getConnection(connectionUrl)) {
-            // Code here.
-        }
-        // Handle any errors that may have occurred.
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-		
-		
+				+ "hostNameInCertificate=*.database.windows.net;";
+		try {
+			connection = DriverManager.getConnection(connectionSql);
+		} catch (CrosscuttingCustomException exception) {
+			throw exception;
+		} catch (SQLException excepcion) {
+			throw DataCustomException.createTechnicalException(Messages.SqlServerDAOFactory.TECHNICAL_PROBLEM_OPEN_CONNECTION, excepcion);
+		}
 	}
 
 	@Override
 	public void initTransaction() {
-		// TODO Auto-generated method stub
-		/*
 		try {
-			//SqlConnectionHelper // initTransaccion(connection).
-		} catch() {
-			//
+			SqlConnectionHelper.initTransaction(connection);
+		} catch(CrosscuttingCustomException exception) {
+			throw DataCustomException.createTechnicalException(Messages.SqlServerDAOFactory.TECHNICAL_PROBLEM_INIT_TRANSACTION, exception);
 		}
-		*/
-		
 	}
 
 	@Override
 	public void confirmTransaction() {
-		// TODO Auto-generated method stub
-		
+		SqlConnectionHelper.commitTransaction(connection);
 	}
 
 	@Override
 	public void cancelTransaction() {
-		// TODO Auto-generated method stub
-		
+		SqlConnectionHelper.rollbackTransaction(connection);
 	}
 
 	@Override
 	public void closeConnection() {
-		// TODO Auto-generated method stub
-		
+		SqlConnectionHelper.closeConnection(connection);
 	}
 
 	@Override
@@ -87,4 +79,15 @@ public final class SqlServerDAOFactory extends DAOFactory{
 		return new YearSqlServerDAO(connection);
 	}
 
+	public static void main(String[] args) {
+		try {
+			SqlServerDAOFactory dao = new SqlServerDAOFactory();
+			dao.initTransaction();
+			System.out.println("Transaccion iniciada!!!!!");
+			
+		} catch (DataCustomException exception) {
+			exception.printStackTrace();
+		}
+	}
+	
 }

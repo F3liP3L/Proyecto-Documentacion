@@ -1,8 +1,8 @@
-package edu.uco.budget.crosscutting.helper;
+package edu.uco.quickjob.crosscutting.helper;
 
 import java.util.Objects;
 
-import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 
 public class StringHelper {
 	
