@@ -16,22 +16,23 @@ public abstract class DAOFactory {
 		
 		switch(factory) {
 			case SQLSERVER: 
-			daoFactory = new SqlServerDAOFactory();
+				daoFactory = new SqlServerDAOFactory();
 			break;
 			case CASSANDRA: 
 				throw DataCustomException.createTechnicalException(Messages.DAOFactory.TECHNICAL_CASSANDRA_NOT_IMPLEMENTED);
 			case MARIADB:
-				throw new RuntimeException(Messages.DAOFactory.TECHNICAL_MARIADB_NOT_IMPLEMENTED);
+				throw DataCustomException.createTechnicalException(Messages.DAOFactory.TECHNICAL_MARIADB_NOT_IMPLEMENTED);
 			case MONGODB:
-					throw new RuntimeException(Messages.DAOFactory.TECHNICAL_MONGODB_NOT_IMPLEMENTED);
+				throw DataCustomException.createTechnicalException(Messages.DAOFactory.TECHNICAL_MONGODB_NOT_IMPLEMENTED);
 			case MYSQL: 
-					throw new RuntimeException(Messages.DAOFactory.TECHNICAL_MYSQL_NOT_IMPLEMENTED);
+				throw DataCustomException.createTechnicalException(Messages.DAOFactory.TECHNICAL_MYSQL_NOT_IMPLEMENTED);
 			case ORACLE: 
-				throw new RuntimeException(Messages.DAOFactory.TECHNICAL_ORACLE_NOT_IMPLEMENTED);
+				throw DataCustomException.createTechnicalException(Messages.DAOFactory.TECHNICAL_ORACLE_NOT_IMPLEMENTED);
 			case POSTGRESQL: 
-				throw new RuntimeException(Messages.DAOFactory.TECHNICAL_POSTGRESQL_NOT_IMPLEMENTED);
+				daoFactory = new PostgresqlDAOFactory();
+			break;
 			default:
-				throw new RuntimeException(Messages.DAOFactory.TECHNICAL_UNEXPECTED_DAOFACTORY);
+				throw DataCustomException.createTechnicalException(Messages.DAOFactory.TECHNICAL_UNEXPECTED_DAOFACTORY);
 		}
 		return daoFactory;
 	}

@@ -18,7 +18,12 @@ public final class UUIDHelper {
 	}
 	
 	public static final UUID getNewUUID() {
-		return UUID.randomUUID();
+		UUID uuid;
+		do {
+			uuid = UUID.randomUUID();
+		} while(isDefaultUUID(uuid));
+		
+		return uuid;
 	}
 	
 	public static final String getUUIDAsString (final UUID value) {

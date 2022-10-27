@@ -67,21 +67,6 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="codigo1" id="7F6A053F-B965-3E76-BE01-66346FFF5188">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 05:06:44 UTC</createdTime>
-<generatorID>15700E11-0582-60CA-84A1-13CA7B0BC6B8</generatorID>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<engineerTo>
-<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
-</engineerTo>
-<referedAttribute>486D2BBD-D0F0-38FB-2576-B771ACC821E3</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="8F906B61-B631-AD21-6E58-B1289EB89DDF" name="tipo_identificacion PK">

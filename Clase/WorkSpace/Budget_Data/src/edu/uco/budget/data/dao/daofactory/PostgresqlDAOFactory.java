@@ -2,6 +2,8 @@ package edu.uco.budget.data.dao.daofactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException;
@@ -11,33 +13,36 @@ import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
-import edu.uco.budget.data.dao.relational.sqlserver.BudgetSqlServerDAO;
-import edu.uco.budget.data.dao.relational.sqlserver.PersonSqlServerDAO;
-import edu.uco.budget.data.dao.relational.sqlserver.YearSqlServerDAO;
 
-public final class SqlServerDAOFactory extends DAOFactory{
+public class PostgresqlDAOFactory extends DAOFactory {
 	
 	private Connection connection;
 	
-	SqlServerDAOFactory(){
+	PostgresqlDAOFactory(){
 		openConnection();
 	}
 
 	@Override
 	protected void openConnection() {
-		String connectionSql =  "jdbc:sqlserver://rg-wf.database.windows.net:1433;" 
-				+ "database=db-budget;user=userDmlBudget;" 
-				+ "password=us3rDmlBudg3t;" 
-				+ "encrypt=true;" 
-				+ "trustServerCertificate=false;" 
-				+ "hostNameInCertificate=*.database.windows.net;";
-		try {
-			connection = DriverManager.getConnection(connectionSql);
-		} catch (CrosscuttingCustomException exception) {
-			throw exception;
-		} catch (SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.SqlServerDAOFactory.TECHNICAL_PROBLEM_OPEN_CONNECTION, exception);
-		}
+		String url = "jdbc:postgresql://localhost/dvdrental"; // Ejemplo de conexion a un base de datos local.
+		String user = "postgres";
+		String password = "Nomic230s";
+		  try {
+	            connection = DriverManager.getConnection(url, user, password);
+	            /*
+	            String SQL = "SELECT * FROM film WHERE film_id = ?";
+				PreparedStatement pstmt = connection.prepareStatement(SQL);
+				pstmt.setLong(1, 777);
+				ResultSet rs = pstmt.executeQuery();
+				while(rs.next()) {
+					System.out.println( "[The title: " + rs.getString("title") + "]  Sipnosis: \n" + rs.getString("description") + " \n Special Feature: " + rs.getString("special_features") );
+				}
+				*/
+	        } catch (CrosscuttingCustomException exception) {
+	            throw exception;
+	        } catch (SQLException exception) {
+	        	throw DataCustomException.createTechnicalException(Messages.SqlServerDAOFactory.TECHNICAL_PROBLEM_OPEN_CONNECTION, exception);
+	        }
 	}
 
 	@Override
@@ -66,31 +71,32 @@ public final class SqlServerDAOFactory extends DAOFactory{
 
 	@Override
 	public BudgetDAO getBudgetDAO() {
-		return new BudgetSqlServerDAO(connection);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public PersonDAO getPersonDAO() {
-		return new PersonSqlServerDAO(connection);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public YearDAO getYearDAO() {
-		return new YearSqlServerDAO(connection);
+		// TODO Auto-generated method stub
+		return null;
 	}
-
-	// Prueba para saber si funciona la conexion
+	
+	// Prueba para saber si la conexion a Postgresql funciona correctamente.
 	
 	public static void main(String[] args) {
 		try {
-			SqlServerDAOFactory dao = new SqlServerDAOFactory();
-			dao.initTransaction();
-			System.out.println("Transaccion iniciada!!!!!");
-			dao.closeConnection();
-			
+			PostgresqlDAOFactory PostSQLDAO = new PostgresqlDAOFactory();
+			System.out.println("Connected to the PostgreSQL server successfully.");
+			PostSQLDAO.closeConnection();
 		} catch (DataCustomException exception) {
 			exception.printStackTrace();
 		}
 	}
-	
+
 }
