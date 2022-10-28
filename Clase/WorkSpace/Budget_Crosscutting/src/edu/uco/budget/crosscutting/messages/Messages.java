@@ -67,8 +67,42 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_DELETE_BUDGET = "There was a problem trying to delete the desired budget in SQL Server DAOFactory with id = ";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET = "There was an unexpected problem trying to delete the budget in SQLServerDAOFactory with id = ";
 		public static final String TECHNICAL_PROBLEM_SELECT_BUDGET = "There was a problem trying to select the desired budget in SQL Server DAOFactory with id = ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SELECT_BUDGET = "There was an unexpected problem trying to select the budget in SQLServerDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SELECT_BUDGET = "There was an unexpected problem trying to select the budget in SQLServerDAOFactory with id = ";
 		
+		
+	}
+	
+	public static class PersonSqlServerDAO {
+		
+		private PersonSqlServerDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_PERSON = "There was a problem trying to create the desired person in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_PERSON = "There was an unexpected problem trying to create the person in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_PROBLEM_UPDATE_PERSON = "There was a problem trying to update the desired person in SQL Server DAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_PERSON = "There was an unexpected problem trying to update the person in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_PROBLEM_DELETE_PERSON = "There was a problem trying to delete the desired person in SQL Server DAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_PERSON = "There was an unexpected problem trying to delete the person in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_PROBLEM_SELECT_PERSON = "There was a problem trying to select the desired person in SQL Server DAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SELECT_PERSON = "There was an unexpected problem trying to select the person in SQLServerDAOFactory with id = ";
+		
+	}
+	
+public static class YearSqlServerDAO {
+		
+		private YearSqlServerDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_YEAR = "There was a problem trying to create the desired year in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_YEAR = "There was an unexpected problem trying to create the year in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_PROBLEM_UPDATE_YEAR = "There was a problem trying to update the desired year in SQL Server DAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_YEAR = "There was an unexpected problem trying to update the year in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_PROBLEM_DELETE_YEAR = "There was a problem trying to delete the desired year in SQL Server DAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_YEAR = "There was an unexpected problem trying to delete the year in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_PROBLEM_SELECT_YEAR = "There was a problem trying to select the desired year in SQL Server DAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SELECT_YEAR = "There was an unexpected problem trying to select the year in SQLServerDAOFactory with id = ";
 		
 	}
 	

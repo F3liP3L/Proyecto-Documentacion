@@ -90,16 +90,21 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 		
 		sqlBuilder.append("Order By Pe.idCard ASC, ");
 		sqlBuilder.append("         Ye.year ASC ");
-		
-		
+				
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
 			
 			for (int index = 0; index < parameters.size(); index++) {
 				preparedStatement.setObject(index + 1, parameters.get(index));
 			}
+				parameters.forEach(elem -> System.out.println(elem));
 			
 			try (final var resultSet = preparedStatement.executeQuery()) {
 				// TODO Fill the list with the results.
+				while(resultSet.next()){
+					BudgetDTO budgetCreate = new BudgetDTO();
+					
+				}
+				
 			} catch (SQLException exception) {
 				String message = Messages.BudgetSqlServerDAO.TECHNICAL_PROBLEM_SELECT_BUDGET.concat(budget.getIdAsString());
 				throw DataCustomException.createTechnicalException(message, exception);

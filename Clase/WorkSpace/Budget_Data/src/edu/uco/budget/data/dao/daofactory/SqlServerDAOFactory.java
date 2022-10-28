@@ -14,6 +14,7 @@ import edu.uco.budget.data.dao.YearDAO;
 import edu.uco.budget.data.dao.relational.sqlserver.BudgetSqlServerDAO;
 import edu.uco.budget.data.dao.relational.sqlserver.PersonSqlServerDAO;
 import edu.uco.budget.data.dao.relational.sqlserver.YearSqlServerDAO;
+import edu.uco.budget.domain.BudgetDTO;
 
 public final class SqlServerDAOFactory extends DAOFactory{
 	
@@ -79,15 +80,17 @@ public final class SqlServerDAOFactory extends DAOFactory{
 		return new YearSqlServerDAO(connection);
 	}
 
-	// Prueba para saber si funciona la conexion
+	// Prueba para saber si funciona la conexion.
 	
 	public static void main(String[] args) {
 		try {
 			SqlServerDAOFactory dao = new SqlServerDAOFactory();
+			BudgetDTO budget = new BudgetDTO();
 			dao.initTransaction();
 			System.out.println("Transaccion iniciada!!!!!");
-			dao.closeConnection();
-			
+			System.out.println("\t\t FIND!! \n");
+			dao.getBudgetDAO().find(budget);
+			System.out.println("\t\t FIND terminado.");
 		} catch (DataCustomException exception) {
 			exception.printStackTrace();
 		}
