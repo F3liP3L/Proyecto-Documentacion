@@ -66,8 +66,26 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was an unexpected problem trying to update the budget in SQLServerDAOFactory with id = ";
 		public static final String TECHNICAL_PROBLEM_DELETE_BUDGET = "There was a problem trying to delete the desired budget in SQL Server DAOFactory with id = ";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET = "There was an unexpected problem trying to delete the budget in SQLServerDAOFactory with id = ";
-		public static final String TECHNICAL_PROBLEM_SELECT_BUDGET = "There was a problem trying to select the desired budget in SQL Server DAOFactory with id = ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SELECT_BUDGET = "There was an unexpected problem trying to select the budget in SQLServerDAOFactory with id = ";
+		public static final String TECHNICAL_PROBLEM_FILL_RESULTS_BUDGET = "There was a problem recovering results from the select the desired budget in SQL Server DAOFactory with id = ";
+		
+		public static final String TECHNICAL_PROBLEM_FILL_BUDGET_DTO = "There was a problem filling BudgetDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_BUDGET_DTO = "There was an unexpected problem trying to filling BudgetDTO from the resultSet";
+		
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_BUDGET = "There was a unexpected problem trying to recovering results from the resultSet";
+
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific budgets";
+
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific budgets";
+		
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific budgets";
+		
+		
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+		
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific budgets";
+		
 		
 		
 	}
@@ -105,5 +123,15 @@ public static class YearSqlServerDAO {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SELECT_YEAR = "There was an unexpected problem trying to select the year in SQLServerDAOFactory with id = ";
 		
 	}
+
+public static class UUIDHelper {
+	
+	private UUIDHelper() {
+		super();
+	}
+	
+	public static final String TECHNICAL_UUID_FROM_STRING_INVALID = " The UUID to convert doesnot have a valid format";
+	public static final String TECHNICAL_UUID_FROM_STRING_UNEXPECTED_ERROR = " There was  convert doesnot have a valid format";
+}
 	
 }

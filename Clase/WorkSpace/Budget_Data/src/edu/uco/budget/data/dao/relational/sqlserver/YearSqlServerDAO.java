@@ -17,12 +17,26 @@ public final class YearSqlServerDAO extends DAORelational implements YearDAO{
 
 	public YearSqlServerDAO(final Connection connection) {
 		super(connection);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public final void create(YearDTO year) {
-		// TODO Auto-generated method stub
+		final var sqlInsert = "INSERT INTO Year (id, year) VALUES (?, ?)";
+		
+		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
+			
+			preparedStatement.setString(1, year.getIdAsString());
+			preparedStatement.setShort(2, year.getYearNumber());
+			
+			preparedStatement.executeUpdate();
+			
+		} catch(final SQLException exception) {
+			String message = Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_CREATE_YEAR.concat(year.getIdAsString());
+			throw DataCustomException.createTechnicalException(message, exception); 
+		} catch (final Exception exception) {
+			String message = Messages.YearSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_YEAR.concat(year.getIdAsString());
+			throw DataCustomException.createTechnicalException(message ,exception);
+		}
 		
 	}
 
@@ -34,8 +48,22 @@ public final class YearSqlServerDAO extends DAORelational implements YearDAO{
 
 	@Override
 	public final void update(YearDTO year) {
-		// TODO Auto-generated method stub
+		final var sqlUpdate = "UPDATE Year SET year = ? WHERE id = ?";
 		
+		try (final var preparedStatement = getConnection().prepareStatement(sqlUpdate)) {
+			
+			preparedStatement.setShort(1, year.getYearNumber());
+			preparedStatement.setString(2, year.getIdAsString());
+			
+			preparedStatement.executeUpdate();
+			
+		} catch (SQLException exception ) {
+			String message =  Messages.YearSqlServerDAO.TECHNICAL_PROBLEM_UPDATE_YEAR.concat(year.getIdAsString());
+			throw DataCustomException.createTechnicalException(message, exception);
+		} catch (Exception exception) {
+			String message =  Messages.YearSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_YEAR.concat(year.getIdAsString());
+			throw DataCustomException.createTechnicalException(message, exception);
+		}
 	}
 
 	@Override

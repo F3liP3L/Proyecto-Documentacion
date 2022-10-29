@@ -1,6 +1,7 @@
 package edu.uco.budget.domain;
 
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
@@ -38,6 +39,10 @@ public class PersonDTO {
 	
 	public static final PersonDTO create (final UUID id, final String idCard, final String firstName, final String secondName, final String firstSurname, final String secondSurname) {
 		return new PersonDTO(id, idCard, firstName,secondName,firstSurname,secondSurname);
+	}
+	
+	public static final PersonDTO create (final String id, final String idCard, final String firstName, final String secondName, final String firstSurname, final String secondSurname) {
+		return new PersonDTO(getUUIDFromString(id), idCard, firstName,secondName,firstSurname,secondSurname);
 	}
 
 	public final UUID getId() {

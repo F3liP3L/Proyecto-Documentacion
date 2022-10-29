@@ -10,6 +10,8 @@ import static edu.uco.budget.domain.builder.PersonDTOBuilder.getPersonDTOBuilder
 import static edu.uco.budget.domain.builder.YearDTOBuilder.getYearDTOBuilder;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
+import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDFromString;
+
 public final class BudgetDTO {
 	
 	private UUID id;
@@ -30,6 +32,10 @@ public final class BudgetDTO {
 	
 	public static final BudgetDTO create(final UUID id, final PersonDTO person, final YearDTO year) {
 		return new BudgetDTO(id, person, year);
+	}
+	
+	public static final BudgetDTO create(final String id, final PersonDTO person, final YearDTO year) {
+		return new BudgetDTO(getUUIDFromString(id), person, year);
 	}
 	
 	public UUID getId() {
