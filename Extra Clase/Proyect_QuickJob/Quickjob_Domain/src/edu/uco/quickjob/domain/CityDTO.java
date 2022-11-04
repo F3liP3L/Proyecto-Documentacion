@@ -28,6 +28,5 @@ public final class CityDTO {
 	
 	
 	
-	
 
 }

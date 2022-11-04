@@ -26,7 +26,8 @@ public final class CreateBudgetUseCaseImpl implements CreateBudgetUseCase {
 		
 		List<BudgetDTO> results = DAOFactory.getDAOFactory(DAOFactoryType.SQLSERVER).getBudgetDAO().find(null);
 		
-		results.forEach(elem -> System.out.println(elem.getPerson().getId()));
+		
+		results.forEach(elem -> System.out.println(elem.getPerson().getFirstName() + elem.getPerson().ge));
 		
 		
 	}
