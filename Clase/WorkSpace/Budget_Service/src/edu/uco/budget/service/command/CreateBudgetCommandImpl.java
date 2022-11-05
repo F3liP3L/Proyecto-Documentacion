@@ -1,6 +1,8 @@
 package edu.uco.budget.service.command;
 
 import edu.uco.budget.crosscutting.exception.BudgetCustomException;
+import edu.uco.budget.crosscutting.exception.service.ServiceCustomException;
+import edu.uco.budget.crosscutting.messages.Messages;
 import edu.uco.budget.data.dao.daofactory.DAOFactory;
 import edu.uco.budget.data.enumeration.DAOFactoryType;
 import edu.uco.budget.domain.BudgetDTO;
@@ -19,12 +21,18 @@ public class CreateBudgetCommandImpl implements CreateBudgetCommand {
 			// Use case execution
 			useCase.execute(budget);
 			factory.confirmTransaction();
-		} catch (BudgetCustomException exception) {
+		} catch (ServiceCustomException exception) {
 			factory.cancelTransaction();
 			throw exception;
+		} catch (BudgetCustomException exception) {
+			factory.cancelTransaction();
+			if(exception.isTechnicalException()) {
+				// Wrapper negocio!!
+				throw ServiceCustomException.wrapException(null, exception);
+			}
 		} catch (Exception exception) {
 			factory.cancelTransaction();
-		//	throw [Devolver excepcion Service ];
+			throw ServiceCustomException.createBussinesException(Messages.CreateBudgetUseCaseImpl.BUSSINES_UNEXPECTED, exception);
 		} finally {
 			factory.closeConnection();
 		}

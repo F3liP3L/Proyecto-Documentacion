@@ -6,8 +6,6 @@ public final class ObjectHelper {
 		super();
 	}
 	
-	// Evalua si un objeto es igual a null
-	
 	public static final <T> boolean isNull(T value) {
 		return value == null;
 	}

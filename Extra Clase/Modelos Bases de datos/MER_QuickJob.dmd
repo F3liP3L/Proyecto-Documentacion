@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="MER_QuickJob" id="9A90DAB2-3A02-88D2-8458-91AB2D324EC7" version="3.5">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:18:56 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>9A90DAB2-3A02-88D2-8458-91AB2D324EC7</designId>
+</OSDM_Design>
