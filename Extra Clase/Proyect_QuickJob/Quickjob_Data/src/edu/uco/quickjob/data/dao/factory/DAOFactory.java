@@ -2,7 +2,7 @@ package edu.uco.quickjob.data.dao.factory;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
-import edu.uco.quickjob.data.dao.relational.enumeration.DAOFactoryType;
+import edu.uco.quickjob.data.enumeration.DAOFactoryType;
 
 public abstract class DAOFactory {
 	

@@ -37,9 +37,9 @@ public final class CityDTOBuilder {
 		return this;
 	}
 	
-	public final CityDTOBuilder build() {
+	/*public final CityDTOBuilder build() {
 		return CityDTOBuilder.create(id, name, department));
-	}
+	}*/
 	
 	
 }

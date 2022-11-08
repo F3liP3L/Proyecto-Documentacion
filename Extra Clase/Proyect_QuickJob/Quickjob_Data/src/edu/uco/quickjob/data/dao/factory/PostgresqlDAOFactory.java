@@ -10,7 +10,6 @@ import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.helper.SqlConnectionHelper;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 
-
 public class PostgresqlDAOFactory extends DAOFactory {
 	
 private Connection connection;
@@ -21,11 +20,11 @@ private Connection connection;
 
 	@Override
 	protected void openConnection() {
-		String url = "jdbc:postgresql://localhost/dvdrental"; // Ejemplo de conexion a un base de datos local.
+		String url = "jdbc:postgresql://localhost/quickjob";
 		String user = "postgres";
 		String password = "Nomic230s";
 		  try {
-	            connection = DriverManager.getConnection(url, user, password);
+	           connection = DriverManager.getConnection(url, user, password);
 	        } catch (QuickjobCustomException exception) {
 	            throw exception;
 	        } catch (SQLException exception) {
@@ -37,9 +36,9 @@ private Connection connection;
 	public void initTransaction() {
 		try {
 			SqlConnectionHelper.initTransaction(connection);
-			} catch(CrosscuttingCustomException exception) {
+		} catch(CrosscuttingCustomException exception) {
 			throw DataCustomException.createTechnicalException(Messages.SqlServerDAOFactory.TECHNICAL_PROBLEM_INIT_TRANSACTION, exception);
-			}
+		}
 	}
 
 	@Override
@@ -54,9 +53,7 @@ private Connection connection;
 
 	@Override
 	public void closeConnection() {
-		SqlConnectionHelper.closeConnection(connection);
+		SqlConnectionHelper.closeConnection(connection);	
 	}
 	
-	
-
 }

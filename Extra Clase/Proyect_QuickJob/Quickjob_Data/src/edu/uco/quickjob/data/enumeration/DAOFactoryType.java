@@ -1,4 +1,4 @@
-package edu.uco.quickjob.data.dao.relational.enumeration;
+package edu.uco.quickjob.data.enumeration;
 
 public enum DAOFactoryType {
 	
