@@ -1,16 +1,14 @@
 package edu.uco.quickjob.domain;
 
-import java.util.List;
 
 public class CustomerDTO {
 	
 	private UserDTO user;
-	private List<ServiceDTO> usedService;
+	private ServiceDTO usedService;
 	
 	public CustomerDTO() {
 		super();
 	}
-	
 	
 	public UserDTO getUser() {
 		return user;
@@ -18,10 +16,12 @@ public class CustomerDTO {
 	public void setUser(UserDTO user) {
 		this.user = user;
 	}
-	public List<ServiceDTO> getUsedService() {
+
+	public ServiceDTO getUsedService() {
 		return usedService;
 	}
-	public void setUsedService(List<ServiceDTO> usedService) {
+
+	public void setUsedService(ServiceDTO usedService) {
 		this.usedService = usedService;
 	}
 	

@@ -1,10 +1,11 @@
 package edu.uco.quickjob.builder;
 
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
+
 import java.sql.Date;
 import java.util.UUID;
 
-
-
+import edu.uco.quickjob.domain.IdentificationDocumentDTO;
 import edu.uco.quickjob.domain.IdentificationTypeDTO;
 
 public final class IdentificationDocumentDTOBuilder {
@@ -33,47 +34,57 @@ public final class IdentificationDocumentDTOBuilder {
 		return id;
 	}
 
-
 	public final void setId(UUID id) {
-		this.id = id;
+		this.id = getDefaultUUID(id) ;
 	}
 
-	public final void setName(String name) {
+	public final IdentificationDocumentDTOBuilder setName(String name) {
 		this.name = name;
+		return this;
 	}
 
-	public final void setSurname(String surname) {
+	public final IdentificationDocumentDTOBuilder setSurname(String surname) {
 		this.surname = surname;
+		return this;
 	}
 
-	public final void setBirthDate(Date birthDate) {
+	public final IdentificationDocumentDTOBuilder setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+		return this;
 	}
 
-	public final void setPlaceOfBirth(String placeOfBirth) {
+	public final IdentificationDocumentDTOBuilder setPlaceOfBirth(String placeOfBirth) {
 		this.placeOfBirth = placeOfBirth;
+		return this;
 	}
 
-	public final void setExpeditionDate(Date expeditionDate) {
+	public final IdentificationDocumentDTOBuilder setExpeditionDate(Date expeditionDate) {
 		this.expeditionDate = expeditionDate;
+		return this;
 	}
 
-	public final void setExpeditionSite(String expeditionSite) {
+	public final IdentificationDocumentDTOBuilder setExpeditionSite(String expeditionSite) {
 		this.expeditionSite = expeditionSite;
+		return this;
 	}
 
-	public final void setSex(String sex) {
+	public final IdentificationDocumentDTOBuilder setSex(String sex) {
 		this.sex = sex;
+		return this;
 	}
 
-	public final void setIdentificationNumber(String identificationNumber) {
+	public final IdentificationDocumentDTOBuilder setIdentificationNumber(String identificationNumber) {
 		this.identificationNumber = identificationNumber;
+		return this;
 	}
 
-	public final void setIdentificationType(IdentificationTypeDTO identificationType) {
+	public final IdentificationDocumentDTOBuilder setIdentificationType(IdentificationTypeDTO identificationType) {
 		this.identificationType = identificationType;
+		return this;
 	}
 	
+	public final IdentificationDocumentDTO build() {
+		return IdentificationDocumentDTO.create(id, name, surname, birthDate, placeOfBirth, expeditionDate, expeditionSite, sex, identificationNumber, identificationType);
+	}
 	
-
 }
