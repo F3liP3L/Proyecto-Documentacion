@@ -34,10 +34,8 @@ public final class IdentificationDocumentDTO {
 		setIdentificationType(getIdentificationTypeDTOBuilder().build());
 	}
 	
-	
-	
 	public IdentificationDocumentDTO(final UUID id, final String name, final String surname, final Date birthDate,final String placeOfBirth,
-			final Date expeditionDate, final String expeditionSite, final String sex, final String identificationNumber,final IdentificationTypeDTO identificationType) {
+			final Date expeditionDate, final String expeditionSite, final String sex, final String identificationNumber, final IdentificationTypeDTO identificationType) {
 			setId(id);
 			setName(name);
 			setSurname(surname);
@@ -110,7 +108,12 @@ public final class IdentificationDocumentDTO {
 	public void setIdentificationType(IdentificationTypeDTO identificationType) {
 		this.identificationType = getDefaultIfNull(identificationType, getIdentificationTypeDTOBuilder().build());
 	}
-	
+
+	public static final IdentificationDocumentDTO create(final UUID id, final String name, final String surname, final Date birthDate, final String placeOfBirth,
+			final Date expeditionDate, final String expeditionSite, final String sex, final String identificationNumber,
+			final IdentificationTypeDTO identificationType) {
+		return new IdentificationDocumentDTO(id, name, surname, birthDate, placeOfBirth, expeditionDate, expeditionSite, sex, identificationNumber, identificationType);
+	}
 	
 	
 }

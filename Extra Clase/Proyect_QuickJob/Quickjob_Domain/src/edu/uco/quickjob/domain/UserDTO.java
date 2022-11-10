@@ -7,7 +7,8 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDFromString;
-
+import static edu.uco.quickjob.builder.IdentificationDocumentDTOBuilder.getIdentificationDocumentDTOBuilder;
+import static edu.uco.quickjob.builder.CityDTOBuilder.getCityDTOBuilder;
 
 public final class UserDTO {
 	
@@ -19,6 +20,15 @@ public final class UserDTO {
 	private String password;
 	private CityDTO residenceCity;
 	
+	public UserDTO() {
+		setId(getNewUUID());
+		setName(EMPTY);
+		setDescription(EMPTY);
+		setEmail(EMPTY);
+		setPassword(EMPTY);
+		setIdentification(getIdentificationDocumentDTOBuilder().build());
+		setResidenceCity(getCityDTOBuilder().build());
+	}
 	
 	public UserDTO(UUID id, String name, String description, IdentificationDocumentDTO identification, String email,
 		String password, CityDTO residenceCity) {
@@ -85,8 +95,4 @@ public final class UserDTO {
 		this.residenceCity = getDefaultIfNull(residenceCity, null);
 	}
 	
-	
-	
-	
-
 }
