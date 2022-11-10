@@ -3,6 +3,7 @@ package edu.uco.quickjob.builder;
 import java.util.UUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 
+import edu.uco.quickjob.domain.CityDTO;
 import edu.uco.quickjob.domain.DepartmentDTO;
 
 public final class CityDTOBuilder {
@@ -37,9 +38,9 @@ public final class CityDTOBuilder {
 		return this;
 	}
 	
-	/*public final CityDTOBuilder build() {
-		return CityDTOBuilder.create(id, name, department));
-	}*/
+	public final CityDTO build() {
+		return CityDTO.create(id, name, department);
+	}
 	
 	
 }

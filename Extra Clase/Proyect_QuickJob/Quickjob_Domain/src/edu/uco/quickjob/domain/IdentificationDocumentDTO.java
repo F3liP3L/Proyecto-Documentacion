@@ -2,6 +2,12 @@ package edu.uco.quickjob.domain;
 
 import java.sql.Date;
 import java.util.UUID;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
+import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
+import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
+import static edu.uco.quickjob.builder.IdentificationTypeDTOBuilder.getIdentificationTypeDTOBuilder;
+import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
 
 public final class IdentificationDocumentDTO {
 	
@@ -15,23 +21,52 @@ public final class IdentificationDocumentDTO {
 	private String sex;
 	private String identificationNumber;
 	private IdentificationTypeDTO identificationType;
+	
+	public IdentificationDocumentDTO() {
+		setId(getNewUUID());
+		setName(EMPTY);
+		setSurname(EMPTY);
+		setBirthDate(birthDate);
+		setPlaceOfBirth(placeOfBirth);
+		setExpeditionDate(expeditionDate);
+		setExpeditionSite(EMPTY);
+		setIdentificationNumber(EMPTY);
+		setIdentificationType(getIdentificationTypeDTOBuilder().build());
+	}
+	
+	
+	
+	public IdentificationDocumentDTO(final UUID id, final String name, final String surname, final Date birthDate,final String placeOfBirth,
+			final Date expeditionDate, final String expeditionSite, final String sex, final String identificationNumber,final IdentificationTypeDTO identificationType) {
+			setId(id);
+			setName(name);
+			setSurname(surname);
+			setBirthDate(birthDate);
+			setPlaceOfBirth(placeOfBirth);
+			setExpeditionDate(expeditionDate);
+			setExpeditionSite(expeditionSite);
+			setSex(sex);
+			setIdentificationNumber(identificationNumber);
+			setIdentificationType(identificationType);
+	}
+	
 	public UUID getId() {
 		return id;
 	}
 	public void setId(UUID id) {
-		this.id = id;
+		this.id = getDefaultUUID(id);
 	}
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.name = applyTrim(name) ;
 	}
 	public String getSurname() {
 		return surname;
 	}
 	public void setSurname(String surname) {
-		this.surname = surname;
+		this.surname = applyTrim(surname);
 	}
 	public Date getBirthDate() {
 		return birthDate;
@@ -43,7 +78,7 @@ public final class IdentificationDocumentDTO {
 		return placeOfBirth;
 	}
 	public void setPlaceOfBirth(String placeOfBirth) {
-		this.placeOfBirth = placeOfBirth;
+		this.placeOfBirth = applyTrim(placeOfBirth);
 	}
 	public Date getExpeditionDate() {
 		return expeditionDate;
@@ -55,29 +90,27 @@ public final class IdentificationDocumentDTO {
 		return expeditionSite;
 	}
 	public void setExpeditionSite(String expeditionSite) {
-		this.expeditionSite = expeditionSite;
+		this.expeditionSite = applyTrim(expeditionSite);
 	}
 	public String getSex() {
 		return sex;
 	}
 	public void setSex(String sex) {
-		this.sex = sex;
+		this.sex = applyTrim(sex);
 	}
 	public String getIdentificationNumber() {
 		return identificationNumber;
 	}
 	public void setIdentificationNumber(String identificationNumber) {
-		this.identificationNumber = identificationNumber;
+		this.identificationNumber = applyTrim(identificationNumber);
 	}
 	public IdentificationTypeDTO getIdentificationType() {
 		return identificationType;
 	}
 	public void setIdentificationType(IdentificationTypeDTO identificationType) {
-		this.identificationType = identificationType;
+		this.identificationType = getDefaultIfNull(identificationType, getIdentificationTypeDTOBuilder().build());
 	}
 	
 	
 	
-	
-
 }

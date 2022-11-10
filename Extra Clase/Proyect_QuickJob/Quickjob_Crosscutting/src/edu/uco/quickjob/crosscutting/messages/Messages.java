@@ -68,4 +68,15 @@ public class Messages {
 		
 	}
 	
+	public static class UUIDHelper {
+		
+		private UUIDHelper() {
+			super();
+		}
+		
+		public static final String TECHNICAL_UUID_FROM_STRING_INVALID = " The UUID to convert doesnot have a valid format";
+		public static final String TECHNICAL_UUID_FROM_STRING_UNEXPECTED_ERROR = " There was  convert doesnot have a valid format";
+	}
+
+	
 }
