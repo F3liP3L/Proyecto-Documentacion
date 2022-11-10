@@ -12,7 +12,7 @@ import edu.uco.budget.crosscutting.helper.UUIDHelper;
 import static edu.uco.budget.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.budget.crosscutting.helper.StringHelper.EMPTY;
 
-public class PersonDTO {
+public final class PersonDTO {
 	
 	private UUID id;
 	private String idCard;

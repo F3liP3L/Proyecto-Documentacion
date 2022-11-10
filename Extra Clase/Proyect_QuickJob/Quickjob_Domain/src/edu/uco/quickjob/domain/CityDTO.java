@@ -7,6 +7,7 @@ public final class CityDTO {
 	private UUID id;
 	private String name;
 	private DepartmentDTO department;
+	
 	public UUID getId() {
 		return id;
 	}
@@ -25,7 +26,6 @@ public final class CityDTO {
 	public void setDepartment(DepartmentDTO department) {
 		this.department = department;
 	}
-	
 	
 	
 

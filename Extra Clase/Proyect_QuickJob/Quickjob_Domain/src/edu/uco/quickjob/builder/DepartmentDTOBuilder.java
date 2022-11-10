@@ -9,5 +9,9 @@ public class DepartmentDTOBuilder {
 	private UUID id;
 	private String name;
 	private CountryDTO country;
+	
+	private DepartmentDTOBuilder() {
+		super();
+	}
 
 }

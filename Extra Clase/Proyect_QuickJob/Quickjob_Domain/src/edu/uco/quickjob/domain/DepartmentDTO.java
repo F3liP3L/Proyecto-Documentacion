@@ -7,6 +7,7 @@ public final class DepartmentDTO {
 	private UUID id;
 	private String name;
 	private CountryDTO country;
+	
 	public UUID getId() {
 		return id;
 	}

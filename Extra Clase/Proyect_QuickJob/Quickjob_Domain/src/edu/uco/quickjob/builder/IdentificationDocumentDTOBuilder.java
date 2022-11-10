@@ -18,5 +18,9 @@ public final class IdentificationDocumentDTOBuilder {
 	private String sex;
 	private String identificationNumber;
 	private IdentificationTypeDTO identificationType;
+	
+	private IdentificationDocumentDTOBuilder() {
+		super();
+	}
 
 }

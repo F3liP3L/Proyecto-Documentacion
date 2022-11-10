@@ -6,6 +6,7 @@ public class CountryDTO {
 	
 	private UUID id;
 	private String name;
+	
 	public UUID getId() {
 		return id;
 	}

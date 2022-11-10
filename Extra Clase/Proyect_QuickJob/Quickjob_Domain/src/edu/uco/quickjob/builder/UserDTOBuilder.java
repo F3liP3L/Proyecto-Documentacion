@@ -5,7 +5,7 @@ import java.util.UUID;
 import edu.uco.quickjob.domain.CityDTO;
 import edu.uco.quickjob.domain.IdentificationDocumentDTO;
 
-public final class UserDTOBuilder {
+public class UserDTOBuilder {
 	
 	private UUID id;
 	private String name;
@@ -14,5 +14,11 @@ public final class UserDTOBuilder {
 	private String email;
 	private String password;
 	private CityDTO residenceCity;
+	
+	private UserDTOBuilder() {
+		super();
+	}
+	
+	
 
 }
