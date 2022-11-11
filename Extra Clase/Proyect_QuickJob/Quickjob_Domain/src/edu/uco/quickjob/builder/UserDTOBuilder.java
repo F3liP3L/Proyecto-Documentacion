@@ -12,6 +12,7 @@ public class UserDTOBuilder {
 	
 	private UUID id;
 	private String name;
+	private String surname;
 	private String description;
 	private IdentificationDocumentDTO identification;
 	private String email;
@@ -28,6 +29,11 @@ public class UserDTOBuilder {
 
 	public final UUID getId() {
 		return id;
+	}
+	
+	public final UserDTOBuilder setSurname(String surname) {
+		this.surname = surname;
+		return this;
 	}
 
 	public final void setId(final UUID id) {
@@ -66,7 +72,7 @@ public class UserDTOBuilder {
 	}
 	
 	public UserDTO build() {
-		return UserDTO.create(id, name, description, identification, email, password, residenceCity);
+		return UserDTO.create(id, name, surname, description, identification, email, password, residenceCity);
 	}
 	
 }

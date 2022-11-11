@@ -6,7 +6,6 @@ import edu.uco.quickjob.domain.CityDTO;
 
 public interface CityDAO {
 	
-	
 	List<CityDTO> find(CityDTO city);
 
 }

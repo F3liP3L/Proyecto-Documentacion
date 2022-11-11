@@ -20,22 +20,10 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nombres" id="154CFB82-9EA4-708A-7C2C-23310CA3C59E">
+<Column name="nombre" id="154CFB82-9EA4-708A-7C2C-23310CA3C59E">
 <createdBy>Felipe</createdBy>
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
 <generatorID>AA2AD8CF-7497-7EE6-A7D6-90D89C30EF83</generatorID>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="apellidos" id="7D582DB6-76E7-67BC-EF3A-95E6676D58F7">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 05:36:24 UTC</createdTime>
-<generatorID>3A5C447F-093B-EA68-04BE-ADF01B533F33</generatorID>
 <ownerDesignName>MER_QuickJob</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -68,7 +56,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="password" id="E0C4DAFA-6447-1C4C-A9B0-6957DDDBB6EA">
+<Column name="clave" id="E0C4DAFA-6447-1C4C-A9B0-6957DDDBB6EA">
 <createdBy>Felipe</createdBy>
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
 <generatorID>BE34CC63-A9A7-C975-1911-63BD720A74D4</generatorID>
@@ -96,6 +84,21 @@
 <colAssociation fkAssociation="9A074799-965A-B5A7-E3E7-FAFB0EA440B3" referredColumn="3732FD8C-52FE-17C2-F366-A6FBCCECCC9B"/>
 </associations>
 </Column>
+<Column name="doc_identificacion_codigo" id="225C337C-72E7-85EF-433F-BF162619A833">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-11 04:42:43 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="80A89C3E-F090-86E1-247F-53A730222FA3" referredColumn="78667601-B32B-3D7D-BA58-6E98022762B3"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="2C8C13D3-A04D-6B0D-F483-40F5786AE5E0" name="usuario_PK">
@@ -119,6 +122,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="8410D178-0FAC-8694-4EC1-ACADA4953D83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DAB955FC-80DB-C50F-C298-44FB1DB5F71F" name="usuario_documento_identificacion_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-11 04:42:43 UTC</createdTime>
+<generatorID>E5AB4BD9-6A8B-A2D7-F871-5EAB65C53961</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="225C337C-72E7-85EF-433F-BF162619A833"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

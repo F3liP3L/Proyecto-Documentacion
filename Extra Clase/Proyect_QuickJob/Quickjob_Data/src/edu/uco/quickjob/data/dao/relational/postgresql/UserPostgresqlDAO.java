@@ -17,13 +17,28 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 
 	protected UserPostgresqlDAO(Connection connection) {
 		super(connection);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void create(UserDTO user) {
-		// TODO Auto-generated method stub
-		
+		final var sqlInsert = "INSERT INTO public.usuario(codigo, nombres, apellidos, descripcion, correo, password, ciudad_codigo) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
+			
+			preparedStatement.setString(1, user.getIdAsString());
+			preparedStatement.setString(2, user.getName());
+			preparedStatement.setString(3, user.getSurname());
+			preparedStatement.setString(4, user.getDescription());
+			preparedStatement.setString(5, user.getEmail());
+			preparedStatement.setString(6, user.getPassword());
+			preparedStatement.setString(7, user.getResidenceCity().getIdAsString());
+			
+			preparedStatement.executeUpdate();
+			
+		} catch(final SQLException exception) {
+			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_QUALIFICATION, exception); 
+		} catch (final Exception exception) {
+			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION ,exception);
+		}
 	}
 
 	@Override
@@ -46,10 +61,8 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 		try (final var preparedStatement = getConnection().prepareStatement(sqlDelete)) {
 			preparedStatement.setString(1, idAsString);
 		} catch(SQLException exception) {
-			// String message = Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET(idAsString);
 			throw DataCustomException.createTechnicalException(null, exception);
 		} catch (Exception exception) {
-			// String message = Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET.concat(idAsString);
 			throw DataCustomException.createTechnicalException(null, exception);
 		}	
 		

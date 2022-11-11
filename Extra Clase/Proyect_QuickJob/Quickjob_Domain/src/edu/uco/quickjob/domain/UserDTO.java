@@ -16,6 +16,7 @@ public class UserDTO {
 	
 	private UUID id;
 	private String name;
+	private String surname;
 	private String description;
 	private IdentificationDocumentDTO identification;
 	private String email;
@@ -25,17 +26,19 @@ public class UserDTO {
 	public UserDTO() {
 		setId(getNewUUID());
 		setName(EMPTY);
+		setSurname(EMPTY);
 		setDescription(EMPTY);
 		setEmail(EMPTY);
 		setPassword(EMPTY);
 		setIdentification(getIdentificationDocumentDTOBuilder().build());
 		setResidenceCity(getCityDTOBuilder().build());
 	}
-	
-	public UserDTO(UUID id, String name, String description, IdentificationDocumentDTO identification, String email,
-		String password, CityDTO residenceCity) {
+
+	public UserDTO(final UUID id, final String name, final String surname, final String description, final IdentificationDocumentDTO identification, final String email,
+		final String password, final CityDTO residenceCity) {
 		setId(id);
 		setName(name);
+		setSurname(surname);
 		setDescription(description);
 		setIdentification(identification);
 		setEmail(email);
@@ -43,16 +46,15 @@ public class UserDTO {
 		setResidenceCity(residenceCity);
 	}
 
-	public static final UserDTO create (final UUID id, final String name, final String description, final IdentificationDocumentDTO identification, final String email,
+	public static final UserDTO create (final UUID id, final String name, final String surname, final String description, final IdentificationDocumentDTO identification, final String email,
 			final String password, final CityDTO residenceCity) {
-		return new UserDTO(id, name, description ,identification ,email, password, residenceCity);
+		return new UserDTO(id, name, description ,surname, identification ,email, password, residenceCity);
 	}
 	
-	public static final UserDTO create (final String id, final String name, final String description, final IdentificationDocumentDTO identification, final String email,
+	public static final UserDTO create (final String id, final String name, final String surname, final String description, final IdentificationDocumentDTO identification, final String email,
 			final String password, final CityDTO residenceCity) {
-		return new UserDTO(getUUIDFromString(id), name, description ,identification ,email, password, residenceCity);
-	}
-		
+		return new UserDTO(getUUIDFromString(id), name, surname, description ,identification ,email, password, residenceCity);
+	}	
 	
 	public UUID getId() {
 		return id;
@@ -65,6 +67,14 @@ public class UserDTO {
 	}
 	public void setName(String name) {
 		this.name = applyTrim(name);
+	}
+	
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = applyTrim(surname);
 	}
 	public String getDescription() {
 		return description;

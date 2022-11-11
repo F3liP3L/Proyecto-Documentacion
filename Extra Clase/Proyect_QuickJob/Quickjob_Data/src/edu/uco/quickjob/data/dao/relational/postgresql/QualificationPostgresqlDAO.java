@@ -38,7 +38,6 @@ public class QualificationPostgresqlDAO extends DAORelational implements Qualifi
 
 	@Override
 	public List<QualificationDTO> find(QualificationDTO qualification) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
