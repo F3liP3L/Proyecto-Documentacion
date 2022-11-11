@@ -44,10 +44,8 @@ public class ServicePostgresqlDAO extends DAORelational implements ServiceDAO {
 		try (final var preparedStatement = getConnection().prepareStatement(sqlDelete)) {
 			preparedStatement.setString(1, idAsString);
 		} catch(SQLException exception) {
-			// String message = Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET(idAsString);
 			throw DataCustomException.createTechnicalException(null, exception);
 		} catch (Exception exception) {
-			// String message = Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET.concat(idAsString);
 			throw DataCustomException.createTechnicalException(null, exception);
 		}	
 		

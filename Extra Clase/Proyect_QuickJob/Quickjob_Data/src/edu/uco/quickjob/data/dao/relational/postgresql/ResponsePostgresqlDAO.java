@@ -11,7 +11,6 @@ public class ResponsePostgresqlDAO extends DAORelational implements ResponseDAO 
 
 	protected ResponsePostgresqlDAO(Connection connection) {
 		super(connection);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

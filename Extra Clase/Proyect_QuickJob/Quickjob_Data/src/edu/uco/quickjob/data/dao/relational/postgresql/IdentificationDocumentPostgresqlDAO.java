@@ -40,8 +40,7 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION ,exception);
 		}
 		
-	}
-	
+	}	
 
 	@Override
 	public List<IdentificationDocumentDTO> find(IdentificationDocumentDTO identificationDocument) {

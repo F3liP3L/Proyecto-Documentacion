@@ -5,6 +5,7 @@ import java.util.List;
 import edu.uco.budget.data.dao.daofactory.DAOFactory;
 import edu.uco.budget.data.enumeration.DAOFactoryType;
 import edu.uco.budget.domain.BudgetDTO;
+import edu.uco.budget.domain.PersonDTO;
 import edu.uco.budget.domain.YearDTO;
 import edu.uco.budget.service.business.budget.CreateBudgetUseCase;
 import edu.uco.budget.service.business.budget.FindBudgetUseCase;
@@ -33,7 +34,7 @@ public final class CreateBudgetUseCaseImpl implements CreateBudgetUseCase {
 		// 1. Que el año de presupusupuesto exista
 		final YearDTO year = findNextYearUseCase.execute();
 		// 2. Que la persona exista.
-		final PersonDTO person = findPersonByIdUseCase.execute(id);
+		final PersonDTO person = findPersonByIdUseCase.execute(budget.getPerson().getId());
 		// 3. Que no exista un presupesto para el mismo usuario en el mismo año
 		budget.setYear(year);
 		budget.setPerson(person);

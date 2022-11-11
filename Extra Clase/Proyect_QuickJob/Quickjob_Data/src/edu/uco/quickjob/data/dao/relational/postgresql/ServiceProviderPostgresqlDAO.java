@@ -33,8 +33,7 @@ public class ServiceProviderPostgresqlDAO extends DAORelational implements Servi
 			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_QUALIFICATION, exception); 
 		} catch (final Exception exception) {
 			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION ,exception);
-		}
-		
+		}		
 	}
 
 	@Override

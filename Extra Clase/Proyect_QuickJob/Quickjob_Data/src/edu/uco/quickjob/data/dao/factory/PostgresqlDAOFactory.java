@@ -26,7 +26,7 @@ private Connection connection;
 		String user = "postgres";
 		String password = "Nomic230s";
 		  try {
-	           connection = DriverManager.getConnection(url, user, password);
+	          connection = DriverManager.getConnection(url, user, password);
 	        } catch (QuickjobCustomException exception) {
 	            throw exception;
 	        } catch (SQLException exception) {
