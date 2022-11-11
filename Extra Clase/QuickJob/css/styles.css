@@ -1,0 +1,48 @@
+:root{
+    --blanco:#FFFF;
+    --morado:#4D448B;
+    --aqua:#A8F2FE;
+    --azul:#1B75BC;
+}
+.Fondo{
+    background-color: var(--morado);
+}
+.logo{
+    position: relative;
+    width: 6vw;
+}
+.title{
+    color: var(--aqua);
+    font-size: 80px;
+}
+.portada{
+    margin: 80px;
+    position: absolute;
+    left: 3vW;
+    font-size: 30px;
+    color: var(--blanco);
+}
+
+.imgPortada{
+    width: 40vw;
+    position: absolute;
+    left: 20vW;
+}
+.title2{
+    color: var(--aqua);
+    font-size: 60px;
+}
+.somos{
+    margin: 80px;
+    position: absolute;
+    left: 3vW;
+    font-size: 25px;
+    color: var(--blanco);
+}
+.return{
+    color: var(--blanco);
+    font-size: 50px;
+}
+.check{
+    width: 10vw;
+}
