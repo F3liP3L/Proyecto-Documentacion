@@ -69,7 +69,7 @@ private Connection connection;
 			throw DataCustomException.createTechnicalException(Messages.PostgresqlDAOFactory.TECHNICAL_PROBLEM_CLOSE_CONNECTION,exception);
 		}
 	}
-
+	
 	@Override
 	public CountryDAO getCountryDAO() {
 		return new CountryPostgresqlDAO(connection);
