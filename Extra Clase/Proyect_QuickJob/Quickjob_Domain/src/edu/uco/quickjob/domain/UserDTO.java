@@ -1,5 +1,7 @@
 package edu.uco.quickjob.domain;
 
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
+
 import java.util.UUID;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
@@ -94,5 +96,8 @@ public class UserDTO {
 	public void setResidenceCity(CityDTO residenceCity) {
 		this.residenceCity = getDefaultIfNull(residenceCity, null);
 	}
-	
+
+	public String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

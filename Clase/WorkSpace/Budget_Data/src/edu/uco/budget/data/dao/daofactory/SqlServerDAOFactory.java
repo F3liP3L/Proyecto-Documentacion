@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException;
+import edu.uco.budget.crosscutting.exception.CrosscuttingCustomException;
 import edu.uco.budget.crosscutting.exception.data.DataCustomException;
 import edu.uco.budget.crosscutting.helper.SqlConnectionHelper;
 import edu.uco.budget.crosscutting.messages.Messages;

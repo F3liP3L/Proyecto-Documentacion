@@ -1,6 +1,7 @@
 package edu.uco.quickjob.domain;
 
 import java.sql.Date;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import java.util.UUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
@@ -115,5 +116,8 @@ public final class IdentificationDocumentDTO {
 		return new IdentificationDocumentDTO(id, name, surname, birthDate, placeOfBirth, expeditionDate, expeditionSite, sex, identificationNumber, identificationType);
 	}
 	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 	
 }

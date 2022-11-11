@@ -1,8 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2FB1035A-90E9-62FA-08ED-C50C66CB09A1" name="cliente_usa_servicio">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2FB1035A-90E9-62FA-08ED-C50C66CB09A1" name="detalle_servicio_usado">
 <createdBy>Felipe</createdBy>
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
 <ownerDesignName>MER_QuickJob</ownerDesignName>
+<ordsAlias>cliente_usa_servicio</ordsAlias>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
@@ -36,6 +37,16 @@
 <associations>
 <colAssociation fkAssociation="32F503C7-4CCE-D12D-5436-BED83914443B" referredColumn="7C4E442E-B865-E5FC-2592-5234ED20F63E"/>
 </associations>
+</Column>
+<Column name="fecha_uso" id="3449AEC2-FE5B-4338-D478-7FE682D13DFE">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-11 01:06:48 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

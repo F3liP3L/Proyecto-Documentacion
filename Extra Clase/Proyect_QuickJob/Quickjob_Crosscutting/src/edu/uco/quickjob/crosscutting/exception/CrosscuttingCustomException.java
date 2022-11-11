@@ -1,8 +1,7 @@
-package edu.uco.quickjob.crosscutting.exception.data;
+package edu.uco.quickjob.crosscutting.exception;
 
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
 
-import edu.uco.quickjob.crosscutting.exception.QuickjobCustomException;
 import edu.uco.quickjob.crosscutting.exception.enumeration.LayerException;
 
 public class CrosscuttingCustomException extends QuickjobCustomException {

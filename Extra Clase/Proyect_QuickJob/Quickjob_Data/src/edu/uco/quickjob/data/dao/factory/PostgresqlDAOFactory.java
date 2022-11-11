@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import edu.uco.quickjob.crosscutting.exception.CrosscuttingCustomException;
 import edu.uco.quickjob.crosscutting.exception.QuickjobCustomException;
-import edu.uco.quickjob.crosscutting.exception.data.CrosscuttingCustomException;
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.helper.SqlConnectionHelper;
 import edu.uco.quickjob.crosscutting.messages.Messages;
@@ -28,7 +28,7 @@ private Connection connection;
 	        } catch (QuickjobCustomException exception) {
 	            throw exception;
 	        } catch (SQLException exception) {
-	        	throw DataCustomException.createTechnicalException(Messages.SqlServerDAOFactory.TECHNICAL_PROBLEM_OPEN_CONNECTION, exception);
+	        	throw DataCustomException.createTechnicalException(Messages.PostgresqlDAOFactory.TECHNICAL_PROBLEM_OPEN_CONNECTION, exception);
 	        }
 	}
 
@@ -37,7 +37,7 @@ private Connection connection;
 		try {
 			SqlConnectionHelper.initTransaction(connection);
 		} catch(CrosscuttingCustomException exception) {
-			throw DataCustomException.createTechnicalException(Messages.SqlServerDAOFactory.TECHNICAL_PROBLEM_INIT_TRANSACTION, exception);
+			throw DataCustomException.createTechnicalException(Messages.PostgresqlDAOFactory.TECHNICAL_PROBLEM_INIT_TRANSACTION, exception);
 		}
 	}
 

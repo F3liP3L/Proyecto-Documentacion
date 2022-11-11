@@ -1,10 +1,10 @@
 package edu.uco.quickjob.domain;
 
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import static edu.uco.quickjob.builder.ServiceDTOBuilder.getServiceDTOBuilder;
 import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
-
 import java.util.UUID;
 
 public class ServiceProviderDTO extends UserDTO {
@@ -41,5 +41,11 @@ public class ServiceProviderDTO extends UserDTO {
 	public static final ServiceProviderDTO create(final UUID serviceProviderId, final ServiceDTO serviceProvided) {
 		return new ServiceProviderDTO(serviceProviderId, serviceProvided);
 	}
+	
+	@Override
+	public final String getIdAsString() {
+		return getUUIDAsString(getServiceProviderId());
+	}
+	
 	
 }

@@ -12,7 +12,7 @@ public class Messages {
 			super();
 		}
 		
-		public static final String TECHNICAL_SQLSERVER_NOT_IMPLEMENTED = "DAOFactory for SQLServer is not implemented yet";
+		public static final String TECHNICAL_SQLSERVER_NOT_IMPLEMENTED = "DAOFactory for Postgresql is not implemented yet";
 		public static final String TECHNICAL_MONGODB_NOT_IMPLEMENTED = "DAOFactory for MongoDB is not implemented yet";
 		public static final String TECHNICAL_CASSANDRA_NOT_IMPLEMENTED = "DAOFactory for Cassandra is not implemented yet";
 		public static final String TECHNICAL_MARIADB_NOT_IMPLEMENTED = "DAOFactory for MariaDB is not implemented yet";
@@ -42,29 +42,48 @@ public class Messages {
 	}
 	
 	
-	public static class SqlServerDAOFactory {
+	public static class PostgresqlDAOFactory {
 		
-		private SqlServerDAOFactory() {
+		private PostgresqlDAOFactory() {
 			super();
 		}		
 		
-		public static final String TECHNICAL_PROBLEM_INIT_TRANSACTION = "There was a problem trying to init transaction with the current connection in SQLServerDAOFactory";
-		public static final String TECHNICAL_PROBLEM_OPEN_CONNECTION = "There was a problem trying to open connection in SQLServerDAOFactory";
+		public static final String TECHNICAL_PROBLEM_INIT_TRANSACTION = "There was a problem trying to init transaction with the current connection in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_OPEN_CONNECTION = "There was a problem trying to open connection in PostgresqlDAOFactory";
 		
 	}
 	
 	
 	
-	public static class BudgetSqlServerDAO {
+	public static class QualificationPostgresqlDAO {
 		
-		private BudgetSqlServerDAO() {
+		private QualificationPostgresqlDAO() {
+				super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_QUALIFICATION = "There was a problem trying to create the desired qualification in PostgresqlDAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION = "There was an unexpected problem trying to create the qualification in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_UPDATE_QUALIFICATION = "There was a problem trying to update the desired qualification in PostgresqlDAOFactory with id = ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_QUALIFICATION = "There was an unexpected problem trying to create the qualification in PostgresqlDAOFactory";
+		
+	}
+	
+	public static class CountryPostgresqlDAO {
+		
+		private CountryPostgresqlDAO() {
 			super();
 		}
 		
-		public static final String TECHNICAL_PROBLEM_CREATE_BUDGET = "There was a problem trying to create the desired budget in SQLServerDAOFactory with id = ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_BUDGET = "There was an unexpected problem trying to create the budget in SQLServerDAOFactory";
-		public static final String TECHNICAL_PROBLEM_UPDATE_BUDGET = "There was a problem trying to update the desired budget in SQL Server DAOFactory with id = ";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET = "There was an unexpected problem trying to create the budget in SQLServerDAOFactory";
+		public static final String TECHNICAL_PROBLEM_FILL_COUNTRY_DTO = "There was a problem filling COUNTRYDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_COUNTRY_DTO = "There was an unexpected problem trying to filling COUNTRYDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_COUNTRY = "There was a unexpected problem trying to recovering results from the resultSet";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific COUNTRYs";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific COUNTRYs";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific COUNTRYs";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific COUNTRYs";
+		
 		
 	}
 	

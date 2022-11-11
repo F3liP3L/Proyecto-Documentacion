@@ -4,7 +4,7 @@ import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull
 
 import java.util.UUID;
 
-import edu.uco.quickjob.crosscutting.exception.data.CrosscuttingCustomException;
+import edu.uco.quickjob.crosscutting.exception.CrosscuttingCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 
 public final class UUIDHelper {

@@ -8,6 +8,7 @@ import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull
 import static edu.uco.quickjob.builder.ServiceDTOBuilder.getServiceDTOBuilder;
 import static edu.uco.quickjob.builder.CustomerDTOBuilder.getCustomerDTOBuilder;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 public final class CommentDTO {
 	
@@ -68,4 +69,7 @@ public final class CommentDTO {
 		return new CommentDTO(id, name, description, service, customer);
 	}
 	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

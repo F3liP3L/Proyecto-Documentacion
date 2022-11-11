@@ -8,12 +8,12 @@ import edu.uco.budget.service.business.budget.FindBudgetUseCase;
 
 public class FindBudgetUseCaseImpl implements FindBudgetUseCase{
 	
-	private final DAOFactory factory;
+	// private final DAOFactory factory;
 	
 	
-	public FindBudgetUseCaseImpl(DAOFactory daoFactory) {
+	/*public FindBudgetUseCaseImpl(DAOFactory daoFactory) {
 		this.factory = factory;
-	}
+	} */
 
 
 	@Override

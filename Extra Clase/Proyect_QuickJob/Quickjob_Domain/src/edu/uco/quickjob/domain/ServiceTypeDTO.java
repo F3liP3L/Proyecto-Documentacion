@@ -1,6 +1,7 @@
 package edu.uco.quickjob.domain;
 
 import java.util.UUID;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
@@ -55,6 +56,10 @@ public class ServiceTypeDTO {
 	
 	public static final ServiceTypeDTO create(final UUID id, final String name, final String description, final boolean state) {
 		return new ServiceTypeDTO(id, name, description, state);
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 
 }

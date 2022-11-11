@@ -1,6 +1,7 @@
 package edu.uco.quickjob.domain;
 
 import java.util.UUID;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
@@ -59,4 +60,7 @@ public final class ResponseDTO {
 		return new ResponseDTO(id, description, question, serviceProvider);
 	}
 
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

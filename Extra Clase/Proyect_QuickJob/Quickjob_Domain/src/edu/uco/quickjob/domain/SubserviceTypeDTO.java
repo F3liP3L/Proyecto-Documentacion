@@ -1,5 +1,6 @@
 package edu.uco.quickjob.domain;
 
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import java.util.UUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
@@ -70,6 +71,10 @@ public final class SubserviceTypeDTO {
 	
 	public static final SubserviceTypeDTO create(final UUID id, final ServiceTypeDTO serviceType, final String name, final String description, final boolean state) {
 		return new SubserviceTypeDTO(id,serviceType, name, description, state);
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 
 }

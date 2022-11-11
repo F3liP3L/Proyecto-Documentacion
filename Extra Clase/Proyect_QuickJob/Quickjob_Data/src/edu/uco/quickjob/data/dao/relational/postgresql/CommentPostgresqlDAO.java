@@ -20,7 +20,18 @@ public class CommentPostgresqlDAO extends DAORelational implements CommentDAO{
 
 	@Override
 	public void create(CommentDTO comment) {
-		// TODO Auto-generated method stub
+		final var sqlInsert = "INSERT INTO public.calificacion(codigo, puntuacion, cliente_codigo, servicio_codigo) VALUES (?, ?, ?, ?)";
+		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
+			
+			preparedStatement.setString(1, comment.getIdAsString());
+			
+			preparedStatement.executeUpdate();
+			
+		} catch(final SQLException exception) {
+			throw DataCustomException.createTechnicalException(null, exception); 
+		} catch (final Exception exception) {
+			throw DataCustomException.createTechnicalException(null ,exception);
+		}
 		
 	}
 
