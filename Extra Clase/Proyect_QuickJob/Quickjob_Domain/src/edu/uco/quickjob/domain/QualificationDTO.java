@@ -41,7 +41,7 @@ public class QualificationDTO {
 		return score;
 	}
 	public void setScore(Short score) {
-		this.score = isGreaterThan(score, ZERO) ? ZERO: score;
+		this.score = isGreaterThan(5, score) ? ZERO: score;
 	}
 	public CustomerDTO getCustomer() {
 		return customer;

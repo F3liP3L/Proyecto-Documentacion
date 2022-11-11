@@ -5,6 +5,7 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import java.sql.Date;
 import java.util.UUID;
 
+import edu.uco.quickjob.domain.CityDTO;
 import edu.uco.quickjob.domain.IdentificationDocumentDTO;
 import edu.uco.quickjob.domain.IdentificationTypeDTO;
 
@@ -14,7 +15,7 @@ public final class IdentificationDocumentDTOBuilder {
 	private String name;
 	private String surname;
 	private Date birthDate;
-	private String placeOfBirth;
+	private CityDTO placeOfBirth;
 	private Date expeditionDate;
 	private String expeditionSite;
 	private String sex;
@@ -53,7 +54,7 @@ public final class IdentificationDocumentDTOBuilder {
 		return this;
 	}
 
-	public final IdentificationDocumentDTOBuilder setPlaceOfBirth(String placeOfBirth) {
+	public final IdentificationDocumentDTOBuilder setPlaceOfBirth(CityDTO placeOfBirth) {
 		this.placeOfBirth = placeOfBirth;
 		return this;
 	}

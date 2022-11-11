@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
+import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.ServiceProviderDAO;
 import edu.uco.quickjob.data.dao.relational.DAORelational;
 import edu.uco.quickjob.domain.ServiceProviderDTO;
@@ -20,7 +21,19 @@ public class ServiceProviderPostgresqlDAO extends DAORelational implements Servi
 
 	@Override
 	public void create(ServiceProviderDTO serviceProvider) {
-		// TODO Auto-generated method stub
+		final var sqlInsert = "INSERT INTO public.prestador_servicio(codigo, usuario_codigo) VALUES (?, ?)";
+		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
+			
+			preparedStatement.setString(1, serviceProvider.getIdAsString());
+			preparedStatement.setString(2,  getUUIDAsString(serviceProvider.getId()));
+			
+			preparedStatement.executeUpdate();
+			
+		} catch(final SQLException exception) {
+			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_QUALIFICATION, exception); 
+		} catch (final Exception exception) {
+			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION ,exception);
+		}
 		
 	}
 
@@ -43,10 +56,8 @@ public class ServiceProviderPostgresqlDAO extends DAORelational implements Servi
 		try (final var preparedStatement = getConnection().prepareStatement(sqlDelete)) {
 			preparedStatement.setString(1, idAsString);
 		} catch(SQLException exception) {
-			// String message = Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_BUDGET(idAsString);
 			throw DataCustomException.createTechnicalException(null, exception);
 		} catch (Exception exception) {
-			// String message = Messages.BudgetSqlServerDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_BUDGET.concat(idAsString);
 			throw DataCustomException.createTechnicalException(null, exception);
 		}	
 		

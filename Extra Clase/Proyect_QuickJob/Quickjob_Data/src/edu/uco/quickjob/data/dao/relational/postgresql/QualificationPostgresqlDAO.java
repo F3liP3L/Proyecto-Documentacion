@@ -54,10 +54,8 @@ public class QualificationPostgresqlDAO extends DAORelational implements Qualifi
 			preparedStatement.executeUpdate();
 			
 		} catch (SQLException exception ) {
-			String message =  Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_UPDATE_QUALIFICATION;
 			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_UPDATE_QUALIFICATION, exception);
 		} catch (Exception exception) {
-			String message =  Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_QUALIFICATION;
 			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_QUALIFICATION, exception);
 		}
 	}

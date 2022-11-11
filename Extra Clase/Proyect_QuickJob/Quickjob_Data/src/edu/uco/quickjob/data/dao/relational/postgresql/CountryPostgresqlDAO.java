@@ -15,7 +15,7 @@ import edu.uco.quickjob.domain.CountryDTO;
 
 public class CountryPostgresqlDAO extends DAORelational implements CountryDAO {
 
-	protected CountryPostgresqlDAO(Connection connection) {
+	public CountryPostgresqlDAO(final Connection connection) {
 		super(connection);
 	}
 

@@ -19,7 +19,12 @@ public class FindPersonByIdUseCaseImpl implements FindPersonById{
 	public PersonDTO execute(UUID id) {
 		final PersonDTO person = PersonDTO.create(id);
 		final List<PersonDTO> results = factory.getPersonDAO().find(person);
-		return results.get(0);
+		
+		if (!results.isEmpty()) {
+			return results.get(0);
+		}
+		
+		return new PersonDTO();
 	}
 	
 	

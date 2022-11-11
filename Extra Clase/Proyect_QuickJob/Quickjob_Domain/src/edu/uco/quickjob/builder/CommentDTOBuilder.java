@@ -1,20 +1,23 @@
 package edu.uco.quickjob.builder;
 
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
+
+import java.util.Date;
 import java.util.UUID;
 
 import edu.uco.quickjob.domain.CommentDTO;
 import edu.uco.quickjob.domain.CustomerDTO;
 import edu.uco.quickjob.domain.ServiceDTO;
-import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 
 public class CommentDTOBuilder {
 	
 	private UUID id;
 	private String name;
 	private String description;
+	private Date publicationDate;
 	private ServiceDTO service;
 	private CustomerDTO customer;
-	
+		
 	private CommentDTOBuilder() {
 		super();
 	}
@@ -29,6 +32,11 @@ public class CommentDTOBuilder {
 
 	public final void setId(UUID id) {
 		this.id = getDefaultUUID(id);
+	}
+
+	public final CommentDTOBuilder setPublicationDate(Date publicationDate) {
+		this.publicationDate = publicationDate;
+		return this;
 	}
 
 	public final CommentDTOBuilder setName(String name) {
@@ -52,6 +60,6 @@ public class CommentDTOBuilder {
 	}
 
 	public final CommentDTO build() {
-		return CommentDTO.create(id, name, description, service, customer);
+		return CommentDTO.create(id, name, description, publicationDate, service, customer);
 	}
 }

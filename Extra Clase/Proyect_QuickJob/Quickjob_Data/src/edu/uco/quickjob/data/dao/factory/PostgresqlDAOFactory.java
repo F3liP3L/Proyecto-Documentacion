@@ -9,6 +9,8 @@ import edu.uco.quickjob.crosscutting.exception.QuickjobCustomException;
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.helper.SqlConnectionHelper;
 import edu.uco.quickjob.crosscutting.messages.Messages;
+import edu.uco.quickjob.data.dao.CountryDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.CountryPostgresqlDAO;
 
 public class PostgresqlDAOFactory extends DAOFactory {
 	
@@ -43,17 +45,33 @@ private Connection connection;
 
 	@Override
 	public void confirmTransaction() {
-		SqlConnectionHelper.commitTransaction(connection);
+		try {
+			SqlConnectionHelper.commitTransaction(connection);
+		} catch (CrosscuttingCustomException exception) {
+			throw DataCustomException.createTechnicalException(Messages.PostgresqlDAOFactory.TECHNICAL_PROBLEM_CONFIRM_TRANSACTION, exception);
+		}
 	}
 
 	@Override
 	public void cancelTransaction() {
-		SqlConnectionHelper.rollbackTransaction(connection);
+		try {
+			SqlConnectionHelper.rollbackTransaction(connection);
+		} catch (CrosscuttingCustomException exception) {
+			throw DataCustomException.createTechnicalException(Messages.PostgresqlDAOFactory.TECHNICAL_PROBLEM_CANCEL_TRANSACTION, exception);
+		}
 	}
 
 	@Override
 	public void closeConnection() {
-		SqlConnectionHelper.closeConnection(connection);	
+		try {
+			SqlConnectionHelper.closeConnection(connection);	
+		} catch (CrosscuttingCustomException exception) {
+			throw DataCustomException.createTechnicalException(Messages.PostgresqlDAOFactory.TECHNICAL_PROBLEM_CLOSE_CONNECTION,exception);
+		}
 	}
-	
+
+	@Override
+	public CountryDAO getCountryDAO() {
+		return new CountryPostgresqlDAO(connection);
+	}
 }
