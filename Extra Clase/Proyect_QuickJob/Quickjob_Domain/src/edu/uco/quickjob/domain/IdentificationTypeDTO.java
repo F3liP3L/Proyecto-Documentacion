@@ -5,7 +5,7 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
-
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 public final class IdentificationTypeDTO {
 	
 	private UUID id;
@@ -56,4 +56,7 @@ public final class IdentificationTypeDTO {
 		return new IdentificationTypeDTO(id, name, description, state);
 	}
 
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

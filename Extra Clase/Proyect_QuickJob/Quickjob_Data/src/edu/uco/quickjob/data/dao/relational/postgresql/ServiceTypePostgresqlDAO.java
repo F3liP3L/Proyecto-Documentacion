@@ -16,7 +16,6 @@ public class ServiceTypePostgresqlDAO extends DAORelational implements ServiceTy
 
 	@Override
 	public List<ServiceTypeDTO> find(ServiceTypeDTO serviceType) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

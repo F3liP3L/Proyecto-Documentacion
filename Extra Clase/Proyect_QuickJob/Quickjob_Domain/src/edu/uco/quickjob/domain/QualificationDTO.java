@@ -1,6 +1,7 @@
 package edu.uco.quickjob.domain;
 
 import java.util.UUID;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.crosscutting.helper.NumberHelper.ZERO;
@@ -8,6 +9,7 @@ import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull
 import static edu.uco.quickjob.crosscutting.helper.NumberHelper.isGreaterThan;
 import static edu.uco.quickjob.builder.ServiceDTOBuilder.getServiceDTOBuilder;
 import static edu.uco.quickjob.builder.CustomerDTOBuilder.getCustomerDTOBuilder;
+
 public class QualificationDTO {
 	
 	private UUID id;
@@ -39,7 +41,7 @@ public class QualificationDTO {
 		return score;
 	}
 	public void setScore(Short score) {
-		this.score = isGreaterThan(score, ZERO) ? ZERO: score;
+		this.score = isGreaterThan(5, score) ? ZERO: score;
 	}
 	public CustomerDTO getCustomer() {
 		return customer;
@@ -52,6 +54,10 @@ public class QualificationDTO {
 	}
 	public void setService(ServiceDTO service) {
 		this.service = getDefaultIfNull(service, getServiceDTOBuilder().build());
+	}
+	
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
 	}
 	
 	

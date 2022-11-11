@@ -2,6 +2,7 @@ package edu.uco.quickjob.data.dao.factory;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
+import edu.uco.quickjob.data.dao.CountryDAO;
 import edu.uco.quickjob.data.enumeration.DAOFactoryType;
 
 public abstract class DAOFactory {
@@ -41,6 +42,9 @@ public static final DAOFactory getDAOFactory(final DAOFactoryType factory) {
 	public abstract void cancelTransaction();
 	
 	public abstract void closeConnection();
+	
+	
+	public abstract CountryDAO getCountryDAO();
 	
 	
 	

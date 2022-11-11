@@ -106,6 +106,21 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo2" id="88F7D7F2-D23E-CE16-5935-3B8959525190">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-11 04:53:48 UTC</createdTime>
+<generatorID>42F7A79C-05D2-F9CA-D7D4-2B201E1A6158</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<referedAttribute>486D2BBD-D0F0-38FB-2576-B771ACC821E3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

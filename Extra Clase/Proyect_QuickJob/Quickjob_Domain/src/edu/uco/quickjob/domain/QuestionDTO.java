@@ -6,7 +6,7 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.builder.ServiceDTOBuilder.getServiceDTOBuilder;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull;
-
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 public final class QuestionDTO {
 	
@@ -59,4 +59,7 @@ public final class QuestionDTO {
 		return new QuestionDTO(id,description, customer, service);
 	}	
 
+	public final String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }

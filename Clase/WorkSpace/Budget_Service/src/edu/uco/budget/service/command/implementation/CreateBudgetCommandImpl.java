@@ -1,4 +1,4 @@
-package edu.uco.budget.service.command;
+package edu.uco.budget.service.command.implementation;
 
 import edu.uco.budget.crosscutting.exception.BudgetCustomException;
 import edu.uco.budget.crosscutting.exception.service.ServiceCustomException;
@@ -8,6 +8,7 @@ import edu.uco.budget.data.enumeration.DAOFactoryType;
 import edu.uco.budget.domain.BudgetDTO;
 import edu.uco.budget.service.business.budget.CreateBudgetUseCase;
 import edu.uco.budget.service.business.budget.implementation.CreateBudgetUseCaseImpl;
+import edu.uco.budget.service.command.CreateBudgetCommand;
 
 public class CreateBudgetCommandImpl implements CreateBudgetCommand {
 

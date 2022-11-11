@@ -3,6 +3,7 @@ package edu.uco.quickjob.data.dao.relational.postgresql;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
@@ -20,7 +21,21 @@ public class CommentPostgresqlDAO extends DAORelational implements CommentDAO{
 
 	@Override
 	public void create(CommentDTO comment) {
-		// TODO Auto-generated method stub
+		final var sqlInsert = "INSERT INTO public.comentario(codigo, nombre, descripcion, fecha_publicacion, cliente_codigo, servicio_codigo) VALUES (?, ?, ?, ?, ?, ?)";
+		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
+			
+			preparedStatement.setString(1, comment.getIdAsString());
+			preparedStatement.setString(2, comment.getName());
+			preparedStatement.setString(3, comment.getDescription());
+			preparedStatement.setDate(4, (Date) comment.getPublicationDate());
+			
+			preparedStatement.executeUpdate();
+			
+		} catch(final SQLException exception) {
+			throw DataCustomException.createTechnicalException(null, exception); 
+		} catch (final Exception exception) {
+			throw DataCustomException.createTechnicalException(null ,exception);
+		}
 		
 	}
 

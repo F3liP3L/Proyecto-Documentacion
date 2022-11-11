@@ -1,6 +1,7 @@
 package edu.uco.quickjob.domain;
 
 import static edu.uco.quickjob.builder.ServiceDTOBuilder.getServiceDTOBuilder;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
@@ -40,5 +41,10 @@ public class CustomerDTO extends UserDTO {
 	
 	public static final CustomerDTO create(final UUID customerId, final ServiceDTO usedService) {
 		return new CustomerDTO(customerId, usedService);
+	}
+	
+	@Override
+	public final String getIdAsString() {
+		return getUUIDAsString(getCustomerId());
 	}
 }

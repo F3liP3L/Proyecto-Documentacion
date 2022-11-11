@@ -55,18 +55,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="lugar_nacimiento" id="35DE1EF5-E839-C9FC-5541-AB4BE674A209">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 05:36:24 UTC</createdTime>
-<generatorID>644BAF0E-DCDD-6F92-87D0-F42DA70DB293</generatorID>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="fecha_expedimiento" id="2A811C74-661B-DF46-C7E4-E64687CA4608">
 <createdBy>Felipe</createdBy>
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
@@ -114,7 +102,7 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ciudad_codigo" id="B0F986C6-7936-E84E-2A6A-59F4ED7927B9">
+<Column name="lugar_nacimiento" id="B0F986C6-7936-E84E-2A6A-59F4ED7927B9">
 <createdBy>Felipe</createdBy>
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
 <generatorID>98E2103F-ABE8-76D3-E9DD-2F910BF0D968</generatorID>
@@ -123,7 +111,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -138,7 +126,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>

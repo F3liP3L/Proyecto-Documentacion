@@ -1,15 +1,12 @@
 package edu.uco.budget.domain;
 
 import java.util.UUID;
-
-
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.budget.domain.builder.PersonDTOBuilder.getPersonDTOBuilder;
 import static edu.uco.budget.domain.builder.YearDTOBuilder.getYearDTOBuilder;
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDAsString;
-
 import static edu.uco.budget.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 public final class BudgetDTO {

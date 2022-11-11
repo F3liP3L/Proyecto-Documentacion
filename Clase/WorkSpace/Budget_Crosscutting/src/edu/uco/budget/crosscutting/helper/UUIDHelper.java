@@ -2,7 +2,7 @@ package edu.uco.budget.crosscutting.helper;
 
 import java.util.UUID;
 
-import edu.uco.budget.crosscutting.exception.data.CrosscuttingCustomException;
+import edu.uco.budget.crosscutting.exception.CrosscuttingCustomException;
 import edu.uco.budget.crosscutting.messages.Messages;
 
 import static edu.uco.budget.crosscutting.helper.ObjectHelper.getDefaultIfNull;

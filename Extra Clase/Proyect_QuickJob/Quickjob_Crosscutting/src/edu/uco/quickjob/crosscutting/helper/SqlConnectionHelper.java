@@ -3,7 +3,7 @@ package edu.uco.quickjob.crosscutting.helper;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import edu.uco.quickjob.crosscutting.exception.data.CrosscuttingCustomException;
+import edu.uco.quickjob.crosscutting.exception.CrosscuttingCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 
 public final class SqlConnectionHelper {

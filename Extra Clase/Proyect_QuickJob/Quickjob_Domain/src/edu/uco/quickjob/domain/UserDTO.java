@@ -1,5 +1,7 @@
 package edu.uco.quickjob.domain;
 
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
+
 import java.util.UUID;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
@@ -29,9 +31,9 @@ public class UserDTO {
 		setIdentification(getIdentificationDocumentDTOBuilder().build());
 		setResidenceCity(getCityDTOBuilder().build());
 	}
-	
-	public UserDTO(UUID id, String name, String description, IdentificationDocumentDTO identification, String email,
-		String password, CityDTO residenceCity) {
+
+	public UserDTO(final UUID id, final String name, final String description, final IdentificationDocumentDTO identification, final String email,
+		final String password, final CityDTO residenceCity) {
 		setId(id);
 		setName(name);
 		setDescription(description);
@@ -43,14 +45,13 @@ public class UserDTO {
 
 	public static final UserDTO create (final UUID id, final String name, final String description, final IdentificationDocumentDTO identification, final String email,
 			final String password, final CityDTO residenceCity) {
-		return new UserDTO(id, name, description ,identification ,email, password, residenceCity);
+		return new UserDTO(id, name, description , identification , email, password, residenceCity);
 	}
 	
 	public static final UserDTO create (final String id, final String name, final String description, final IdentificationDocumentDTO identification, final String email,
 			final String password, final CityDTO residenceCity) {
 		return new UserDTO(getUUIDFromString(id), name, description ,identification ,email, password, residenceCity);
-	}
-		
+	}	
 	
 	public UUID getId() {
 		return id;
@@ -64,6 +65,7 @@ public class UserDTO {
 	public void setName(String name) {
 		this.name = applyTrim(name);
 	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -94,5 +96,8 @@ public class UserDTO {
 	public void setResidenceCity(CityDTO residenceCity) {
 		this.residenceCity = getDefaultIfNull(residenceCity, null);
 	}
-	
+
+	public String getIdAsString() {
+		return getUUIDAsString(getId());
+	}
 }
