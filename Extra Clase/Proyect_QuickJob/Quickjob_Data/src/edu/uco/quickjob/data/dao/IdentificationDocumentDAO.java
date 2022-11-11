@@ -1,7 +1,6 @@
 package edu.uco.quickjob.data.dao;
 
 import java.util.List;
-import java.util.UUID;
 
 import edu.uco.quickjob.domain.IdentificationDocumentDTO;
 
@@ -11,6 +10,6 @@ public interface IdentificationDocumentDAO {
 	
 	List<IdentificationDocumentDTO> find(IdentificationDocumentDTO identificationDocument);
 	
-	void delete (UUID id);
+	void update (IdentificationDocumentDTO identificationType);
 
 }

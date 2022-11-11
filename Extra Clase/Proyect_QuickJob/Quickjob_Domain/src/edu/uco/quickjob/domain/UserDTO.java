@@ -10,7 +10,7 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.quickjob.builder.IdentificationDocumentDTOBuilder.getIdentificationDocumentDTOBuilder;
 import static edu.uco.quickjob.builder.CityDTOBuilder.getCityDTOBuilder;
 
-public final class UserDTO {
+public class UserDTO {
 	
 	private UUID id;
 	private String name;
