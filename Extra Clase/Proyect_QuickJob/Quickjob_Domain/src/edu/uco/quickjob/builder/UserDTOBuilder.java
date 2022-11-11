@@ -65,10 +65,8 @@ public class UserDTOBuilder {
 		return this;
 	}
 	
-	public final UserDTO build() {
+	public UserDTO build() {
 		return UserDTO.create(id, name, description, identification, email, password, residenceCity);
 	}
 	
-	
-
 }

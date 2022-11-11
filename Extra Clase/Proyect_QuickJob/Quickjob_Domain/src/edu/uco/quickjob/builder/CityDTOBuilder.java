@@ -20,7 +20,7 @@ public final class CityDTOBuilder {
 		return new CityDTOBuilder();
 	}
 
-	public UUID getId() {
+	public final UUID getId() {
 		return id;
 	}
 

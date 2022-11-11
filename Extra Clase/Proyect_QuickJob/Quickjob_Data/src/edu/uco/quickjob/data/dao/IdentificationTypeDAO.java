@@ -11,7 +11,5 @@ public interface IdentificationTypeDAO {
 	
 	List<IdentificationTypeDTO> find(IdentificationTypeDTO identificationType);
 	
-	
-
 
 }

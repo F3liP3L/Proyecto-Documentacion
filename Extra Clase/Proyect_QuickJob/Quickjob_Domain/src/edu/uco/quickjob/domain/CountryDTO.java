@@ -6,8 +6,7 @@ import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 
-
-public class CountryDTO {
+public final class CountryDTO {
 
 	private UUID id;
 	private String name;

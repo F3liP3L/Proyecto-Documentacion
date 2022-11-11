@@ -40,5 +40,4 @@ public class IdentificationTypeDTOBuilder {
 	public final IdentificationTypeDTO build() {
 		return IdentificationTypeDTO.create(id, name, description, state);
 	}
-	
 }

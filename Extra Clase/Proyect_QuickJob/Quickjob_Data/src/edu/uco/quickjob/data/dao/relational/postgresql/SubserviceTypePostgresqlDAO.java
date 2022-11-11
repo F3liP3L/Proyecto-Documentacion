@@ -15,7 +15,6 @@ public class SubserviceTypePostgresqlDAO extends DAORelational implements Subser
 
 	@Override
 	public List<SubserviceTypeDTO> find(SubserviceTypeDTO subServiceType) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
