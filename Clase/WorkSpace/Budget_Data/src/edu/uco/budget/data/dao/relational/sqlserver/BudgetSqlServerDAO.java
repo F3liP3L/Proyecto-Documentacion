@@ -206,7 +206,6 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 		}
 	}
 
-
 	@Override
 	public final void update(BudgetDTO budget) {
 

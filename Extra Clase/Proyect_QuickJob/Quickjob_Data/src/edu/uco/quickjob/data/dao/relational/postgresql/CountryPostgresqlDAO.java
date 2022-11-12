@@ -21,36 +21,41 @@ public class CountryPostgresqlDAO extends DAORelational implements CountryDAO {
 
 	@Override
 	public List<CountryDTO> find(CountryDTO country) {
-		
+
 		final var sqlBuilder = new StringBuilder();
-		
+
 		createSelectFrom(sqlBuilder);
+
+		createOrderBy(sqlBuilder);
 
 		return prepareAndExecuteQuery(sqlBuilder);
 	}
 	
 	private final void createSelectFrom(final StringBuilder sqlBuilder) {
-
-		sqlBuilder.append("SELECT codigo AS idCountry ");
+		sqlBuilder.append("SELECT 	codigo AS idCountry, ");
 		sqlBuilder.append("         nombre AS countryName ");
-		sqlBuilder.append("         FROM public.pais ");
-		
+		sqlBuilder.append("         FROM pais ");
 	}
 	
+
 	private final List<CountryDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder) {
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
-			
+
 			return executeQuery(preparedStatement);
-			
+
 		}  catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
 			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_PROBLEM_PREPARED_STATEMENT, exception);
 		} catch (final Exception exception) {
 			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
-		}		
+		}
 	}
-	
+
+	private final void createOrderBy(final StringBuilder stringBuilder) {
+		stringBuilder.append("Order By countryName ASC ");
+	}
+
 	private final List<CountryDTO> fillResults (final ResultSet resultset) {
 		try {
 			var results = new ArrayList<CountryDTO>();
@@ -66,12 +71,12 @@ public class CountryPostgresqlDAO extends DAORelational implements CountryDAO {
 			throw DataCustomException.createTechnicalException(null, exception);
 		}
 	}
-	
+
 	private final List<CountryDTO> executeQuery(PreparedStatement preparedStatement){
 		try (final var resultSet = preparedStatement.executeQuery()) {
-			
+
 			return fillResults(resultSet);
-			
+
 		} catch (DataCustomException exception) {
 			throw exception;
 		} catch (SQLException exception) {
@@ -83,7 +88,7 @@ public class CountryPostgresqlDAO extends DAORelational implements CountryDAO {
 
 	private final CountryDTO fillCountryDTO (final ResultSet resultset) {
 		try {
-			return CountryDTO.create(resultset.getString("idCountry"), resultset.getString("countryName")); 
+			return CountryDTO.create(resultset.getString("idCountry"), resultset.getString("countryName"));
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
@@ -92,6 +97,5 @@ public class CountryPostgresqlDAO extends DAORelational implements CountryDAO {
 			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_COUNTRY, exception);
 		}
 	}
-	
 
 }

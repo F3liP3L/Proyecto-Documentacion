@@ -10,7 +10,9 @@ import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.helper.SqlConnectionHelper;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.CountryDAO;
+import edu.uco.quickjob.data.dao.DepartmentDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.CountryPostgresqlDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.DepartmentPostgresqlDAO;
 
 public class PostgresqlDAOFactory extends DAOFactory {
 	
@@ -73,5 +75,10 @@ private Connection connection;
 	@Override
 	public CountryDAO getCountryDAO() {
 		return new CountryPostgresqlDAO(connection);
+	}
+
+	@Override
+	public DepartmentDAO getDepartmentDAO() {
+		return new DepartmentPostgresqlDAO(connection);
 	}
 }

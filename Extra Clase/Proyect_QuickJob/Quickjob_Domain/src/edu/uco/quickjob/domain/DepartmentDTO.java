@@ -8,6 +8,7 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.builder.CountryDTOBuilder.getCountryDTOBuilder;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDFromString;;
 
 public final class DepartmentDTO {
 	
@@ -50,6 +51,10 @@ public final class DepartmentDTO {
 	
 	public static final DepartmentDTO create( final UUID id, final String name, final CountryDTO country) {
 		return new DepartmentDTO(id, name, country);
+	}
+	
+	public static final DepartmentDTO create(final String id, final String name, final CountryDTO country) {
+		return new DepartmentDTO(getUUIDFromString(id), name, country);
 	}
 	
 	public final String getIdAsString() {

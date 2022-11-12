@@ -2,6 +2,8 @@ package edu.uco.budget.data.dao.daofactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import edu.uco.budget.crosscutting.exception.CrosscuttingCustomException;
@@ -27,15 +29,15 @@ public class PostgresqlDAOFactory extends DAOFactory {
 		String password = "Nomic230s";
 		  try {
 	            connection = DriverManager.getConnection(url, user, password);
-	            /*
-	            String SQL = "SELECT * FROM film WHERE film_id = ?";
+	            
+	            String SQL = "SELECT * FROM film";
 				PreparedStatement pstmt = connection.prepareStatement(SQL);
-				pstmt.setLong(1, 777);
+				// pstmt.setLong(1, 777);
 				ResultSet rs = pstmt.executeQuery();
 				while(rs.next()) {
 					System.out.println( "[The title: " + rs.getString("title") + "]  Sipnosis: \n" + rs.getString("description") + " \n Special Feature: " + rs.getString("special_features") );
 				}
-				*/
+				
 	        } catch (CrosscuttingCustomException exception) {
 	            throw exception;
 	        } catch (SQLException exception) {
@@ -69,7 +71,6 @@ public class PostgresqlDAOFactory extends DAOFactory {
 
 	@Override
 	public BudgetDAO getBudgetDAO() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

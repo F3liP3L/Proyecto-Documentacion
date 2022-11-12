@@ -10,8 +10,6 @@ public class IdentificationTypeDTOBuilder {
 	
 	private UUID id;
 	private String name;
-	private String description;
-	private boolean state;
 	
 	private IdentificationTypeDTOBuilder() {
 		super();
@@ -28,16 +26,8 @@ public class IdentificationTypeDTOBuilder {
 		this.name = name;
 		return this;
 	}
-	public final IdentificationTypeDTOBuilder setDescription(String description) {
-		this.description = description;
-		return this;
-	}
-	public final IdentificationTypeDTOBuilder setState(boolean state) {
-		this.state = state;
-		return this;
-	}
 	
 	public final IdentificationTypeDTO build() {
-		return IdentificationTypeDTO.create(id, name, description, state);
+		return IdentificationTypeDTO.create(id, name);
 	}
 }

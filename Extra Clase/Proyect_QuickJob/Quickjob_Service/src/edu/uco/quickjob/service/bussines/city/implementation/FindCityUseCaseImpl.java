@@ -1,5 +1,15 @@
 package edu.uco.quickjob.service.bussines.city.implementation;
 
-public class FindCityUseCaseImpl {
+import java.util.List;
+
+import edu.uco.quickjob.domain.CityDTO;
+import edu.uco.quickjob.service.bussines.city.FindCityUseCase;
+
+public class FindCityUseCaseImpl implements FindCityUseCase {
+
+	@Override
+	public List<CityDTO> execute(CityDTO city) {
+		return null;
+	}
 
 }

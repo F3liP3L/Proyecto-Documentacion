@@ -84,10 +84,28 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific COUNTRYs";
 		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific COUNTRYs";
-		
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific COUNTRYs";	
 		
 	}
+	
+public static class DepartmentPostgresqlDAO {
+		
+		private DepartmentPostgresqlDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_FILL_DEPARTMENT_DTO = "There was a problem filling departmentDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_DEPARTMENT_DTO = "There was an unexpected problem trying to filling departmentDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_DEPARTMENT = "There was a unexpected problem trying to recovering results from the resultSet";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+	
+	}
+	
 	
 	public static class UUIDHelper {
 		
