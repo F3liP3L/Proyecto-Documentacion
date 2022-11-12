@@ -2,8 +2,6 @@ package edu.uco.budget.data.dao.daofactory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import edu.uco.budget.crosscutting.exception.CrosscuttingCustomException;
@@ -15,9 +13,9 @@ import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
 
 public class PostgresqlDAOFactory extends DAOFactory {
-	
+
 	private Connection connection;
-	
+
 	PostgresqlDAOFactory(){
 		openConnection();
 	}
@@ -86,9 +84,9 @@ public class PostgresqlDAOFactory extends DAOFactory {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	// Prueba para saber si la conexion a Postgresql funciona correctamente.
-	
+
 	public static void main(String[] args) {
 		try {
 			PostgresqlDAOFactory PostSQLDAO = new PostgresqlDAOFactory();

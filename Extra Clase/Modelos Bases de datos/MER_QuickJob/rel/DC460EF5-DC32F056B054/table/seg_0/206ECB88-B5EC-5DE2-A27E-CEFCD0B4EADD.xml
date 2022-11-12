@@ -37,6 +37,7 @@
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
 <generatorID>19AC8222-A10A-1609-7AFD-F98F8BC3CF12</generatorID>
 <ownerDesignName>MER_QuickJob</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

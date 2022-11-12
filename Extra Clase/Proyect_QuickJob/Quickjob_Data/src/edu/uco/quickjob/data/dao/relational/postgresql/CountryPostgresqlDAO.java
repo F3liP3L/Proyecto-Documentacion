@@ -80,7 +80,6 @@ public class CountryPostgresqlDAO extends DAORelational implements CountryDAO {
 			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY,exception);
 		}
 	}
-	
 
 	private final CountryDTO fillCountryDTO (final ResultSet resultset) {
 		try {

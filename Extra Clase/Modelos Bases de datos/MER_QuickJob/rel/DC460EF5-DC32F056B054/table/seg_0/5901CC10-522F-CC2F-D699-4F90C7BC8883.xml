@@ -60,6 +60,7 @@
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
 <generatorID>7B0B5E8B-A897-C89C-22B3-435F9D2FCB61</generatorID>
 <ownerDesignName>MER_QuickJob</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
@@ -71,6 +72,7 @@
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
 <generatorID>BEAF3748-DFD1-C31A-9321-4D4FF5BE4541</generatorID>
 <ownerDesignName>MER_QuickJob</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -83,6 +85,7 @@
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>
 <generatorID>B703E6B1-2CCD-9845-C95C-17239B7EABB3</generatorID>
 <ownerDesignName>MER_QuickJob</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -111,7 +114,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -126,7 +129,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>

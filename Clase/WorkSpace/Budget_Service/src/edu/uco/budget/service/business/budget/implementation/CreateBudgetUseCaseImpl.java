@@ -40,10 +40,8 @@ public final class CreateBudgetUseCaseImpl implements CreateBudgetUseCase {
 		budget.setPerson(person);
 		
 		// List<BudgetDTO> results = 
-		
-		
-		factory.getBudgetDAO().create(budget);
-		
+	
+		factory.getBudgetDAO().create(budget);	
 	}
 	
 	

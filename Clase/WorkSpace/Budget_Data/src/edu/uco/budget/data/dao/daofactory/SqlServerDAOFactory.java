@@ -17,20 +17,20 @@ import edu.uco.budget.data.dao.relational.sqlserver.YearSqlServerDAO;
 import edu.uco.budget.domain.BudgetDTO;
 
 public final class SqlServerDAOFactory extends DAOFactory{
-	
+
 	private Connection connection;
-	
+
 	SqlServerDAOFactory(){
 		openConnection();
 	}
 
 	@Override
 	protected void openConnection() {
-		String connectionSql =  "jdbc:sqlserver://rg-wf.database.windows.net:1433;" 
-				+ "database=db-budget;user=userDmlBudget;" 
-				+ "password=us3rDmlBudg3t;" 
-				+ "encrypt=true;" 
-				+ "trustServerCertificate=false;" 
+		String connectionSql =  "jdbc:sqlserver://rg-wf.database.windows.net:1433;"
+				+ "database=db-budget;user=userDmlBudget;"
+				+ "password=us3rDmlBudg3t;"
+				+ "encrypt=true;"
+				+ "trustServerCertificate=false;"
 				+ "hostNameInCertificate=*.database.windows.net;";
 		try {
 			connection = DriverManager.getConnection(connectionSql);
@@ -64,7 +64,6 @@ public final class SqlServerDAOFactory extends DAOFactory{
 	public void closeConnection() {
 		SqlConnectionHelper.closeConnection(connection);
 	}
-
 	@Override
 	public BudgetDAO getBudgetDAO() {
 		return new BudgetSqlServerDAO(connection);
@@ -81,7 +80,7 @@ public final class SqlServerDAOFactory extends DAOFactory{
 	}
 
 	// Prueba para saber si funciona la conexion.
-	
+
 	public static void main(String[] args) {
 		try {
 			SqlServerDAOFactory dao = new SqlServerDAOFactory();
@@ -95,5 +94,5 @@ public final class SqlServerDAOFactory extends DAOFactory{
 			exception.printStackTrace();
 		}
 	}
-	
+
 }
