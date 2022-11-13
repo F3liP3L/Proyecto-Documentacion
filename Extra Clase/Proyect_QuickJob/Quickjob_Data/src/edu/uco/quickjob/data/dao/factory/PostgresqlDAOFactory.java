@@ -9,10 +9,14 @@ import edu.uco.quickjob.crosscutting.exception.QuickjobCustomException;
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.helper.SqlConnectionHelper;
 import edu.uco.quickjob.crosscutting.messages.Messages;
+import edu.uco.quickjob.data.dao.CityDAO;
 import edu.uco.quickjob.data.dao.CountryDAO;
 import edu.uco.quickjob.data.dao.DepartmentDAO;
+import edu.uco.quickjob.data.dao.IdentificationTypeDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.CityPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.CountryPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.DepartmentPostgresqlDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.IdentificationTypePostgresqlDAO;
 
 public class PostgresqlDAOFactory extends DAOFactory {
 	
@@ -80,5 +84,15 @@ private Connection connection;
 	@Override
 	public DepartmentDAO getDepartmentDAO() {
 		return new DepartmentPostgresqlDAO(connection);
+	}
+
+	@Override
+	public CityDAO getCityDAO() {
+		return new CityPostgresqlDAO(connection);
+	}
+
+	@Override
+	public IdentificationTypeDAO getIdentificationTypeDAO() {
+		return new IdentificationTypePostgresqlDAO(connection);
 	}
 }

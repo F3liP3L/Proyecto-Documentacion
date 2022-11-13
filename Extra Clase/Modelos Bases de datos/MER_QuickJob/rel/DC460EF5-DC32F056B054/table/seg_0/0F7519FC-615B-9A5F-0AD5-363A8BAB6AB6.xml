@@ -32,30 +32,6 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="descripcion" id="F2A36748-BCAC-D0A9-6B3A-5CD798F22631">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 05:36:24 UTC</createdTime>
-<generatorID>4E68A905-F5C3-451C-A38C-9910965C8C3E</generatorID>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="estado" id="BBC3025E-6D49-1C28-AF9B-5AA38776758F">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 05:36:24 UTC</createdTime>
-<generatorID>AC62C901-D912-C49D-D869-6051AA00DB73</generatorID>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="2C214ACB-6878-F3C7-1DDB-487406E952F5" name="tipo_servicio_PK">

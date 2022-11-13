@@ -139,7 +139,7 @@ public class DepartmentPostgresqlDAO extends DAORelational implements Department
 
 	}
 
-	private final void createWhere(final StringBuilder sqlBuilder, final DepartmentDTO department, final List<Object> parameters) {
+		private final void createWhere(final StringBuilder sqlBuilder, final DepartmentDTO department, final List<Object> parameters) {
 
 		var setWhere = true;
 
@@ -153,7 +153,6 @@ public class DepartmentPostgresqlDAO extends DAORelational implements Department
 
 			if(UUIDHelper.isDefaultUUID(department.getCountry().getId())) {
 				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("D.pais_codigo = ? ");
-				setWhere = false;
 				parameters.add(department.getCountry().getIdAsString());
 			}
 		}

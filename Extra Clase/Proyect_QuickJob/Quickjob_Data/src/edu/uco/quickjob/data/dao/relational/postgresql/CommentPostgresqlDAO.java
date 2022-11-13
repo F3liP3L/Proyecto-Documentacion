@@ -3,12 +3,12 @@ package edu.uco.quickjob.data.dao.relational.postgresql;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
+import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.CommentDAO;
 import edu.uco.quickjob.data.dao.relational.DAORelational;
 import edu.uco.quickjob.domain.CommentDTO;
@@ -21,14 +21,16 @@ public class CommentPostgresqlDAO extends DAORelational implements CommentDAO{
 
 	@Override
 	public void create(CommentDTO comment) {
-		final var sqlInsert = "INSERT INTO public.comentario(codigo, nombre, descripcion, fecha_publicacion, cliente_codigo, servicio_codigo) VALUES (?, ?, ?, ?, ?, ?)";
+		final var sqlInsert = "INSERT INTO comentario(codigo, nombre, descripcion, fecha_publicacion, cliente_codigo, servicio_codigo) VALUES (?, ?, ?, ?, ?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 			
 			preparedStatement.setString(1, comment.getIdAsString());
 			preparedStatement.setString(2, comment.getName());
 			preparedStatement.setString(3, comment.getDescription());
-			preparedStatement.setDate(4, (Date) comment.getPublicationDate());
-			
+			preparedStatement.setDate(4, comment.getPublicationDate());
+			preparedStatement.setString(5, comment.getCustomer().getIdAsString());
+			preparedStatement.setString(6, comment.getService().getIdAsString());
+					
 			preparedStatement.executeUpdate();
 			
 		} catch(final SQLException exception) {
@@ -47,7 +49,20 @@ public class CommentPostgresqlDAO extends DAORelational implements CommentDAO{
 
 	@Override
 	public void update(CommentDTO comment) {
-		// TODO Auto-generated method stub
+		final var sqlUpdate = "UPDATE comentario SET  nombre=?, descripcion=? WHERE codigo = ?";
+		try (final var preparedStatement = getConnection().prepareStatement(sqlUpdate)) {
+			
+			preparedStatement.setString(1, comment.getName());
+			preparedStatement.setString(2, comment.getDescription());
+			preparedStatement.setString(3, comment.getIdAsString());
+			
+			preparedStatement.executeUpdate();
+			
+		} catch (SQLException exception ) {
+			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_UPDATE_QUALIFICATION, exception);
+		} catch (Exception exception) {
+			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_QUALIFICATION, exception);
+		}
 		
 	}
 
@@ -63,7 +78,5 @@ public class CommentPostgresqlDAO extends DAORelational implements CommentDAO{
 		} catch (Exception exception) {
 			throw DataCustomException.createTechnicalException(null, exception);
 		}	
-		
 	}
-
 }

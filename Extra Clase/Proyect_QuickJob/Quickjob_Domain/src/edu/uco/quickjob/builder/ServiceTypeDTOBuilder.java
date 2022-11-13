@@ -9,8 +9,6 @@ public class ServiceTypeDTOBuilder {
 	
 	private UUID id;
 	private String name;
-	private String description;
-	private boolean state;
 	
 	private ServiceTypeDTOBuilder() {
 		super();
@@ -33,18 +31,8 @@ public class ServiceTypeDTOBuilder {
 		return this;
 	}
 
-	public final ServiceTypeDTOBuilder setDescription(String description) {
-		this.description = description;
-		return this;
-	}
-
-	public final ServiceTypeDTOBuilder setState(boolean state) {
-		this.state = state;
-		return this;
-	}	
-	
 	public final ServiceTypeDTO build() {
-		return ServiceTypeDTO.create(id, name, description, state);
+		return ServiceTypeDTO.create(id, name);
 	}	
 	
 

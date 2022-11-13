@@ -21,7 +21,7 @@ public class CustomerPostgresqlDAO extends DAORelational implements CustomerDAO{
 
 	@Override
 	public void create(CustomerDTO customer) {
-		final var sqlInsert = "INSERT INTO public.cliente(codigo, usuario_codigo) VALUES (?,?)";
+		final var sqlInsert = "INSERT INTO cliente(codigo, usuario_codigo) VALUES (?,?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 			
 			preparedStatement.setString(1, customer.getIdAsString());

@@ -15,7 +15,7 @@ import edu.uco.quickjob.domain.IdentificationTypeDTO;
 
 public class IdentificationTypePostgresqlDAO extends DAORelational implements IdentificationTypeDAO {
 
-	protected IdentificationTypePostgresqlDAO(Connection connection) {
+	public IdentificationTypePostgresqlDAO(Connection connection) {
 		super(connection);
 	}
 

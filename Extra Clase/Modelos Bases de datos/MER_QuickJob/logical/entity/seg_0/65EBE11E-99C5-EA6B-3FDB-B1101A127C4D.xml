@@ -41,32 +41,6 @@
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="descripcion" id="A73B2F53-D022-11DB-B8DC-54E03BE3E4E0">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 03:22:12 UTC</createdTime>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<engineerTo>
-<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="estado" id="6415EAA3-4C28-0C55-11CC-FD967E749BC0">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 03:22:12 UTC</createdTime>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<engineerTo>
-<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="codigo1" id="2EF46348-4ECB-AD24-970D-504954B79AAE">
 <createdBy>Felipe</createdBy>
 <createdTime>2022-10-21 05:25:02 UTC</createdTime>

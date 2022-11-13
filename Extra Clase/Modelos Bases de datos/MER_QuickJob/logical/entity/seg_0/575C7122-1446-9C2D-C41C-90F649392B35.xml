@@ -41,32 +41,6 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="descripcion" id="E1ED7945-C9D8-7744-9805-A55D8A6E3BA4">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 03:45:15 UTC</createdTime>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<engineerTo>
-<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="estado" id="653E5613-D626-55F7-F1B8-62D96B6FABB0">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 03:45:30 UTC</createdTime>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<engineerTo>
-<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="8F906B61-B631-AD21-6E58-B1289EB89DDF" name="tipo_identificacion PK">

@@ -43,7 +43,7 @@ public class QualificationPostgresqlDAO extends DAORelational implements Qualifi
 
 	@Override
 	public void update(QualificationDTO qualification) {
-		final var sqlUpdate = "UPDATE public.calificacion SET puntuacion=? WHERE codigo = ?";
+		final var sqlUpdate = "UPDATE calificacion SET puntuacion=? WHERE codigo = ?";
 		
 		try (final var preparedStatement = getConnection().prepareStatement(sqlUpdate)) {
 			

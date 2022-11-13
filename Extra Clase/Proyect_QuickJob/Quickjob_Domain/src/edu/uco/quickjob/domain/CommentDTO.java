@@ -9,7 +9,7 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.UUID;
 
 public final class CommentDTO {

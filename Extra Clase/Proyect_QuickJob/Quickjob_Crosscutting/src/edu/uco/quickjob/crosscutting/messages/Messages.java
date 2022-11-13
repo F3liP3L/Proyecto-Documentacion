@@ -76,19 +76,19 @@ public class Messages {
 			super();
 		}
 		
-		public static final String TECHNICAL_PROBLEM_FILL_COUNTRY_DTO = "There was a problem filling COUNTRYDTO from the resultSet";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_COUNTRY_DTO = "There was an unexpected problem trying to filling COUNTRYDTO from the resultSet";
+		public static final String TECHNICAL_PROBLEM_FILL_COUNTRY_DTO = "There was a problem filling countryDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_COUNTRY_DTO = "There was an unexpected problem trying to filling countryDTO from the resultSet";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_COUNTRY = "There was a unexpected problem trying to recovering results from the resultSet";
-		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific COUNTRYs";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific COUNTRYs";
-		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific COUNTRYs";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific country";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific country";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific country";
 		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific COUNTRYs";	
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific country";	
 		
 	}
 	
-public static class DepartmentPostgresqlDAO {
+	public static class DepartmentPostgresqlDAO {
 		
 		private DepartmentPostgresqlDAO() {
 			super();
@@ -103,6 +103,24 @@ public static class DepartmentPostgresqlDAO {
 		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+	
+	}
+	
+	public static class CityPostgresqlDAO {
+		
+		private CityPostgresqlDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_FILL_CITY_DTO = "There was a problem filling cityDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_CITY_DTO = "There was an unexpected problem trying to filling cityDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_CITY = "There was a unexpected problem trying to recovering results from the resultSet";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific city";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific city";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific city";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific city";
 	
 	}
 	

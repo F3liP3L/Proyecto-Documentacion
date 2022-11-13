@@ -2,8 +2,10 @@ package edu.uco.quickjob.data.dao.factory;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
+import edu.uco.quickjob.data.dao.CityDAO;
 import edu.uco.quickjob.data.dao.CountryDAO;
 import edu.uco.quickjob.data.dao.DepartmentDAO;
+import edu.uco.quickjob.data.dao.IdentificationTypeDAO;
 import edu.uco.quickjob.data.enumeration.DAOFactoryType;
 
 public abstract class DAOFactory {
@@ -48,6 +50,10 @@ public static final DAOFactory getDAOFactory(final DAOFactoryType factory) {
 	public abstract CountryDAO getCountryDAO();
 	
 	public abstract DepartmentDAO getDepartmentDAO();
+	
+	public abstract CityDAO getCityDAO();
+	
+	public abstract IdentificationTypeDAO getIdentificationTypeDAO();
 	
 	
 	

@@ -2,7 +2,7 @@ package edu.uco.quickjob.builder;
 
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.UUID;
 
 import edu.uco.quickjob.domain.CommentDTO;

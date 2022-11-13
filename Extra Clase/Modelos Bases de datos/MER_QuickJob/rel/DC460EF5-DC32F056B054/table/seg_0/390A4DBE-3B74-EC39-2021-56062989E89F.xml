@@ -32,30 +32,6 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="descripcion" id="EA025305-2225-4674-4144-F7B52C1BA2A8">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 05:36:24 UTC</createdTime>
-<generatorID>A73B2F53-D022-11DB-B8DC-54E03BE3E4E0</generatorID>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="estado" id="634E75A2-C26A-87F3-C7F1-9445C5A68DB9">
-<createdBy>Felipe</createdBy>
-<createdTime>2022-10-21 05:36:24 UTC</createdTime>
-<generatorID>6415EAA3-4C28-0C55-11CC-FD967E749BC0</generatorID>
-<ownerDesignName>MER_QuickJob</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="tipo_servicio_codigo" id="3CEEFAF1-4161-DB06-1FD6-8B80A5C916D9">
 <createdBy>Felipe</createdBy>
 <createdTime>2022-10-21 05:36:24 UTC</createdTime>

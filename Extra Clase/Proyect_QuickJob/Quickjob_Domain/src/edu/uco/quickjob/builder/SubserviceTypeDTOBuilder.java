@@ -12,8 +12,6 @@ public class SubserviceTypeDTOBuilder {
 	private UUID id;
 	private ServiceTypeDTO serviceType;
 	private String name;
-	private String description; 
-	private boolean state;
 	
 	private SubserviceTypeDTOBuilder() {
 		super();
@@ -40,20 +38,9 @@ public class SubserviceTypeDTOBuilder {
 		this.name = name;
 		return this;
 	}
-	public final SubserviceTypeDTOBuilder setDescription(String description) {
-		this.description = description;
-		return this;
-	}
-
-	public final SubserviceTypeDTOBuilder setState(boolean state) {
-		this.state = state;
-		return this;
-	}
 	
 	public final SubserviceTypeDTO build() {
-		return SubserviceTypeDTO.create(id, serviceType, name, description, state);
+		return SubserviceTypeDTO.create(id, serviceType, name);
 	}
 	
-	
-
 }
