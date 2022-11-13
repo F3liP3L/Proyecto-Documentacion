@@ -31,28 +31,17 @@ public final class CreateBudgetUseCaseImpl implements CreateBudgetUseCase {
 	@Override
 	public final void execute(final BudgetDTO budget) {
 
-		// 1. Que el año de presupusupuesto exista
+		// 1. Que no exista un presupuesto para el mismo año.
 		final YearDTO year = findNextYearUseCase.execute();
-		// 2. Que la persona exista.
+		// 2. Que el año de presupuesto exista.
+		
+		// 3. Que la persona exista.
 		final PersonDTO person = findPersonByIdUseCase.execute(budget.getPerson().getId());
-		// 3. Que no exista un presupesto para el mismo usuario en el mismo año
 		budget.setYear(year);
 		budget.setPerson(person);
 		
-		// List<BudgetDTO> results = 
+		List<BudgetDTO> results = findBudgetUseCase.execute(budget);
 	
 		factory.getBudgetDAO().create(budget);	
 	}
-	
-	
-	public static void main(String[] args) {
-		
-		List<BudgetDTO> results = DAOFactory.getDAOFactory(DAOFactoryType.SQLSERVER).getBudgetDAO().find(null);
-		
-		
-		results.forEach(elem -> System.out.println(elem.getPerson().getFirstName() + elem.getPerson()));
-		
-		
-	}
-
 }

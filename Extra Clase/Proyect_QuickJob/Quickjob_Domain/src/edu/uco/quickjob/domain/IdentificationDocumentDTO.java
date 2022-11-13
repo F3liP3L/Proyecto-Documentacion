@@ -7,6 +7,7 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
+import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDFromString;
 import static edu.uco.quickjob.builder.IdentificationTypeDTOBuilder.getIdentificationTypeDTOBuilder;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.quickjob.crosscutting.helper.DateHelper.getDefaultDate;
@@ -117,6 +118,12 @@ public final class IdentificationDocumentDTO {
 			final Date expeditionDate, final String expeditionSite, final String sex, final String identificationNumber,
 			final IdentificationTypeDTO identificationType) {
 		return new IdentificationDocumentDTO(id, name, surname, birthDate, placeOfBirth, expeditionDate, expeditionSite, sex, identificationNumber, identificationType);
+	}
+	
+	public static final IdentificationDocumentDTO create(final String id, final String name, final String surname, final Date birthDate, final CityDTO placeOfBirth,
+			final Date expeditionDate, final String expeditionSite, final String sex, final String identificationNumber,
+			final IdentificationTypeDTO identificationType) {
+		return new IdentificationDocumentDTO(getUUIDFromString(id), name, surname, birthDate, placeOfBirth, expeditionDate, expeditionSite, sex, identificationNumber, identificationType);
 	}
 	
 	public final String getIdAsString() {

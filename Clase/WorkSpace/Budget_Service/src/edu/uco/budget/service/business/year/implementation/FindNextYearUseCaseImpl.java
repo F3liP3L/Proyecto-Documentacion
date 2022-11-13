@@ -27,7 +27,7 @@ public class FindNextYearUseCaseImpl implements FindNextYearUseCase {
 		} else {
 			year = result.get(0);
 		}
-		return null;
+		return year;
 	}
 
 }

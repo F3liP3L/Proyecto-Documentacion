@@ -5,7 +5,9 @@ import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.CityDAO;
 import edu.uco.quickjob.data.dao.CountryDAO;
 import edu.uco.quickjob.data.dao.DepartmentDAO;
+import edu.uco.quickjob.data.dao.IdentificationDocumentDAO;
 import edu.uco.quickjob.data.dao.IdentificationTypeDAO;
+import edu.uco.quickjob.data.dao.UserDAO;
 import edu.uco.quickjob.data.enumeration.DAOFactoryType;
 
 public abstract class DAOFactory {
@@ -55,7 +57,9 @@ public static final DAOFactory getDAOFactory(final DAOFactoryType factory) {
 	
 	public abstract IdentificationTypeDAO getIdentificationTypeDAO();
 	
+	public abstract IdentificationDocumentDAO getIdentificationDocumentDAO();
 	
+	public abstract UserDAO getUserDAO();
 	
 }
 

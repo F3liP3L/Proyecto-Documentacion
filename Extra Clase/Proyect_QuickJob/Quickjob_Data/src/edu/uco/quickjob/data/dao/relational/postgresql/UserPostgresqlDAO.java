@@ -15,7 +15,7 @@ import edu.uco.quickjob.domain.UserDTO;
 
 public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 
-	protected UserPostgresqlDAO(Connection connection) {
+	public UserPostgresqlDAO(Connection connection) {
 		super(connection);
 	}
 

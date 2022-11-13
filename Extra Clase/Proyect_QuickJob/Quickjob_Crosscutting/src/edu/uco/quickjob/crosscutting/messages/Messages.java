@@ -136,4 +136,15 @@ public class Messages {
 	}
 
 	
+	public static class CreateUserUseCaseImpl {
+		
+		private CreateUserUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_USER_EXISTS = " The UUID to convert doesnot have a valid format";
+		public static final String BUSSINES_UNEXPECTED = " There was an unexpected problem";
+		
+	}
+	
 }
