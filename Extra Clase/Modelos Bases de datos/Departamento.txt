@@ -1,0 +1,13 @@
+INSERT INTO public.departamento(
+	codigo, nombre, pais_codigo)
+	VALUES
+	(uuid_generate_v1(), 'Antioquia', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Atlántico', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Bogotá D.C', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Bolivar', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Boyacá', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Caldas', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Caquetá', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Cauca', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Cesar', 'fa7a9739-645d-11ed-a557-38142819d27a'),
+	(uuid_generate_v1(), 'Cundinamarca', 'fa7a9739-645d-11ed-a557-38142819d27a')

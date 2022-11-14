@@ -82,3 +82,101 @@ form {
     position: absolute;
     right: 500px;
 }
+
+.formIniciar{
+    width: 500px;
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.iniciarSesion{
+    text-align: center;
+}
+
+.login{
+    color: var(--azul);
+    position: relative;
+    left: 40%;
+    font-size: 100px;
+    padding: 10px;
+   
+}
+
+.controls1{
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+.container1{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    font-size: 90px;
+}
+
+.container1 .card{
+    width: 330px;
+    height: 430px;
+    border: 8px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+    background-color: var(--aqua);
+
+}
+
+.container1 .card:hover{
+    transform: translatey(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container1 .card i{
+    width: 330px;
+    height: 220px;
+    padding: 30px;
+}
+
+
+.container1 .card a{
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    font-size: 50px;
+}
+
+.opcion{
+    color: var(--aqua);
+    text-align: center;
+}
+
+.formServicio{
+    width: 600px;
+    position: relative;
+    left: 3%;
+    background-color: var(--blanco);
+    border-radius: 5px;
+    margin: 30px;
+}
+
+.logoServicio{
+    position: absolute;
+    left: 50%;
+    margin: 80px;
+}
+
+.ofrecerServicio{
+    text-align: center;
+    color: var(--azul);
+}

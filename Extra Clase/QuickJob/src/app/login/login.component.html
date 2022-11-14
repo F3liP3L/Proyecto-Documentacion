@@ -1,16 +1,19 @@
-<body class="Fondo">
+<body class="Fondo" *ngIf="!ingreso">
     <section>
         <div class="container">
             <img src="assets/img/Logo.png" alt="" class="check">
         </div>
 
-        <form>
-            <h1 class="iniciarSesion">Iniciar Sesión</h1>
-            <i class="fa-light fa-circle-user"></i>
-            <input class="controls" type="text" name="correo" placeholder="Correo">
-            <input class="controls" type="password" name="clave" placeholder="Contraseña">
-            <button class="btn btn-primary">Confirmar</button>
+        <form class="formIniciar" action="">
+            <h1 class="iniciarSesion">Iniciar Sesion</h1>
+            <i class="login fa-regular fa-user"></i>
+            <input class="controls1" type="text" name="correo" placeholder="Correo">
+            <input class="controls1" type="password" name="clave" placeholder="Contraseña">
+            <button class="confirmar btn btn-primary" (click)=" redirigirAOpciones()">Confirmar</button>
+            <div> <a href="#">¿Olvido su contraseña?</a></div>
         </form>
     </section>
 
 </body>
+
+<app-option *ngIf="ingreso"></app-option>

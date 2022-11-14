@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Ciudad } from '../modelos/ciudad';
 import { IdentificationpDocument } from '../modelos/identification-document';
 import { IdentificationType } from '../modelos/identificationType';
 import { Usuario } from '../modelos/usuario';
@@ -11,7 +12,9 @@ import { UsuarioService } from '../services/usuario.service';
   styleUrls: ['./check-in.component.css']
 })
 export class CheckInComponent implements OnInit {
+
   public tipoIdentificacion: IdentificationType[] = [];
+  public ciudades: Ciudad[] = [];
 
   formularioRegistro!: FormGroup;
 
@@ -20,19 +23,13 @@ export class CheckInComponent implements OnInit {
 
   ngOnInit(): void {
     this.inicializarFormulario();
-    const tipo1: IdentificationType = {
-      id: '1',
-      name: 'Cédula'
-    }
-    const tipo2: IdentificationType = {
-      id: '2',
-      name: 'Tarjeta identidad'
-    }
-    this.tipoIdentificacion.push(tipo1);
-    this.tipoIdentificacion.push(tipo2)
-    /**this.usuarioServicio.obtenerTipoIdentificacion().subscribe(identificacion => {
+    this.usuarioServicio.obtenerTipoIdentificacion().subscribe(identificacion => {
       this.tipoIdentificacion = identificacion;
-    });*/
+    });
+    this.usuarioServicio.obtenerCiudad().subscribe(ciudad => {
+      this.ciudades = ciudad;
+    });
+
   }
 
   inicializarFormulario() {
@@ -43,7 +40,9 @@ export class CheckInComponent implements OnInit {
       tipoIdent: ['', [Validators.required]],
       correo: ['', [Validators.required]],
       clave: ['', [Validators.required]],
-      fechaNacimiento: ['', [Validators.required]]
+      fechaNacimiento: ['', [Validators.required]],
+      ciudad: ['', [Validators.required]],
+
     });
   }
 

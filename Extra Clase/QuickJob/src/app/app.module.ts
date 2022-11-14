@@ -8,13 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import { LoginComponent } from './login/login.component';
+import { OptionComponent } from './option/option.component';
+import { OfferServiceComponent } from './offer-service/offer-service.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutUsComponent,
     CheckInComponent,
-    LoginComponent
+    LoginComponent,
+    OptionComponent,
+    OfferServiceComponent
   ],
   imports: [
     BrowserModule,
