@@ -107,7 +107,7 @@ public final class PersonDTO {
 	}
 	
 	public final boolean notExist() {
-		return UUIDHelper.isDefaultUUID(id);
+		return !exist();
 	}
 	
 }
