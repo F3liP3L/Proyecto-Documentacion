@@ -170,7 +170,7 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 			if(user.getResidenceCity().getId() != null) {
 				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("U.ciudad_codigo = ? ");
 				setWhere = false;
-				parameters.add(user.getResidenceCity().getId());
+				parameters.add(user.getResidenceCity().getIdAsString());
 			}
 			
 			if(user.getEmail() != null) {

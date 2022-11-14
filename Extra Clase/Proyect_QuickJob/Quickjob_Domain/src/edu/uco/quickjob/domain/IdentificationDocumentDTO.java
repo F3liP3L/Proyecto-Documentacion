@@ -31,7 +31,7 @@ public final class IdentificationDocumentDTO {
 		setId(getNewUUID());
 		setName(EMPTY);
 		setSurname(EMPTY);
-		setBirthDate(birthDate);
+		setBirthDate(getLocalDateADate(getDefaultDate()));
 		setPlaceOfBirth(getCityDTOBuilder().build());
 		setExpeditionDate(getLocalDateADate(getDefaultDate()));
 		setExpeditionSite(EMPTY);

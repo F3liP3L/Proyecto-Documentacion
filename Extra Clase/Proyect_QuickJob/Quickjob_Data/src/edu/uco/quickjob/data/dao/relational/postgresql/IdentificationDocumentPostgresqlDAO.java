@@ -36,10 +36,10 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 			preparedStatement.setDate(4, identificationDocument.getBirthDate());
 			preparedStatement.setDate(5, identificationDocument.getExpeditionDate());
 			preparedStatement.setString(6, identificationDocument.getExpeditionSite());
-			preparedStatement.setString(7, identificationDocument.getIdentificationNumber());
-			preparedStatement.setString(8, identificationDocument.getSex());
+			preparedStatement.setString(7, identificationDocument.getSex());
+			preparedStatement.setString(8, identificationDocument.getIdentificationNumber());
 			preparedStatement.setString(9, identificationDocument.getPlaceOfBirth().getIdAsString());
-			preparedStatement.setString(10, identificationDocument.getIdentificationNumber());
+			preparedStatement.setString(10, identificationDocument.getIdentificationType().getIdAsString());
 			
 			preparedStatement.executeUpdate();
 			
