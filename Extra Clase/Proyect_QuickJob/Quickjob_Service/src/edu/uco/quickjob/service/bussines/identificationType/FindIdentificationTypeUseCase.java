@@ -6,6 +6,6 @@ import edu.uco.quickjob.domain.IdentificationTypeDTO;
 
 public interface FindIdentificationTypeUseCase {
 	
-	List<IdentificationTypeDTO> execute(IdentificationTypeDTO identificationType);
+	List<IdentificationTypeDTO> findIdentification();
 
 }

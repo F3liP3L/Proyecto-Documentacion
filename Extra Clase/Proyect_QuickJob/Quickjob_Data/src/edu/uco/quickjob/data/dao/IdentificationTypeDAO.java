@@ -9,7 +9,7 @@ import edu.uco.quickjob.domain.IdentificationTypeDTO;
 public interface IdentificationTypeDAO {
 	
 	
-	List<IdentificationTypeDTO> find(IdentificationTypeDTO identificationType);
+	List<IdentificationTypeDTO> find();
 	
 
 }

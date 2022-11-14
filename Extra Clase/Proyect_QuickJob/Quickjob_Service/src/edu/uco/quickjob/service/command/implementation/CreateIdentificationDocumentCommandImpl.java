@@ -5,21 +5,20 @@ import edu.uco.quickjob.crosscutting.exception.service.ServiceCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.factory.DAOFactory;
 import edu.uco.quickjob.data.enumeration.DAOFactoryType;
-import edu.uco.quickjob.domain.UserDTO;
-import edu.uco.quickjob.service.bussines.user.CreateUserUseCase;
-import edu.uco.quickjob.service.bussines.user.implementation.CreateUserUseCaseImpl;
-import edu.uco.quickjob.service.command.CreateUserCommand;
+import edu.uco.quickjob.domain.IdentificationDocumentDTO;
+import edu.uco.quickjob.service.bussines.identificationdocument.CreateIdentificationDocumentUseCase;
+import edu.uco.quickjob.service.bussines.identificationdocument.implementation.CreateIdentificationDocumentUseCaseImpl;
 
-public class CreateUserCommandImpl implements CreateUserCommand {
+public class CreateIdentificationDocumentCommandImpl implements CreateIdentificationDocumentUseCase{
 	
 	private final DAOFactory factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
-	private final CreateUserUseCase useCase = new CreateUserUseCaseImpl(factory);
+	private final CreateIdentificationDocumentUseCase useCase = new CreateIdentificationDocumentUseCaseImpl(factory);
 
 	@Override
-	public void createUser(UserDTO user) {
+	public void execute(IdentificationDocumentDTO identificatinDocumentDTO) {
 		try {
 			factory.initTransaction();
-			useCase.execute(user);
+			useCase.execute(identificatinDocumentDTO);
 			factory.confirmTransaction();
 		} catch (ServiceCustomException exception) {
 			factory.cancelTransaction();
@@ -31,11 +30,9 @@ public class CreateUserCommandImpl implements CreateUserCommand {
 			}
 		} catch (Exception exception) {
 			factory.cancelTransaction();
-			throw ServiceCustomException.createBussinesException(Messages.CreateUserUseCaseImpl.BUSSINES_USER_UNEXPECTED, exception);
+			throw ServiceCustomException.createBussinesException(Messages.FindDocumentIdentificationUseCaseImpl.BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED, exception);
 		} finally {
 			factory.closeConnection();
-		}
-		
+		}	
 	}
-
 }

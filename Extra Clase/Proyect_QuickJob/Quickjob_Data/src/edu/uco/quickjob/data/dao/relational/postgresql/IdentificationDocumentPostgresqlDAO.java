@@ -58,7 +58,7 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 
 		createSelectFrom(sqlBuilder);
 
-		createWhere(sqlBuilder, department, parameters);
+		createWhere(sqlBuilder, identificationDocument, parameters);
 
 		createOrderBy(sqlBuilder);
 
@@ -71,7 +71,7 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 	}
 	
 	
-	private final List<DepartmentDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder, List<Object> parameters) {
+	private final List<IdentificationDocumentDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder, List<Object> parameters) {
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
 
 			setParameterValues(preparedStatement, parameters);
@@ -86,6 +86,21 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
 		}
 	}
+	
+	private final List<IdentificationDocumentDTO> executeQuery(PreparedStatement preparedStatement){
+		try (final var resultSet = preparedStatement.executeQuery()) {
+
+			return fillResults(resultSet);
+
+		} catch (DataCustomException exception) {
+			throw exception;
+		} catch (SQLException exception) {
+			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY ,exception);
+		} catch (Exception exception) {
+			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY,exception);
+		}
+	}
+	
 
 	private final void createOrderBy(final StringBuilder stringBuilder) {
 		stringBuilder.append("Order By DI.nombre ASC, ");
@@ -115,30 +130,16 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_PROBLEM_FILL_DEPARTMENT_DTO, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_DEPARTMENT, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		}
 	}
 
-	private final List<DepartmentDTO> executeQuery(PreparedStatement preparedStatement){
-		try (final var resultSet = preparedStatement.executeQuery()) {
-
-			return fillResults(resultSet);
-
-		} catch (DataCustomException exception) {
-			throw exception;
-		} catch (SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY ,exception);
-		} catch (Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY,exception);
-		}
-	}
-
-
-	private final IdentificationDocumentDTO fillIdentificationDocumentDTO (final ResultSet resultset) {
+	public final IdentificationDocumentDTO fillIdentificationDocumentDTO (final ResultSet resultset) {
 		try {
-			return DepartmentDTO.create(resultset.getString("idDepartment"), resultset.getString("departmentName"), fillCountryDTO(resultset));
+			return IdentificationDocumentDTO.create(resultset.getString("idDocumentIdentification"), resultset.getString("name"), resultset.getString("surname"),resultset.getDate("birthDate"), fillCityDTO(resultset), 
+			 resultset.getString("identificationNumber"), fillIdentificationTypeDTO(resultset));
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
@@ -150,15 +151,15 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 
 	private final IdentificationTypeDTO fillIdentificationTypeDTO(final ResultSet resultset) {
 		try {
-			return IdentificationTypeDTO.create(resultset.getString("idIdenticationType"), resultset.getString("identificationTypeName"));
+			return IdentificationTypeDTO.create(resultset.getString("idIdentificationType"), resultset.getString("identificationTypeName"));
 		} catch (final SQLException exception ) {
-			throw DataCustomException.createTechnicalException(Messages.PostgresqlDAOFactory.TECHNICAL_PROBLEM_FILL_DEPARTMENT_DTO, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_DEPARTMENT, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		}
 	}
 	
-	private final CityDTO fillCityDTO (final ResultSet resultset) {
+	public final CityDTO fillCityDTO (final ResultSet resultset) {
 		try {
 			return CityDTO.create(resultset.getString("idCity"), resultset.getString("cityName"), fillDepartmentDTO(resultset));
 		} catch (final DataCustomException exception) {
@@ -192,8 +193,6 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 		}
 	}
 
-
-
 	private final void createSelectFrom(final StringBuilder sqlBuilder) {
 		
 		sqlBuilder.append("SELECT   DI.codigo AS idDocumentIdentification, ");
@@ -202,15 +201,25 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 		sqlBuilder.append("         DI.fecha_nacimiento AS birthDate, ");
 		sqlBuilder.append("         DI.fecha_expedimiento AS expeditionDate, ");
 		sqlBuilder.append("         DI.lugar_expedicion AS expeditionPlace,  ");
-		sqlBuilder.append("         DI.sexo AS sex,  ");
+		sqlBuilder.append("         DI.sexo AS sex, ");
 		sqlBuilder.append("         DI.numero_identificacion AS identificationNumber, ");
 		sqlBuilder.append("         DI.lugar_nacimiento AS placeBirth, ");
-		sqlBuilder.append("         DI.tipo_identificacion_codigo AS idIdenticationType,  ");
-		sqlBuilder.append("         T.nombre AS identificationTypeName ");
+		sqlBuilder.append("         DI.tipo_identificacion_codigo AS idIdentificationType,  ");
+		sqlBuilder.append("         T.nombre AS identificationTypeName, ");
+		sqlBuilder.append("         C.nombre AS cityName, ");
+		sqlBuilder.append("         C.departamento_codigo AS idDepartment, ");
+		sqlBuilder.append("         D.nombre AS departmentName, ");
+		sqlBuilder.append("        	D.pais_codigo AS idCountry, ");
+		sqlBuilder.append("         P.nombre AS countryName ");
 		sqlBuilder.append("FROM documento_identificacion DI ");
 		sqlBuilder.append("INNER JOIN tipo_identificacion T ");
 		sqlBuilder.append("ON T.codigo = DI.tipo_identificacion_codigo ");
-
+		sqlBuilder.append("INNER JOIN ciudad C ");
+		sqlBuilder.append("ON C.codigo = DI.lugar_nacimiento ");
+		sqlBuilder.append("INNER JOIN departamento D ");
+		sqlBuilder.append("ON D.codigo = C.departamento_codigo ");
+		sqlBuilder.append("INNER JOIN pais P ");
+		sqlBuilder.append("ON P.codigo = D.pais_codigo ");
 	}
 
 		private final void createWhere(final StringBuilder sqlBuilder, final IdentificationDocumentDTO identificationDocument, final List<Object> parameters) {
@@ -226,8 +235,26 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 			}
 
 			if(UUIDHelper.isDefaultUUID(identificationDocument.getIdentificationType().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("T.codigo = ? ");
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("DI.tipo_identificacion_codigo = ? ");
+				setWhere = false;
 				parameters.add(identificationDocument.getIdentificationType().getIdAsString());
+			}
+			
+			if(UUIDHelper.isDefaultUUID(identificationDocument.getPlaceOfBirth().getId())) {
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("DI.lugar_nacimiento = ? ");
+				setWhere = false;
+				parameters.add(identificationDocument.getIdentificationType().getIdAsString());
+			}
+			
+			if(UUIDHelper.isDefaultUUID(identificationDocument.getPlaceOfBirth().getDepartment().getId())) {
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("C.departamento_codigo = ? ");
+				setWhere = false;
+				parameters.add(identificationDocument.getPlaceOfBirth().getDepartment().getIdAsString());
+			}
+			
+			if(UUIDHelper.isDefaultUUID(identificationDocument.getPlaceOfBirth().getDepartment().getCountry().getId())) {
+				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("D.pais_codigo = ? ");
+				parameters.add(identificationDocument.getPlaceOfBirth().getDepartment().getCountry().getIdAsString());
 			}
 		}
 	}

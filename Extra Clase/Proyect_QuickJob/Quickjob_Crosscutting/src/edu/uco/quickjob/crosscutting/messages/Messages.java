@@ -55,7 +55,27 @@ public class Messages {
 		public static final String TECHNICAL_PROBLEM_CLOSE_CONNECTION = "There was a problem trying to confirm close connection in PostgresqlDAOFactory";
 	}
 	
-	
+	public static class UserPostgresqlDAO {
+		
+		private UserPostgresqlDAO() {
+				super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_USER = "There was a problem trying to create the desired user in PostgresqlDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_USER = "There was an unexpected problem trying to create the qualification in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_UPDATE_USER = "There was a problem trying to update the desired user in PostgresqlDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_USER = "There was an unexpected problem trying to create the user in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_FILL_USER_DTO = "There was a problem filling userDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_USER_DTO = "There was an unexpected problem trying to filling userDTO from the resultSet";
+		public static final String TECHNICAL_PROBLEM_DELETE_USER_DTO = "There was a problem filling userDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_USER_DTO = "There was an unexpected problem trying to filling userDTO from the resultSet";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+	}
 	
 	public static class QualificationPostgresqlDAO {
 		
@@ -124,6 +144,23 @@ public class Messages {
 	
 	}
 	
+	public static class IdentificationTypePostgresqlDAO {
+		
+		private IdentificationTypePostgresqlDAO() {
+			super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO = "There was a problem filling IdentificationTypeDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO = "There was an unexpected problem trying to filling IdentificationTypeDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_IDENTIFICATION_TYPE = "There was a unexpected problem trying to recovering results from the resultSet";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific identification type";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific identification type";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific identification type";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific identification type";
+	
+	}
 	
 	public static class UUIDHelper {
 		
@@ -143,7 +180,18 @@ public class Messages {
 		}
 		
 		public static final String BUSSINES_USER_EXISTS = " The UUID to convert doesnot have a valid format";
-		public static final String BUSSINES_UNEXPECTED = " There was an unexpected problem";
+		public static final String BUSSINES_USER_UNEXPECTED = " There was an unexpected problem";
+		
+	}
+	
+	public static class FindDocumentIdentificationUseCaseImpl {
+		
+		private FindDocumentIdentificationUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_EXISTS = " The UUID to convert doesnot have a valid format";
+		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED = " There was an unexpected problem";
 		
 	}
 	

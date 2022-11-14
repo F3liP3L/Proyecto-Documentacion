@@ -20,7 +20,7 @@ public class IdentificationTypePostgresqlDAO extends DAORelational implements Id
 	}
 
 	@Override
-	public List<IdentificationTypeDTO> find(IdentificationTypeDTO identificationType) {
+	public List<IdentificationTypeDTO> find() {
 
 		final var sqlBuilder = new StringBuilder();
 
@@ -34,9 +34,8 @@ public class IdentificationTypePostgresqlDAO extends DAORelational implements Id
 	private final void createSelectFrom(final StringBuilder sqlBuilder) {
 		sqlBuilder.append("SELECT 	codigo AS idIdentificationType, ");
 		sqlBuilder.append("         nombre AS identificationTypeName ");
-		sqlBuilder.append("         FROM pais ");
+		sqlBuilder.append("         FROM tipo_identificacion ");
 	}
-	
 
 	private final List<IdentificationTypeDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder) {
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){

@@ -1,26 +1,28 @@
 package edu.uco.quickjob.service.command.implementation;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.uco.quickjob.crosscutting.exception.QuickjobCustomException;
 import edu.uco.quickjob.crosscutting.exception.service.ServiceCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.factory.DAOFactory;
 import edu.uco.quickjob.data.enumeration.DAOFactoryType;
-import edu.uco.quickjob.domain.UserDTO;
-import edu.uco.quickjob.service.bussines.user.CreateUserUseCase;
-import edu.uco.quickjob.service.bussines.user.implementation.CreateUserUseCaseImpl;
-import edu.uco.quickjob.service.command.CreateUserCommand;
+import edu.uco.quickjob.domain.CityDTO;
+import edu.uco.quickjob.service.bussines.city.implementation.FindCityUseCaseImpl;
+import edu.uco.quickjob.service.command.FindCityCommand;
 
-public class CreateUserCommandImpl implements CreateUserCommand {
-	
+public class FindCityCommandImpl implements FindCityCommand {
+
 	private final DAOFactory factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
-	private final CreateUserUseCase useCase = new CreateUserUseCaseImpl(factory);
-
+	private final FindCityUseCaseImpl useCase = new FindCityUseCaseImpl(factory);
+	
 	@Override
-	public void createUser(UserDTO user) {
+	public List<CityDTO> findCity() {
+		List<CityDTO> result = new ArrayList<>();
 		try {
 			factory.initTransaction();
-			useCase.execute(user);
-			factory.confirmTransaction();
+			result.addAll(useCase.findCity());
 		} catch (ServiceCustomException exception) {
 			factory.cancelTransaction();
 			throw exception;
@@ -31,11 +33,13 @@ public class CreateUserCommandImpl implements CreateUserCommand {
 			}
 		} catch (Exception exception) {
 			factory.cancelTransaction();
-			throw ServiceCustomException.createBussinesException(Messages.CreateUserUseCaseImpl.BUSSINES_USER_UNEXPECTED, exception);
+			throw ServiceCustomException.createBussinesException(Messages.FindDocumentIdentificationUseCaseImpl.BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED, exception);
 		} finally {
 			factory.closeConnection();
 		}
-		
+		return result;
 	}
+	
+	
 
 }

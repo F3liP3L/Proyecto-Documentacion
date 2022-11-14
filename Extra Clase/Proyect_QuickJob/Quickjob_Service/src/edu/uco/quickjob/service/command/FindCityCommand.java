@@ -1,10 +1,11 @@
-package edu.uco.quickjob.service.bussines.city;
+package edu.uco.quickjob.service.command;
 
 import java.util.List;
 
 import edu.uco.quickjob.domain.CityDTO;
 
-public interface FindCityUseCase {
-	
+public interface FindCityCommand {
+
 	List<CityDTO> findCity();
+	
 }
