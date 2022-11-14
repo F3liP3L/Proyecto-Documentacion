@@ -1,0 +1,30 @@
+<body class="Fondo" *ngIf="!ofrecerServicio">
+    <header>
+        <nav class="navbar bg-light">
+            <div>
+                <img src="assets/img/Logo.png" alt="Logo QuickJob" class="logo">
+            </div>
+
+            <div class="">
+                <button class="btn btn-primary">Ir al perfil</button>
+                <button class="btn btn-primary">Cerrar sesión</button>
+            </div>
+
+        </nav>
+    </header>
+    <section>
+        <h1 class="opcion">¿Que quieres hacer?</h1>
+        <div class="container1">
+            <div class="card">
+                <i class="fa-sharp fa-solid fa-users"></i>
+                <a (onclick)="redirigirAOfrecerServicios()">Buscar un servicio</a>
+            </div>
+
+            <div class="card">
+                <i class="fa-sharp fa-solid fa-briefcase" (click)=" redirigirAOfrecerServicios()"></i>
+                <a href="#">Ofrecer un sercicio</a>
+            </div>
+        </div>
+    </section>
+</body>
+<app-offer-service *ngIf="ofrecerServicio"></app-offer-service>

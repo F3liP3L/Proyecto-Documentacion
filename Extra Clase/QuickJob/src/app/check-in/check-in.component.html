@@ -23,7 +23,7 @@
                 Este campo es obligatorio.
             </div>
             <select class="controls" name="tipoIdent" placeholder="Tipo Identificacion" formControlName="tipoIdent">
-                <option value="" selected="true">Tipo Identificacion</option>
+                <option value="" selected="true">Seleccione...</option>
                 <option *ngFor="let tipo of tipoIdentificacion" [value]="tipo">{{tipo.name}}</option>
             </select>
             <div
@@ -44,6 +44,14 @@
             <input class="controls" type="date" name="fechaNacimiento" formControlName="fechaNacimiento">
             <div
                 *ngIf="formularioRegistro.controls['fechaNacimiento'].invalid && formularioRegistro.controls['fechaNacimiento'].touched">
+                Este campo es obligatorio.
+            </div>
+            <select class="controls" name="ciudad" placeholder="Ciudad" formControlName="ciudad">
+                <option value="" selected="true">Seleccione...</option>
+                <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ciudad.name}}</option>
+            </select>
+            <div
+                *ngIf="formularioRegistro.controls['ciudad'].invalid && formularioRegistro.controls['ciudad'].touched">
                 Este campo es obligatorio.
             </div>
             <button (click)="registrarse()" class="btn btn-primary">Registrarse</button>

@@ -10,6 +10,8 @@ export class AppComponent {
   
   public conocenos = false;
   public registrarse = false;
+  public iniciarSesion = false;
+
 
 
   redirigirAConocenos() {
@@ -18,6 +20,10 @@ export class AppComponent {
 
   redirigirARegistrarse() {
     this.registrarse = true;
+  }
+
+  redirigirAIniciarSesion() {
+    this.iniciarSesion = true;
   }
 }
 
