@@ -15,11 +15,10 @@ public class CreateIdentificationDocumentCommandImpl implements CreateIdentifica
 	private final CreateIdentificationDocumentUseCase useCase = new CreateIdentificationDocumentUseCaseImpl(factory);
 
 	@Override
-	public void execute(IdentificationDocumentDTO identificatinDocumentDTO) {
+	public IdentificationDocumentDTO createIdentificationDocument(IdentificationDocumentDTO identificatinDocumentDTO) {
 		try {
 			factory.initTransaction();
-			useCase.execute(identificatinDocumentDTO);
-			factory.confirmTransaction();
+			return useCase.createIdentificationDocument(identificatinDocumentDTO);
 		} catch (ServiceCustomException exception) {
 			factory.cancelTransaction();
 			throw exception;
@@ -33,6 +32,7 @@ public class CreateIdentificationDocumentCommandImpl implements CreateIdentifica
 			throw ServiceCustomException.createBussinesException(Messages.FindDocumentIdentificationUseCaseImpl.BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED, exception);
 		} finally {
 			factory.closeConnection();
-		}	
+		}
+		return identificatinDocumentDTO;
 	}
 }

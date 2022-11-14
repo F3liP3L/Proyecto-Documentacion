@@ -26,7 +26,7 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 
 	@Override
 	public void create(UserDTO user) {
-		final var sqlInsert = "INSERT INTO usuario (codigo, nombre, apellido, correo, clave, ciudad_codigo, documento_identidad_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		final var sqlInsert = "INSERT INTO usuario(codigo, nombre, apellido, correo, clave, ciudad_codigo, documento_identidad_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 			
 			preparedStatement.setString(1, user.getIdAsString());
@@ -61,6 +61,7 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
+	
 
 	private final List<UserDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder, List<Object> parameters) {
 		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){

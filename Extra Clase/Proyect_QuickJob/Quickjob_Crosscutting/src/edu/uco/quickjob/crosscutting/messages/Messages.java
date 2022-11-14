@@ -194,5 +194,4 @@ public class Messages {
 		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED = " There was an unexpected problem";
 		
 	}
-	
 }

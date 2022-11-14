@@ -112,9 +112,7 @@ public class CityPostgresqlDAO extends DAORelational implements CityDAO{
 		} catch (final Exception exception) {
 			throw DataCustomException.createTechnicalException(Messages.CityPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_CITY, exception);
 		}
-
 	}
-
 
 	private final void createSelectFrom(final StringBuilder sqlBuilder) {
 

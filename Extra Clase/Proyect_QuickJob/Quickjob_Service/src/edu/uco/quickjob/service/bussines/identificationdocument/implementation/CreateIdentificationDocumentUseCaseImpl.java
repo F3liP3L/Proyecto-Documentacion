@@ -18,8 +18,14 @@ public class CreateIdentificationDocumentUseCaseImpl implements CreateIdentifica
 		this.findIdentificationDocumentUseCase = new FindIdentificationDocumentUseCaseImpl(factory);
 	}
 	
+	private final void validateIfDocumentIdentificationExist(IdentificationDocumentDTO identificationDocument) {
+		if (!findIdentificationDocumentUseCase.execute(identificationDocument).isEmpty()) {
+			throw ServiceCustomException.createUserException(Messages.FindDocumentIdentificationUseCaseImpl.BUSSINES_DOCUMENT_IDENTIFICATION_EXISTS);
+		}
+	}
+
 	@Override
-	public void execute(IdentificationDocumentDTO identificatinDocumentDTO) {
+	public IdentificationDocumentDTO createIdentificationDocument(IdentificationDocumentDTO identificatinDocumentDTO) {
 		
 		// 1.) Verificar si existe un documento de identificacion con el mismo numero.
 		
@@ -29,14 +35,7 @@ public class CreateIdentificationDocumentUseCaseImpl implements CreateIdentifica
 		
 		identificatinDocumentDTO.setId(UUIDHelper.getNewUUID());
 		
-		factory.getIdentificationDocumentDAO().create(identificatinDocumentDTO);
-		
-	}
-	
-	private final void validateIfDocumentIdentificationExist(IdentificationDocumentDTO identificationDocument) {
-		if (!findIdentificationDocumentUseCase.execute(identificationDocument).isEmpty()) {
-			throw ServiceCustomException.createUserException(Messages.FindDocumentIdentificationUseCaseImpl.BUSSINES_DOCUMENT_IDENTIFICATION_EXISTS);
-		}
+		return factory.getIdentificationDocumentDAO().create(identificatinDocumentDTO);
 	}
 
 

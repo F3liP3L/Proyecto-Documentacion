@@ -26,7 +26,7 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 	}
 
 	@Override
-	public void create(IdentificationDocumentDTO identificationDocument) {
+	public IdentificationDocumentDTO create(IdentificationDocumentDTO identificationDocument) {
 		final var sqlInsert = "INSERT INTO public.documento_identificacion(codigo, nombre, apellido, fecha_nacimiento, fecha_expedimiento, lugar_expedicion, sexo, numero_identificacion, lugar_nacimiento, tipo_identificacion_codigo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 			
@@ -47,7 +47,8 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_QUALIFICATION, exception); 
 		} catch (final Exception exception) {
 			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION ,exception);
-		}	
+		}
+		return identificationDocument;	
 	}	
 
 	@Override

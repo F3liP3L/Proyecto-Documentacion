@@ -6,7 +6,7 @@ import edu.uco.quickjob.domain.IdentificationDocumentDTO;
 
 public interface IdentificationDocumentDAO {
 	
-	void create (IdentificationDocumentDTO identificationType);
+	IdentificationDocumentDTO create (IdentificationDocumentDTO identificationType);
 	
 	List<IdentificationDocumentDTO> find(IdentificationDocumentDTO identificationDocument);
 	

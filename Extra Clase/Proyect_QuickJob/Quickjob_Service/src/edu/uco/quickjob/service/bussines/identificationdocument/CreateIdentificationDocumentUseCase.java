@@ -4,6 +4,6 @@ import edu.uco.quickjob.domain.IdentificationDocumentDTO;
 
 public interface CreateIdentificationDocumentUseCase {
 	
-	void execute(IdentificationDocumentDTO identificatinDocumentDTO);
+	IdentificationDocumentDTO createIdentificationDocument(IdentificationDocumentDTO identificatinDocumentDTO);
 
 }
