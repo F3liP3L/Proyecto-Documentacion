@@ -29,7 +29,7 @@ public final class IdentificationDocumentDTOBuilder {
 	public static final IdentificationDocumentDTOBuilder getIdentificationDocumentDTOBuilder() {
 		return new IdentificationDocumentDTOBuilder();
 	}
-
+/*
 	public IdentificationDocumentDTOBuilder(String name, String surname, Date birthDate, CityDTO placeOfBirth,
 			String identificationNumber, IdentificationTypeDTO identificationType) {
 		this.name = name;
@@ -38,7 +38,7 @@ public final class IdentificationDocumentDTOBuilder {
 		this.placeOfBirth = placeOfBirth;
 		this.identificationNumber = identificationNumber;
 		this.identificationType = identificationType;
-	}
+	}*/
 
 	public UUID getId() {
 		return id;
@@ -106,7 +106,7 @@ public final class IdentificationDocumentDTOBuilder {
 	}
 
 	public final IdentificationDocumentDTO build() {
-		return IdentificationDocumentDTO.create(name, surname, birthDate, placeOfBirth, identificationNumber,
+		return IdentificationDocumentDTO.create(id, name, surname, birthDate, placeOfBirth, expeditionDate, expeditionSite, sex, identificationNumber,
 				identificationType);
 	}
 

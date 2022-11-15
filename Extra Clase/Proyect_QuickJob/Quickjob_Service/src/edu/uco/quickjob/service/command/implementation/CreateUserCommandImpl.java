@@ -16,7 +16,7 @@ public class CreateUserCommandImpl implements CreateUserCommand {
 	private final CreateUserUseCase useCase = new CreateUserUseCaseImpl(factory);
 
 	@Override
-	public void createUser(UserDTO user) {
+	public final void createUser(final UserDTO user) {
 		try {
 			factory.initTransaction();
 			useCase.execute(user);

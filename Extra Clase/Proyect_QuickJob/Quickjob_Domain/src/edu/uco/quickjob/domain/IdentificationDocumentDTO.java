@@ -65,6 +65,16 @@ public final class IdentificationDocumentDTO {
 		setIdentificationNumber(identificationNumber);
 		setIdentificationType(identificationType);
 	}
+	
+	public IdentificationDocumentDTO(final UUID id, String name, String surname, Date birthDate,
+			String identificationNumber, IdentificationTypeDTO identificationType) {
+		setId(id);
+		setName(name);
+		setSurname(surname);
+		setBirthDate(birthDate);
+		setIdentificationNumber(identificationNumber);
+		setIdentificationType(identificationType);
+	}
 
 	public UUID getId() {
 		return id;
@@ -160,10 +170,9 @@ public final class IdentificationDocumentDTO {
 				expeditionDate, expeditionSite, sex, identificationNumber, identificationType);
 	}
 
-	public static final IdentificationDocumentDTO create(final String name, final String surname, final Date birthDate,
-			final CityDTO placeOfBirth, final String identificationNumber,
+	public static final IdentificationDocumentDTO create(final String id, final String name, final String surname, final Date birthDate, final String identificationNumber,
 			final IdentificationTypeDTO identificationType) {
-		return new IdentificationDocumentDTO(name, surname, birthDate, placeOfBirth, identificationNumber,
+		return new IdentificationDocumentDTO(getUUIDFromString(id), name, surname, birthDate, identificationNumber,
 				identificationType);
 	}
 

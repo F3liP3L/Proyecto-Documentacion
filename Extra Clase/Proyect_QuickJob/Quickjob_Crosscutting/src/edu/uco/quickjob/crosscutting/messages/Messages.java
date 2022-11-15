@@ -69,12 +69,34 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_USER_DTO = "There was an unexpected problem trying to filling userDTO from the resultSet";
 		public static final String TECHNICAL_PROBLEM_DELETE_USER_DTO = "There was a problem filling userDTO from the resultSet";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_USER_DTO = "There was an unexpected problem trying to filling userDTO from the resultSet";
-		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific department";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
-		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific user";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific user";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific user";
 		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific user";
+	}
+	
+	public static class IdentificationDocumentPostgresqlDAO {
+		
+		private IdentificationDocumentPostgresqlDAO() {
+				super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_IDENTIFICATION_DOCUMENT = "There was a problem trying to create the desired identification document in PostgresqlDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_IDENTIFICATION_DOCUMENT = "There was an unexpected problem trying to create the identification document in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_UPDATE_USER = "There was a problem trying to update the desired identification document in PostgresqlDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_USER = "There was an unexpected problem trying to create the identification document in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_FILL_IDENTIFICATION_DOCUMENT_DTO = "There was a problem filling identification document DTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_DOCUMENT_DTO = "There was an unexpected problem trying to filling identification document DTO from the resultSet";
+		public static final String TECHNICAL_PROBLEM_DELETE_IDENTIFICATION_DOCUMENT_DTO = "There was a problem filling identification document DTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_IDENTIFICATION_DOCUMENT_DTO = "There was an unexpected problem trying to filling identification document DTO from the resultSet";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific identification document";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific identification document";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific identification document";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific identification document";
 	}
 	
 	

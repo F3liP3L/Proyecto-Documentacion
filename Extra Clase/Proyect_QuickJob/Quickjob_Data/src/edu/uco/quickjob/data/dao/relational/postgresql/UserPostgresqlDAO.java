@@ -26,10 +26,10 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 
 	@Override
 	public void create(UserDTO user) {
-		final var sqlInsert = "INSERT INTO usuario(codigo, nombres, apellidos, correo, password, ciudad_codigo, documento_identidad_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		final var sqlInsert = "INSERT INTO usuario(codigo, nombres, apellidos, correo, clave, ciudad_codigo, documento_identidad_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 			
-			preparedStatement.setString(1, java.util.UUID.randomUUID().toString());
+			preparedStatement.setString(1, user.getIdAsString());
 			preparedStatement.setString(2, user.getName());
 			preparedStatement.setString(3, user.getLastName());
 			preparedStatement.setString(4, user.getEmail());
@@ -142,7 +142,7 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 		sqlBuilder.append("		    U.nombres AS name, ");
 		sqlBuilder.append("		    U.apellidos AS lastname, ");
 		sqlBuilder.append("		    U.correo AS email, ");
-		sqlBuilder.append("		   	U.password AS password, ");
+		sqlBuilder.append("		   	U.clave AS password, ");
 		sqlBuilder.append("		   	U.ciudad_codigo AS idCity, ");
 		sqlBuilder.append("		    U.documento_identidad_id AS idDocumentIdentification, ");
 		sqlBuilder.append("         DI.fecha_nacimiento AS birthDate, ");
@@ -168,7 +168,7 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 				parameters.add(user.getIdAsString());
 			}
 		
-			if(user.getResidenceCity().getId() != null) {
+			if(!UUIDHelper.isDefaultUUID(user.getResidenceCity().getId())) {
 				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("U.ciudad_codigo = ? ");
 				setWhere = false;
 				parameters.add(user.getResidenceCity().getIdAsString());

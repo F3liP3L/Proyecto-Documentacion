@@ -65,9 +65,14 @@ public class UserController {
 			} else {
 				response.addErrorMessage(exception.getMessage());
 			}
+			
+			exception.printStackTrace();
+			
 		} catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
 			response.addFatalMessage("There was a unexpected problem trying to created the user.");
+			
+			exception.printStackTrace();
 		}
 		return new ResponseEntity<>(response, httpStatus);
 	}

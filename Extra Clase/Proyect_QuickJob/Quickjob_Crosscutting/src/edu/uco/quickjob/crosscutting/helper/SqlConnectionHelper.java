@@ -63,7 +63,7 @@ public final class SqlConnectionHelper {
 				throw CrosscuttingCustomException
 				.createTechnicalException(Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_IS_CLOSED_FOR_COMMIT_TRANSACTION);
 			}
-			connection.setAutoCommit(false);
+			connection.commit();
 		} catch (final CrosscuttingCustomException exception) {
 			throw exception;
 		}
@@ -79,7 +79,7 @@ public final class SqlConnectionHelper {
 				throw CrosscuttingCustomException
 				.createTechnicalException(Messages.SqlConnectionHelper.TECHNICAL_CONNECTION_IS_CLOSED_FOR_ROLLBACK_TRANSACTION);
 			}
-			connection.setAutoCommit(false);
+			connection.rollback();
 		} catch (final CrosscuttingCustomException exception) {
 			throw exception;
 		}
