@@ -276,8 +276,8 @@ public class Messages {
 			super();
 		}
 		
-		public static final String BUSSINES_USER_EXISTS = " The UUID to convert doesnot have a valid format";
-		public static final String BUSSINES_USER_UNEXPECTED = " There was an unexpected problem";
+		public static final String BUSSINES_USER_EXISTS = " The user is already registered ";
+		public static final String BUSSINES_USER_UNEXPECTED = " There was an unexpected trying to register a user problem";
 		
 	}
 	
