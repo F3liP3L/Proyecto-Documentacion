@@ -29,7 +29,7 @@ public class UserDTO {
 		setEmail(EMPTY);
 		setPassword(EMPTY);
 		setIdentification(getIdentificationDocumentDTOBuilder().build());
-		setResidenceCity(getCityDTOBuilder().build());
+		setResidenceCity(getCityDTOBuilder().buildWhitId());
 	}
 
 	public UserDTO(final UUID id, final String name, final String lastname, final IdentificationDocumentDTO identification, final String email,

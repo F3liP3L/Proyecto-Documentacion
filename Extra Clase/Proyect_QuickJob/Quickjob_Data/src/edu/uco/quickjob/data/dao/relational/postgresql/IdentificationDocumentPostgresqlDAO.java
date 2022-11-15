@@ -267,24 +267,6 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 				setWhere = false;
 				parameters.add(identificationDocument.getIdentificationType().getIdAsString());
 			}
-
-			if (UUIDHelper.isDefaultUUID(identificationDocument.getPlaceOfBirth().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("DI.lugar_nacimiento = ? ");
-				setWhere = false;
-				parameters.add(identificationDocument.getIdentificationType().getIdAsString());
-			}
-
-			if (UUIDHelper.isDefaultUUID(identificationDocument.getPlaceOfBirth().getDepartment().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("C.departamento_codigo = ? ");
-				setWhere = false;
-				parameters.add(identificationDocument.getPlaceOfBirth().getDepartment().getIdAsString());
-			}
-
-			if (UUIDHelper
-					.isDefaultUUID(identificationDocument.getPlaceOfBirth().getDepartment().getCountry().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("D.pais_codigo = ? ");
-				parameters.add(identificationDocument.getPlaceOfBirth().getDepartment().getCountry().getIdAsString());
-			}
 		}
 	}
 

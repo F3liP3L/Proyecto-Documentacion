@@ -1,3 +1,4 @@
+import { Ciudad } from "./ciudad";
 import { IdentificationType } from "./identificationType";
 
 export class IdentificationpDocument {
@@ -7,4 +8,5 @@ export class IdentificationpDocument {
     birthdate!: Date;
     identificationNumber!: string;
     identificationptye!: IdentificationType;
+    placeOfBirth!: Ciudad;
 }

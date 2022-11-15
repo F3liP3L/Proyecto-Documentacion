@@ -1,19 +1,22 @@
 package edu.uco.quickjob.builder;
 
 import java.util.UUID;
-import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
 
 import edu.uco.quickjob.domain.CityDTO;
 import edu.uco.quickjob.domain.DepartmentDTO;
 
 public final class CityDTOBuilder {
-	
+
 	private UUID id;
 	private String name;
 	private DepartmentDTO department;
-	
+
 	private CityDTOBuilder() {
 		super();
+	}
+
+	public CityDTOBuilder(UUID id) {
+		this.id = id;
 	}
 
 	public static final CityDTOBuilder getCityDTOBuilder() {
@@ -25,9 +28,9 @@ public final class CityDTOBuilder {
 	}
 
 	public final void setId(final UUID id) {
-		this.id = getDefaultUUID(id);
+		this.id = id;
 	}
-	
+
 	public final CityDTOBuilder setName(String name) {
 		this.name = name;
 		return this;
@@ -37,10 +40,13 @@ public final class CityDTOBuilder {
 		this.department = department;
 		return this;
 	}
-	
+
 	public final CityDTO build() {
 		return CityDTO.create(id, name, department);
 	}
-	
-	
+
+	public final CityDTO buildWhitId() {
+		return CityDTO.create(id);
+	}
+
 }

@@ -71,10 +71,10 @@ export class CheckInComponent implements OnInit {
     tipoIdentificacion.id = this.formularioRegistro.value.tipoIdent;
     documentoIdentificacion.identificationptye = tipoIdentificacion;
 
-
     usuario.identification = documentoIdentificacion;
     ciudad.id = this.formularioRegistro.value.ciudad;
     usuario.residenceCity = ciudad;
+    documentoIdentificacion.placeOfBirth = ciudad;
 
     console.log(JSON.stringify(usuario));
 

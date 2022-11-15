@@ -34,11 +34,11 @@ public final class IdentificationDocumentDTO {
 		setSurname(EMPTY);
 		setSex(EMPTY);
 		setBirthDate(getLocalDateADate(getDefaultDate()));
-		setPlaceOfBirth(getCityDTOBuilder().build());
+		setPlaceOfBirth(getCityDTOBuilder().buildWhitId());
 		setExpeditionDate(getLocalDateADate(getDefaultDate()));
 		setExpeditionSite(EMPTY);
 		setIdentificationNumber(EMPTY);
-		setIdentificationType(getIdentificationTypeDTOBuilder().build());
+		setIdentificationType(getIdentificationTypeDTOBuilder().buildWhitId());
 	}
 
 	public IdentificationDocumentDTO(final UUID id, final String name, final String surname, final Date birthDate,
@@ -103,7 +103,7 @@ public final class IdentificationDocumentDTO {
 	}
 
 	public void setPlaceOfBirth(CityDTO placeOfBirth) {
-		this.placeOfBirth = getDefaultIfNull(placeOfBirth, getCityDTOBuilder().build());
+		this.placeOfBirth = getDefaultIfNull(placeOfBirth, getCityDTOBuilder().buildWhitId());
 	}
 
 	public Date getExpeditionDate() {
@@ -143,7 +143,7 @@ public final class IdentificationDocumentDTO {
 	}
 
 	public void setIdentificationType(IdentificationTypeDTO identificationType) {
-		this.identificationType = getDefaultIfNull(identificationType, getIdentificationTypeDTOBuilder().build());
+		this.identificationType = getDefaultIfNull(identificationType, getIdentificationTypeDTOBuilder().buildWhitId());
 	}
 
 	public static final IdentificationDocumentDTO create(final UUID id, final String name, final String surname,
