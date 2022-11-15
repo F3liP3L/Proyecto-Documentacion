@@ -29,6 +29,12 @@ public final class CityDTO {
 		setDepartment(department);
 	}
 	
+	
+	
+	public CityDTO(UUID id) {
+		this.id = id;
+	}
+
 	public UUID getId() {
 		return id;
 	}
