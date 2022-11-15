@@ -77,6 +77,20 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
 	}
 	
+	
+		public static class ServicePostgresqlDAO {
+	
+		private ServicePostgresqlDAO() {
+				super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_SERVICE = "There was a problem trying to create the desired service in PostgresqlDAOFactory ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_SERVICE = "There was an unexpected problem trying to create the service in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_UPDATE_SERVICE = "There was a problem trying to update the desired service in PostgresqlDAOFactory ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_SERVICE = "There was an unexpected problem trying to create the service in PostgresqlDAOFactory";
+		
+	}
+	
 	public static class QualificationPostgresqlDAO {
 		
 		private QualificationPostgresqlDAO() {

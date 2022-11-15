@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
+import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.ServiceDAO;
 import edu.uco.quickjob.data.dao.relational.DAORelational;
 import edu.uco.quickjob.domain.ServiceDTO;
@@ -20,7 +21,22 @@ public class ServicePostgresqlDAO extends DAORelational implements ServiceDAO {
 
 	@Override
 	public void create(ServiceDTO service) {
-		// TODO Auto-generated method stub
+		final var sqlInsert = "INSERT INTO public.servicio(codigo, nombre, descripcion, estado, tipo_subservicio_codigo)VALUES (?, ?, ?, ?, ?)";
+		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
+			
+			preparedStatement.setString(1, service.getIdAsString());
+			preparedStatement.setString(2, service.getName());
+			preparedStatement.setString(3, service.getDescription());
+			preparedStatement.setBoolean(4, service.isState());
+			preparedStatement.setString(5, service.getSubSevice().getIdAsString());
+			
+			preparedStatement.executeUpdate();
+			
+		} catch(final SQLException exception) {
+			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_QUALIFICATION, exception); 
+		} catch (final Exception exception) {
+			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION ,exception);
+		}
 		
 	}
 

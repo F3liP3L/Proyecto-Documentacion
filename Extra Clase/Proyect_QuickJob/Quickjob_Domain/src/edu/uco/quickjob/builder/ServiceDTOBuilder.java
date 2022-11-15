@@ -11,6 +11,7 @@ public class ServiceDTOBuilder {
 	private UUID id;
 	private String name;
 	private String description;
+	private boolean state;
 	private SubserviceTypeDTO subSevice;
 	
 	private ServiceDTOBuilder() {
@@ -33,17 +34,24 @@ public class ServiceDTOBuilder {
 		this.name = name;
 		return this;
 	}
+	
 	public final ServiceDTOBuilder setDescription(String description) {
 		this.description = description;
 		return this;
 	}
+	
+	public final ServiceDTOBuilder setState(boolean state) {
+		this.state = state;
+		return this;
+	}
+
 	public final ServiceDTOBuilder setSubSevice(SubserviceTypeDTO subSevice) {
 		this.subSevice = subSevice;
 		return this;
 	}
 	
 	public final ServiceDTO build() {
-		return ServiceDTO.create(id, name, description, subSevice);
+		return ServiceDTO.create(id, name, description, state, subSevice);
 	}
 
 }

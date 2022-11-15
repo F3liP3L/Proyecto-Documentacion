@@ -27,7 +27,7 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 
 	@Override
 	public IdentificationDocumentDTO create(IdentificationDocumentDTO identificationDocument) {
-		final var sqlInsert = "INSERT INTO public.documento_identificacion(codigo, nombre, apellido, fecha_nacimiento, fecha_expedimiento, lugar_expedicion, sexo, numero_identificacion, lugar_nacimiento, tipo_identificacion_codigo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		final var sqlInsert = "INSERT INTO documento_identificacion(codigo, nombre, apellido, fecha_nacimiento, fecha_expedimiento, lugar_expedicion, sexo, numero_identificacion, lugar_nacimiento, tipo_identificacion_codigo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 			
 			preparedStatement.setString(1, identificationDocument.getIdAsString());

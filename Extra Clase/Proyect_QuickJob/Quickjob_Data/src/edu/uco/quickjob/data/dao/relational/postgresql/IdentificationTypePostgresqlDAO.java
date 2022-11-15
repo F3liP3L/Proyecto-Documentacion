@@ -45,9 +45,9 @@ public class IdentificationTypePostgresqlDAO extends DAORelational implements Id
 		}  catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_PROBLEM_PREPARED_STATEMENT, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_PROBLEM_PREPARED_STATEMENT, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
 		}
 	}
 
@@ -65,9 +65,9 @@ public class IdentificationTypePostgresqlDAO extends DAORelational implements Id
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(null, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(null, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		}
 	}
 
@@ -79,9 +79,9 @@ public class IdentificationTypePostgresqlDAO extends DAORelational implements Id
 		} catch (DataCustomException exception) {
 			throw exception;
 		} catch (SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY ,exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY ,exception);
 		} catch (Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY,exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY,exception);
 		}
 	}
 
@@ -91,9 +91,9 @@ public class IdentificationTypePostgresqlDAO extends DAORelational implements Id
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_PROBLEM_FILL_COUNTRY_DTO, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.CountryPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_RESULTS_COUNTRY, exception);
+			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		}
 	}
 	
