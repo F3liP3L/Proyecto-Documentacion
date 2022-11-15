@@ -13,7 +13,7 @@ export class UsuarioService {
 
   private urlTipoIdentificacion = 'http://localhost:8080/api/user/identificationType';
   private urlCiudad = 'http://localhost:8080/api/user/city'
-  private urlguardarUsuario = 'http://localhost/8040/'
+  private urlguardarUsuario = 'http://localhost:8080/api/user/'
   constructor(private http: HttpClient) { }
 
   obtenerTipoIdentificacion(): Observable<IdentificationType[]> {

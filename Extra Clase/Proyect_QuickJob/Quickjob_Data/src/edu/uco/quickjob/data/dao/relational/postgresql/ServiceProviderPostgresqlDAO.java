@@ -15,13 +15,13 @@ import edu.uco.quickjob.domain.ServiceProviderDTO;
 
 public class ServiceProviderPostgresqlDAO extends DAORelational implements ServiceProviderDAO {
 
-	protected ServiceProviderPostgresqlDAO(Connection connection) {
+	public ServiceProviderPostgresqlDAO(Connection connection) {
 		super(connection);
 	}
 
 	@Override
 	public void create(ServiceProviderDTO serviceProvider) {
-		final var sqlInsert = "INSERT INTO public.prestador_servicio(codigo, usuario_codigo) VALUES (?, ?)";
+		final var sqlInsert = "INSERT INTO prestador_servicio(codigo, usuario_codigo) VALUES (?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 			
 			preparedStatement.setString(1, serviceProvider.getIdAsString());
@@ -30,21 +30,20 @@ public class ServiceProviderPostgresqlDAO extends DAORelational implements Servi
 			preparedStatement.executeUpdate();
 			
 		} catch(final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_QUALIFICATION, exception); 
+			throw DataCustomException.createTechnicalException(Messages.ServiceProviderPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_SERVICE_PROVIDER, exception); 
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION ,exception);
+			throw DataCustomException.createTechnicalException(Messages.ServiceProviderPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_SERVICE_PROVIDER ,exception);
 		}		
 	}
 
 	@Override
 	public List<ServiceProviderDTO> find(ServiceProviderDTO serviceProvider) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void update(ServiceProviderDTO serviceProvider) {
-		
+		// TODO.
 	}
 
 	@Override
@@ -55,9 +54,9 @@ public class ServiceProviderPostgresqlDAO extends DAORelational implements Servi
 		try (final var preparedStatement = getConnection().prepareStatement(sqlDelete)) {
 			preparedStatement.setString(1, idAsString);
 		} catch(SQLException exception) {
-			throw DataCustomException.createTechnicalException(null, exception);
+			throw DataCustomException.createTechnicalException(Messages.ServiceProviderPostgresqlDAO.TECHNICAL_PROBLEM_DELETE_SERVICE_PROVIDER_DTO, exception);
 		} catch (Exception exception) {
-			throw DataCustomException.createTechnicalException(null, exception);
+			throw DataCustomException.createTechnicalException(Messages.ServiceProviderPostgresqlDAO.TECHNICAL_PROBLEM_DELETE_SERVICE_PROVIDER_DTO, exception);
 		}	
 		
 	}

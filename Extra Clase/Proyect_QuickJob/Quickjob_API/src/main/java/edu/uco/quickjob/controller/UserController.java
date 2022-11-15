@@ -44,6 +44,7 @@ public class UserController {
 		return new ResponseEntity<>(findCityCommand.findCity(),HttpStatus.OK);
 	}
 	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping()
 	public ResponseEntity<Response<UserDTO>> createUser(@RequestBody UserDTO user){
 		

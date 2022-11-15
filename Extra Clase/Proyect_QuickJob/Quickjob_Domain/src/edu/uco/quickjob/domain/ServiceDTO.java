@@ -11,8 +11,6 @@ import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
 import java.util.UUID;
 
-import edu.uco.quickjob.crosscutting.helper.UUIDHelper;
-
 public final class ServiceDTO {
 	
 	private UUID id;

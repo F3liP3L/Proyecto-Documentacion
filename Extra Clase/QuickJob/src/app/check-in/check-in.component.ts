@@ -28,6 +28,8 @@ export class CheckInComponent implements OnInit {
     });
     this.usuarioServicio.obtenerCiudad().subscribe(ciudad => {
       this.ciudades = ciudad;
+      console.log('Las ciudaddes', this.ciudades);
+
     });
 
   }
@@ -37,11 +39,11 @@ export class CheckInComponent implements OnInit {
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
       identificacion: ['', [Validators.required]],
-      tipoIdent: ['', [Validators.required]],
+      tipoIdent: [null, [Validators.required]],
       correo: ['', [Validators.required]],
       clave: ['', [Validators.required]],
       fechaNacimiento: ['', [Validators.required]],
-      ciudad: ['', [Validators.required]],
+      ciudad: [null, [Validators.required]],
 
     });
   }
@@ -51,18 +53,31 @@ export class CheckInComponent implements OnInit {
     if (this.formularioRegistro.invalid) {
       return;
     }
-    let usuario: Usuario = new Usuario;
-    let tipoIdentificacion = new IdentificationType;
-    let documentoIdentificacion = new IdentificationpDocument;
+
+    let usuario: Usuario = new Usuario();
+    let documentoIdentificacion = new IdentificationpDocument();
+    let tipoIdentificacion = new IdentificationType();
+    let ciudad = new Ciudad();
 
     usuario.name = this.formularioRegistro.value.nombre;
     usuario.lastName = this.formularioRegistro.value.apellido;
     usuario.email = this.formularioRegistro.value.correo;
-    tipoIdentificacion = this.formularioRegistro.value.tipoIdent;
-    documentoIdentificacion.identificationptye = tipoIdentificacion;
-    documentoIdentificacion.identificationNumber = this.formularioRegistro.value.identificacion;
+    usuario.password = this.formularioRegistro.value.clave;
+
+    documentoIdentificacion.name = this.formularioRegistro.value.nombre;
+    documentoIdentificacion.surname = this.formularioRegistro.value.apellido;
     documentoIdentificacion.birthdate = this.formularioRegistro.value.fechaNacimiento;
+    documentoIdentificacion.identificationNumber = this.formularioRegistro.value.identificacion;
+    tipoIdentificacion.id = this.formularioRegistro.value.tipoIdent;
+    documentoIdentificacion.identificationptye = tipoIdentificacion;
+
+
     usuario.identification = documentoIdentificacion;
+    ciudad.id = this.formularioRegistro.value.ciudad;
+    usuario.residenceCity = ciudad;
+
+    console.log(JSON.stringify(usuario));
+
 
     this.usuarioServicio.guardarUsuario(usuario)
       .subscribe();

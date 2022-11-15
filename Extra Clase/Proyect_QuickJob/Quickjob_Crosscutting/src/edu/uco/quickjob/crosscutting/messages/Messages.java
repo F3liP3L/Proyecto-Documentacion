@@ -78,6 +78,63 @@ public class Messages {
 	}
 	
 	
+	public static class ServiceProviderPostgresqlDAO {
+		
+		private ServiceProviderPostgresqlDAO() {
+				super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_SERVICE_PROVIDER = "There was a problem trying to create the desired service provider in PostgresqlDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_SERVICE_PROVIDER = "There was an unexpected problem trying to create the service provider in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_UPDATE_SERVICE_PROVIDER = "There was a problem trying to update the desired service provider in PostgresqlDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_SERVICE_PROVIDER = "There was an unexpected problem trying to create the serviceProvider in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_FILL_SERVICE_PROVIDER_DTO = "There was a problem filling serviceProviderDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_SERVICE_PROVIDER_DTO = "There was an unexpected problem trying to filling serviceProviderDTO from the resultSet";
+		public static final String TECHNICAL_PROBLEM_DELETE_SERVICE_PROVIDER_DTO = "There was a problem filling serviceProviderDTO from the resultSet";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_SERVICE_PROVIDER_DTO = "There was an unexpected problem trying to filling serviceProviderDTO from the resultSet";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+	}
+	
+	
+	public static class ServiceTypePostgresqlDAO {
+		
+		private ServiceTypePostgresqlDAO() {
+				super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_FILL_SERVICE_TYPE = "There was a problem trying to fill a desired service Type in PostgresqlDAOFactory ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_SERVICE_TYPE = "There was an unexpected problem trying to fill a service Type in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific service Type";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific serviceType";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific service Type";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific serviceType";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+	}
+	
+	
+	public static class SubserviceTypePostgresqlDAO {
+		
+		private SubserviceTypePostgresqlDAO() {
+				super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_FILL_SUB_SERVICE_TYPE = "There was a problem trying to fill a desired SubserviceType in PostgresqlDAOFactory ";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_SUB_SERVICE_TYPE = "There was an unexpected problem trying to fill a sub SubserviceType in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific SuberviceType";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific SubserviceType";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific Subservice Type";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific serviceType";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
+	}
+	
+	
 		public static class ServicePostgresqlDAO {
 	
 		private ServicePostgresqlDAO() {
@@ -88,7 +145,11 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_SERVICE = "There was an unexpected problem trying to create the service in PostgresqlDAOFactory";
 		public static final String TECHNICAL_PROBLEM_UPDATE_SERVICE = "There was a problem trying to update the desired service in PostgresqlDAOFactory ";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_SERVICE = "There was an unexpected problem trying to create the service in PostgresqlDAOFactory";
-		
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific service";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific service";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific service";
+		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
 	}
 	
 	public static class QualificationPostgresqlDAO {
@@ -208,4 +269,16 @@ public class Messages {
 		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED = " There was an unexpected problem";
 		
 	}
+	
+	public static class FindServiceTypeUseCaseImpl {
+		
+		private FindServiceTypeUseCaseImpl() {
+			super();
+		}
+		
+
+		public static final String BUSSINES_SERVICE_TYPE_UNEXPECTED = " There was an unexpected problem";
+		
+	}
+	
 }

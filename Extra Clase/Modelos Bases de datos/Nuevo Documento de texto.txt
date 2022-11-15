@@ -1,0 +1,5 @@
+INSERT INTO public.tipo_servicio(
+	codigo, nombre)
+	VALUES (FORMAT('%s', gen_random_uuid()), 'CONSTRUCCION')
+    VALUES (FORMAT('%s', gen_random_uuid()), 'BELLEZA')
+    VALUES (FORMAT('%s', gen_random_uuid()), 'SERVICIOS DOMESTICOS');

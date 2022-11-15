@@ -1,7 +1,10 @@
 import { IdentificationType } from "./identificationType";
 
 export class IdentificationpDocument {
-    identificationNumber!: string;
+
+    name!: string;
+    surname!: string;
     birthdate!: Date;
+    identificationNumber!: string;
     identificationptye!: IdentificationType;
 }

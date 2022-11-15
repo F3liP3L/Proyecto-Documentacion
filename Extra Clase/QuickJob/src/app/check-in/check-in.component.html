@@ -24,7 +24,7 @@
             </div>
             <select class="controls" name="tipoIdent" placeholder="Tipo Identificacion" formControlName="tipoIdent">
                 <option value="" selected="true">Seleccione...</option>
-                <option *ngFor="let tipo of tipoIdentificacion" [value]="tipo">{{tipo.name}}</option>
+                <option *ngFor="let tipo of tipoIdentificacion" [value]="tipo.id">{{tipo.name}}</option>
             </select>
             <div
                 *ngIf="formularioRegistro.controls['tipoIdent'].invalid && formularioRegistro.controls['tipoIdent'].touched">
@@ -48,7 +48,7 @@
             </div>
             <select class="controls" name="ciudad" placeholder="Ciudad" formControlName="ciudad">
                 <option value="" selected="true">Seleccione...</option>
-                <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ciudad.name}}</option>
+                <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ciudad.name}}</option>
             </select>
             <div
                 *ngIf="formularioRegistro.controls['ciudad'].invalid && formularioRegistro.controls['ciudad'].touched">

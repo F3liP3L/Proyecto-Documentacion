@@ -94,7 +94,7 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 	}
 	
 	private final void createOrderBy(final StringBuilder stringBuilder) {
-		stringBuilder.append("Order By U.nombre ASC ");
+		stringBuilder.append("Order By U.nombres ASC ");
 	} 
 
 	private final void setParameterValues(final PreparedStatement preparedStatement, final List<Object> parameters) {
@@ -139,10 +139,10 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 	
 	private final void createSelectFrom(final StringBuilder sqlBuilder) {
 		sqlBuilder.append("SELECT   U.codigo AS idUsuario, ");
-		sqlBuilder.append("		    U.nombre AS name, ");
-		sqlBuilder.append("		    U.apellido AS lastname, ");
+		sqlBuilder.append("		    U.nombres AS name, ");
+		sqlBuilder.append("		    U.apellidos AS lastname, ");
 		sqlBuilder.append("		    U.correo AS email, ");
-		sqlBuilder.append("		   	U.clave AS password, ");
+		sqlBuilder.append("		   	U.password AS password, ");
 		sqlBuilder.append("		   	U.ciudad_codigo AS idCity, ");
 		sqlBuilder.append("		    U.documento_identidad_id AS idDocumentIdentification, ");
 		sqlBuilder.append("         DI.fecha_nacimiento AS birthDate, ");

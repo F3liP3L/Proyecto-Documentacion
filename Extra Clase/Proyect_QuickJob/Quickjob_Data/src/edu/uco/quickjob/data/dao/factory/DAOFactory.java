@@ -7,6 +7,10 @@ import edu.uco.quickjob.data.dao.CountryDAO;
 import edu.uco.quickjob.data.dao.DepartmentDAO;
 import edu.uco.quickjob.data.dao.IdentificationDocumentDAO;
 import edu.uco.quickjob.data.dao.IdentificationTypeDAO;
+import edu.uco.quickjob.data.dao.ServiceDAO;
+import edu.uco.quickjob.data.dao.ServiceProviderDAO;
+import edu.uco.quickjob.data.dao.ServiceTypeDAO;
+import edu.uco.quickjob.data.dao.SubserviceTypeDAO;
 import edu.uco.quickjob.data.dao.UserDAO;
 import edu.uco.quickjob.data.enumeration.DAOFactoryType;
 
@@ -60,6 +64,14 @@ public static final DAOFactory getDAOFactory(final DAOFactoryType factory) {
 	public abstract IdentificationDocumentDAO getIdentificationDocumentDAO();
 	
 	public abstract UserDAO getUserDAO();
+	
+	public abstract ServiceTypeDAO getServiceTypeDAO();
+	
+	public abstract SubserviceTypeDAO getSubserviceTypeDAO();
+	
+	public abstract ServiceDAO getServiceDAO();
+	
+	public abstract ServiceProviderDAO getServiceProviderDAO();
 	
 }
 

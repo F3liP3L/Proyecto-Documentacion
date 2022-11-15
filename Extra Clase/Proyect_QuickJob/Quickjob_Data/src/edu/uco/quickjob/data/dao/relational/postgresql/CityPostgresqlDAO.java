@@ -126,7 +126,7 @@ public class CityPostgresqlDAO extends DAORelational implements CityDAO{
 		sqlBuilder.append("INNER JOIN departamento D ");
 		sqlBuilder.append("ON    C.departamento_codigo = D.codigo ");
 		sqlBuilder.append("INNER JOIN pais P ");
-		sqlBuilder.append("ON C.departamento_codigo = D.codigo ");
+		sqlBuilder.append("ON P.codigo = D.pais_codigo ");
 	}
 
 }

@@ -15,7 +15,7 @@ import edu.uco.quickjob.domain.ServiceDTO;
 
 public class ServicePostgresqlDAO extends DAORelational implements ServiceDAO {
 
-	protected ServicePostgresqlDAO(Connection connection) {
+	public ServicePostgresqlDAO(Connection connection) {
 		super(connection);
 	}
 

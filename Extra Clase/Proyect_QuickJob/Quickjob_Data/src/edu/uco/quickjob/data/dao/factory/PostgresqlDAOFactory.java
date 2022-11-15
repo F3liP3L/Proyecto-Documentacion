@@ -14,12 +14,20 @@ import edu.uco.quickjob.data.dao.CountryDAO;
 import edu.uco.quickjob.data.dao.DepartmentDAO;
 import edu.uco.quickjob.data.dao.IdentificationDocumentDAO;
 import edu.uco.quickjob.data.dao.IdentificationTypeDAO;
+import edu.uco.quickjob.data.dao.ServiceDAO;
+import edu.uco.quickjob.data.dao.ServiceProviderDAO;
+import edu.uco.quickjob.data.dao.ServiceTypeDAO;
+import edu.uco.quickjob.data.dao.SubserviceTypeDAO;
 import edu.uco.quickjob.data.dao.UserDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.CityPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.CountryPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.DepartmentPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.IdentificationDocumentPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.IdentificationTypePostgresqlDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.ServicePostgresqlDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.ServiceProviderPostgresqlDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.ServiceTypePostgresqlDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.SubserviceTypePostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.UserPostgresqlDAO;
 
 public class PostgresqlDAOFactory extends DAOFactory {
@@ -108,5 +116,25 @@ private Connection connection;
 	@Override
 	public UserDAO getUserDAO() {
 		return new UserPostgresqlDAO(connection);
+	}
+
+	@Override
+	public ServiceTypeDAO getServiceTypeDAO() {
+		return new ServiceTypePostgresqlDAO(connection);
+	}
+
+	@Override
+	public SubserviceTypeDAO getSubserviceTypeDAO() {
+		return new SubserviceTypePostgresqlDAO(connection);
+	}
+
+	@Override
+	public ServiceDAO getServiceDAO() {
+		return new ServicePostgresqlDAO(connection);
+	}
+
+	@Override
+	public ServiceProviderDAO getServiceProviderDAO() {
+		return new ServiceProviderPostgresqlDAO(connection);
 	}
 }

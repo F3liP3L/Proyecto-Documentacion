@@ -1,0 +1,4 @@
+INSERT INTO public.tipo_subservicio(
+	codigo, nombre, tipo_servicio_codigo)
+	VALUES (FORMAT('%s', gen_random_uuid()), 'CARPINTERIA', '86107e46-f212-4af9-8a9c-b1dd14b54092'),
+           (FORMAT('%s', gen_random_uuid()), 'ALBAÑILERIA', '86107e46-f212-4af9-8a9c-b1dd14b54092');

@@ -1,3 +1,4 @@
+import { Ciudad } from "./ciudad";
 import { IdentificationpDocument } from "./identification-document";
 
 export class Usuario {
@@ -7,4 +8,5 @@ export class Usuario {
     identification!: IdentificationpDocument;
     email!: string;
     password!: string;
+    residenceCity!: Ciudad
 }

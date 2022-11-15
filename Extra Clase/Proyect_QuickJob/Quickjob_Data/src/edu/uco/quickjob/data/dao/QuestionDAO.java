@@ -10,6 +10,4 @@ public interface QuestionDAO {
 	
 	List<QuestionDTO> find(QuestionDTO question);
 	
-	
-
 }
