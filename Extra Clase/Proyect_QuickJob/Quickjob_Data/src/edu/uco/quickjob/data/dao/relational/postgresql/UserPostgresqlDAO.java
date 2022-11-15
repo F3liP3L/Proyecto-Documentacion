@@ -28,7 +28,7 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 	public void create(UserDTO user) {
 		final var sqlInsert = "INSERT INTO usuario(codigo, nombres, apellidos, correo, clave, ciudad_codigo, documento_identidad_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
-			
+
 			preparedStatement.setString(1, user.getIdAsString());
 			preparedStatement.setString(2, user.getName());
 			preparedStatement.setString(3, user.getLastName());
@@ -36,19 +36,21 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 			preparedStatement.setString(5, user.getPassword());
 			preparedStatement.setString(6, user.getResidenceCity().getIdAsString());
 			preparedStatement.setString(7, user.getIdentification().getIdAsString());
-			
+
 			preparedStatement.executeUpdate();
-			
-		} catch(final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_USER, exception); 
+
+		} catch (final SQLException exception) {
+			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_USER,
+					exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_USER ,exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_USER, exception);
 		}
 	}
 
 	@Override
 	public List<UserDTO> find(UserDTO user) {
-		
+
 		var parameters = new ArrayList<Object>();
 
 		final var sqlBuilder = new StringBuilder();
@@ -61,25 +63,26 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
-	
 
 	private final List<UserDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder, List<Object> parameters) {
-		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
+		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())) {
 
 			setParameterValues(preparedStatement, parameters);
 
 			return executeQuery(preparedStatement);
 
-		}  catch (final DataCustomException exception) {
+		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_PREPARED_STATEMENT, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_PREPARED_STATEMENT, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
 		}
 	}
-	
-	private final List<UserDTO> executeQuery(PreparedStatement preparedStatement){
+
+	private final List<UserDTO> executeQuery(PreparedStatement preparedStatement) {
 		try (final var resultSet = preparedStatement.executeQuery()) {
 
 			return fillResults(resultSet);
@@ -87,15 +90,17 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 		} catch (DataCustomException exception) {
 			throw exception;
 		} catch (SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY ,exception);
+			throw DataCustomException
+					.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 		} catch (Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY,exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY, exception);
 		}
 	}
-	
+
 	private final void createOrderBy(final StringBuilder stringBuilder) {
 		stringBuilder.append("Order By U.nombres ASC ");
-	} 
+	}
 
 	private final void setParameterValues(final PreparedStatement preparedStatement, final List<Object> parameters) {
 		try {
@@ -103,40 +108,48 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 				preparedStatement.setObject(index + 1, parameters.get(index));
 			}
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY, exception);
 		}
 	}
-	
-	private final List<UserDTO> fillResults (final ResultSet resultset) {
+
+	private final List<UserDTO> fillResults(final ResultSet resultset) {
 		try {
 			var results = new ArrayList<UserDTO>();
-			while(resultset.next()){
+			while (resultset.next()) {
 				results.add(fillUserDTO(resultset));
-		}
+			}
 			return results;
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.IdentificationTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.IdentificationTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.IdentificationTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_TYPE_DTO,
+					exception);
 		}
 	}
 
-	private final UserDTO fillUserDTO (final ResultSet resultset) {
+	private final UserDTO fillUserDTO(final ResultSet resultset) {
 		try {
-			return UserDTO.create(resultset.getString("idUsuario"), resultset.getString("name"), resultset.getString("lastname") , resultset.getString("email"), resultset.getString("password"));
+			return UserDTO.create(resultset.getString("idUsuario"), resultset.getString("name"),
+					resultset.getString("lastname"), resultset.getString("email"), resultset.getString("password"));
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_FILL_USER_DTO, exception);
+			throw DataCustomException
+					.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_FILL_USER_DTO, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_USER_DTO, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_USER_DTO, exception);
 		}
 	}
-	
+
 	private final void createSelectFrom(final StringBuilder sqlBuilder) {
 		sqlBuilder.append("SELECT   U.codigo AS idUsuario, ");
 		sqlBuilder.append("		    U.nombres AS name, ");
@@ -156,49 +169,45 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 		sqlBuilder.append("ON C.codigo = U.ciudad_codigo ");
 	}
 
-		private final void createWhere(final StringBuilder sqlBuilder, final UserDTO user, final List<Object> parameters) {
+	private final void createWhere(final StringBuilder sqlBuilder, final UserDTO user, final List<Object> parameters) {
 
 		var setWhere = true;
 
-		if(!ObjectHelper.isNull(user)) {
+		if (!ObjectHelper.isNull(user)) {
 
-			if(!UUIDHelper.isDefaultUUID(user.getId())) {
-				sqlBuilder.append("WHERE U.codigo = ? ");
-			    setWhere = false;
-				parameters.add(user.getIdAsString());
-			}
-		
-			if(!UUIDHelper.isDefaultUUID(user.getResidenceCity().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("U.ciudad_codigo = ? ");
+			if (!UUIDHelper.isDefaultUUID(user.getResidenceCity().getId())) {
+				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("U.ciudad_codigo = ? ");
 				setWhere = false;
 				parameters.add(user.getResidenceCity().getIdAsString());
 			}
-			
-			if(user.getEmail() != null) {
-				sqlBuilder.append(setWhere ? "WHERE ": "AND ").append("U.correo = ? ");
+
+			if (user.getEmail() != null) {
+				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("U.correo = ? ");
 				parameters.add(user.getEmail());
 			}
 		}
 	}
-	
+
 	@Override
 	public void update(UserDTO user) {
-		// TODO Auto-generated method stub	
+		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void delete(UUID id) {
 		final var sqlDelete = "DELETE FROM usuario WHERE codigo = ?";
 		final var idAsString = getUUIDAsString(id);
-		
+
 		try (final var preparedStatement = getConnection().prepareStatement(sqlDelete)) {
 			preparedStatement.setString(1, idAsString);
-		} catch(SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_DELETE_USER_DTO, exception);
+		} catch (SQLException exception) {
+			throw DataCustomException
+					.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_DELETE_USER_DTO, exception);
 		} catch (Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_USER_DTO, exception);
-		}	
-		
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_DELETE_USER_DTO, exception);
+		}
+
 	}
 
 }
