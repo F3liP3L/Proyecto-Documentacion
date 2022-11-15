@@ -7,6 +7,6 @@ export class IdentificationpDocument {
     surname!: string;
     birthdate!: Date;
     identificationNumber!: string;
-    identificationptye!: IdentificationType;
+    identificationType!: IdentificationType;
     placeOfBirth!: Ciudad;
 }

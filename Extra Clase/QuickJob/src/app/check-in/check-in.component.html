@@ -4,9 +4,14 @@
             <img src="assets/img/Logo.png" alt="" class="check">
         </div>
 
+
         <form [formGroup]="formularioRegistro">
             <h1 class="registrarse">Registrarse</h1>
-            
+
+            <div *ngIf="mostrarMensaje" class="alert alert-success">
+                <a href="#" class="alert-link">{{mensaje}}</a>
+            </div>
+
             <input class="controls" type="text" name="nombre" placeholder="Nombre" formControlName="nombre">
             <div *ngIf="formularioRegistro.controls['nombre'].invalid && formularioRegistro.controls['nombre'].touched">
                 Este campo es obligatorio.
@@ -31,13 +36,11 @@
                 Este campo es obligatorio.
             </div>
             <input class="controls" type="text" name="correo" placeholder="Correo Electronico" formControlName="correo">
-            <div
-                *ngIf="formularioRegistro.controls['correo'].invalid && formularioRegistro.controls['correo'].touched">
+            <div *ngIf="formularioRegistro.controls['correo'].invalid && formularioRegistro.controls['correo'].touched">
                 Este campo es obligatorio.
             </div>
             <input class="controls" type="password" name="clave" placeholder="Contraseña" formControlName="clave">
-            <div
-                *ngIf="formularioRegistro.controls['clave'].invalid && formularioRegistro.controls['clave'].touched">
+            <div *ngIf="formularioRegistro.controls['clave'].invalid && formularioRegistro.controls['clave'].touched">
                 Este campo es obligatorio.
             </div>
             <legend>Fecha Nacimiento</legend>
@@ -50,8 +53,7 @@
                 <option value="" selected="true">Seleccione...</option>
                 <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ciudad.name}}</option>
             </select>
-            <div
-                *ngIf="formularioRegistro.controls['ciudad'].invalid && formularioRegistro.controls['ciudad'].touched">
+            <div *ngIf="formularioRegistro.controls['ciudad'].invalid && formularioRegistro.controls['ciudad'].touched">
                 Este campo es obligatorio.
             </div>
             <button (click)="registrarse()" class="btn btn-primary">Registrarse</button>

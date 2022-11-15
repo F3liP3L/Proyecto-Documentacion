@@ -27,29 +27,27 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 
 	@Override
 	public IdentificationDocumentDTO create(IdentificationDocumentDTO identificationDocument) {
-		final var sqlInsert = "INSERT INTO public.documento_identificacion(codigo, nombre, apellido, fecha_nacimiento, numero_identificacion, tipo_identificacion_codigo) VALUES (?, ?, ?, ?, ?, ?)";
+		final var sqlInsert = "INSERT INTO public.documento_identificacion(codigo, nombre, apellido, fecha_nacimiento, numero_identificacion, tipo_identificacion_codigo, ciudad_codigo) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try (final var preparedStatement = getConnection().prepareStatement(sqlInsert)) {
 
 			preparedStatement.setString(1, identificationDocument.getIdAsString());
 			preparedStatement.setString(2, identificationDocument.getName());
 			preparedStatement.setString(3, identificationDocument.getSurname());
 			preparedStatement.setDate(4, identificationDocument.getBirthDate());
-			// preparedStatement.setString(5, identificationDocument.getPlaceOfBirth().getIdAsString());
-			// preparedStatement.setDate(6, identificationDocument.getExpeditionDate());
-			// preparedStatement.setString(7, identificationDocument.getExpeditionSite());
-			// preparedStatement.setString(8, identificationDocument.getSex());
 			preparedStatement.setString(5, identificationDocument.getIdentificationNumber());
-			// preparedStatement.setString(10, identificationDocument.getPlaceOfBirth().getIdAsString());
 			preparedStatement.setString(6, identificationDocument.getIdentificationType().getIdAsString());
+			preparedStatement.setString(7, identificationDocument.getPlaceOfBirth().getIdAsString());
 
 			preparedStatement.executeUpdate();
 
 		} catch (final SQLException exception) {
 			throw DataCustomException.createTechnicalException(
-					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_IDENTIFICATION_DOCUMENT, exception);
+					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_IDENTIFICATION_DOCUMENT,
+					exception);
 		} catch (final Exception exception) {
 			throw DataCustomException.createTechnicalException(
-					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_IDENTIFICATION_DOCUMENT, exception);
+					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_IDENTIFICATION_DOCUMENT,
+					exception);
 		}
 		return identificationDocument;
 	}
@@ -89,7 +87,8 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_PREPARED_STATEMENT, exception);
 		} catch (final Exception exception) {
 			throw DataCustomException.createTechnicalException(
-					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
+					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT,
+					exception);
 		}
 	}
 
@@ -121,7 +120,8 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 			}
 		} catch (final SQLException exception) {
 			throw DataCustomException.createTechnicalException(
-					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY, exception);
+					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY,
+					exception);
 		} catch (final Exception exception) {
 			throw DataCustomException.createTechnicalException(
 					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY,
@@ -140,7 +140,8 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 			throw exception;
 		} catch (final SQLException exception) {
 			throw DataCustomException.createTechnicalException(
-					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_FILL_IDENTIFICATION_DOCUMENT_DTO, exception);
+					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_FILL_IDENTIFICATION_DOCUMENT_DTO,
+					exception);
 		} catch (final Exception exception) {
 			throw DataCustomException.createTechnicalException(
 					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_DOCUMENT_DTO,
@@ -150,9 +151,9 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 
 	public final IdentificationDocumentDTO fillIdentificationDocumentDTO(final ResultSet resultset) {
 		try {
-			return IdentificationDocumentDTO.create(resultset.getString("idDocumentIdentification"), resultset.getString("name"), resultset.getString("surname"),
-					resultset.getDate("birthDate"), resultset.getString("identificationNumber"),
-					fillIdentificationTypeDTO(resultset));
+			return IdentificationDocumentDTO.create(resultset.getString("idDocumentIdentification"),
+					resultset.getString("name"), resultset.getString("surname"), resultset.getDate("birthDate"),
+					resultset.getString("identificationNumber"), fillIdentificationTypeDTO(resultset));
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {

@@ -15,6 +15,8 @@ export class CheckInComponent implements OnInit {
 
   public tipoIdentificacion: IdentificationType[] = [];
   public ciudades: Ciudad[] = [];
+  public mostrarMensaje = false;
+  public mensaje: string = '';
 
   formularioRegistro!: FormGroup;
 
@@ -69,7 +71,7 @@ export class CheckInComponent implements OnInit {
     documentoIdentificacion.birthdate = this.formularioRegistro.value.fechaNacimiento;
     documentoIdentificacion.identificationNumber = this.formularioRegistro.value.identificacion;
     tipoIdentificacion.id = this.formularioRegistro.value.tipoIdent;
-    documentoIdentificacion.identificationptye = tipoIdentificacion;
+    documentoIdentificacion.identificationType = tipoIdentificacion;
 
     usuario.identification = documentoIdentificacion;
     ciudad.id = this.formularioRegistro.value.ciudad;
@@ -80,7 +82,10 @@ export class CheckInComponent implements OnInit {
 
 
     this.usuarioServicio.guardarUsuario(usuario)
-      .subscribe();
+      .subscribe(usuario => {
+        this.mostrarMensaje = true;
+        this.mensaje = 'Se guardó el usuario con éxito';
+      });
 
 
   }
