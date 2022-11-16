@@ -231,7 +231,7 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 		sqlBuilder.append("         DI.lugar_expedicion AS expeditionPlace,  ");
 		sqlBuilder.append("         DI.sexo AS sex, ");
 		sqlBuilder.append("         DI.numero_identificacion AS identificationNumber, ");
-		sqlBuilder.append("         DI.lugar_nacimiento AS placeBirth, ");
+		sqlBuilder.append("         DI.ciudad_codigo AS placeBirth, ");
 		sqlBuilder.append("         DI.tipo_identificacion_codigo AS idIdentificationType,  ");
 		sqlBuilder.append("         T.nombre AS identificationTypeName, ");
 		sqlBuilder.append("         C.nombre AS cityName, ");
@@ -243,7 +243,7 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 		sqlBuilder.append("INNER JOIN tipo_identificacion T ");
 		sqlBuilder.append("ON T.codigo = DI.tipo_identificacion_codigo ");
 		sqlBuilder.append("INNER JOIN ciudad C ");
-		sqlBuilder.append("ON C.codigo = DI.lugar_nacimiento ");
+		sqlBuilder.append("ON C.codigo = DI.ciudad_codigo ");
 		sqlBuilder.append("INNER JOIN departamento D ");
 		sqlBuilder.append("ON D.codigo = C.departamento_codigo ");
 		sqlBuilder.append("INNER JOIN pais P ");
@@ -265,7 +265,6 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 
 			if (UUIDHelper.isDefaultUUID(identificationDocument.getIdentificationType().getId())) {
 				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("DI.tipo_identificacion_codigo = ? ");
-				setWhere = false;
 				parameters.add(identificationDocument.getIdentificationType().getIdAsString());
 			}
 		}

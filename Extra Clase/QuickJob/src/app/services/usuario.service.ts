@@ -10,7 +10,6 @@ import { Usuario } from '../modelos/usuario';
 })
 export class UsuarioService {
 
-
   private urlTipoIdentificacion = 'http://localhost:8080/api/user/identificationType';
   private urlCiudad = 'http://localhost:8080/api/user/city'
   private urlguardarUsuario = 'http://localhost:8080/api/user/'

@@ -281,6 +281,18 @@ public class Messages {
 		
 	}
 	
+	public static class LoginUserUseCaseImpl {
+		
+		private LoginUserUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_USER_DOESNT_EXISTS = "The user trying to log in does not exist ";
+		public static final String BUSSINES_USER_INCORRECT_PASSWORD = "the password you have entered is incorrect, please enter a valid password ";
+		public static final String BUSSINES_USER_LOGIN_UNEXPECTED = " There was an unexpected trying to login a user problem";
+		
+	}
+	
 	public static class FindDocumentIdentificationUseCaseImpl {
 		
 		private FindDocumentIdentificationUseCaseImpl() {
@@ -298,9 +310,24 @@ public class Messages {
 			super();
 		}
 		
-
 		public static final String BUSSINES_SERVICE_TYPE_UNEXPECTED = " There was an unexpected problem";
 		
+	}
+	
+	
+	public static class ResponseUserController {
+		
+		private ResponseUserController (){
+			super();
+		}
+		
+		public static final String USER_CREATED_SUCCESSFULLY = "The user has been created successfully";
+		public static final String USER_CREATED_ERROR = "There was an error trying created the user";
+		public static final String USER_CREATED_UNEXPECTED_ERROR = "There was a unexpected problem trying to created the user";
+		
+		public static final String USER_LOGIN_SUCCESSFULLY = "The user has been login successfully";
+		public static final String USER_LOGIN_ERROR = "There was an error trying login the user";
+		public static final String USER_LOGIN_UNEXPECTED_ERROR = "There was a unexpected problem trying to login the user";
 	}
 	
 }

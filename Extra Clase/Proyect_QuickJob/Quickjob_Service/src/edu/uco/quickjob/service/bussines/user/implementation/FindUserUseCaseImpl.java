@@ -19,16 +19,10 @@ public class FindUserUseCaseImpl implements FindUserUseCase {
 	public List<UserDTO> findUser(UserDTO user) {
 		return factory.getUserDAO().find(user);
 	}
-	/*
+	
 	public static void main(String[] args) {
-		
-		final UserDTO user = UserDTO.create("jessica.alarcon9124@gmail.com");
-		System.out.println(user.getName() + " city " + user.getResidenceCity());
-		
-		
-		DAOFactory factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
-		List<UserDTO> users = factory.getUserDAO().find(user);
-		users.forEach(elem -> System.out.println("id: " + elem.getIdAsString() + " nombre: " + elem.getName() + " Correo: " + elem.getEmail()));
-	}*/
+		List<UserDTO> users = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL).getUserDAO().find(null);
+		users.forEach(elem -> System.out.println("the user is id:"  + elem.getIdAsString() + "the mail is: " + elem.getEmail() + " the document identidad: " + elem.getIdentification()));
+	}
 
 }

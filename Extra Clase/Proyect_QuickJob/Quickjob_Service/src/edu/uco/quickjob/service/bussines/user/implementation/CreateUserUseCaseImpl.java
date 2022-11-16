@@ -28,7 +28,7 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
 
 		// 1.) Se debe verificar que no exista el mismo usuario.
 
-		validateUserExits(user); // TODO terminar el validar si el correo es el mismo
+		validateUserExits(user);
 
 		// 2.) Registrar la informacion de su documento de identificacion.
 

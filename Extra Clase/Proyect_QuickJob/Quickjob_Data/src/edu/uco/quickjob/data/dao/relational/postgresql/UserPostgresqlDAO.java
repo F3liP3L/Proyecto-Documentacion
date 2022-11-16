@@ -160,7 +160,7 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 		sqlBuilder.append("		    U.documento_identidad_id AS idDocumentIdentification, ");
 		sqlBuilder.append("         DI.fecha_nacimiento AS birthDate, ");
 		sqlBuilder.append("         DI.numero_identificacion AS identificationNumber, ");
-		sqlBuilder.append("         DI.lugar_nacimiento AS placeBirth, ");
+		sqlBuilder.append("         DI.ciudad_codigo AS placeBirth, ");
 		sqlBuilder.append("         DI.tipo_identificacion_codigo AS idIdentificationType ");
 		sqlBuilder.append("FROM usuario U ");
 		sqlBuilder.append("INNER JOIN documento_identificacion DI ");

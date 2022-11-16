@@ -17,6 +17,8 @@ public class CreateServiceUseCaseImpl implements CreateServiceUseCase {
 	@Override
 	public void createService(ServiceDTO service) {
 		
+		//1.) Verificar que exista 
+		
 	}
 
 }
