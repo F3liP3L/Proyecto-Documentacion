@@ -80,6 +80,7 @@ public class UserController {
 			} else {
 				response.addErrorMessage(exception.getMessage());
 			}
+			exception.printStackTrace();
 
 		} catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;

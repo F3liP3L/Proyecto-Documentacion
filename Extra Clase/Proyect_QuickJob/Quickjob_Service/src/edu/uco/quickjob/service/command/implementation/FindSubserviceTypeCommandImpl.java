@@ -8,7 +8,6 @@ import edu.uco.quickjob.crosscutting.exception.service.ServiceCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.factory.DAOFactory;
 import edu.uco.quickjob.data.enumeration.DAOFactoryType;
-import edu.uco.quickjob.domain.ServiceTypeDTO;
 import edu.uco.quickjob.domain.SubserviceTypeDTO;
 import edu.uco.quickjob.service.bussines.subservicetype.implementation.FindSubserviceTypeUseCaseImpl;
 import edu.uco.quickjob.service.command.FindSubserviceTypeCommand;

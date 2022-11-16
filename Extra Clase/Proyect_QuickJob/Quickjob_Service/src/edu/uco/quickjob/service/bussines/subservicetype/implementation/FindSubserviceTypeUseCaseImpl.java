@@ -3,7 +3,6 @@ package edu.uco.quickjob.service.bussines.subservicetype.implementation;
 import java.util.List;
 
 import edu.uco.quickjob.data.dao.factory.DAOFactory;
-import edu.uco.quickjob.domain.ServiceTypeDTO;
 import edu.uco.quickjob.domain.SubserviceTypeDTO;
 import edu.uco.quickjob.service.bussines.subservicetype.FindSubserviceTypeUseCase;
 

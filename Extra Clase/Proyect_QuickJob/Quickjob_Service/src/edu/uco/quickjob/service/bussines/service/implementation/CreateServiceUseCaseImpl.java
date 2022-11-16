@@ -13,13 +13,10 @@ public class CreateServiceUseCaseImpl implements CreateServiceUseCase {
 	}
 
 	@Override
-	public void createService(ServiceDTO service) {
+	public void execute (ServiceDTO service) {
 		
-		//TODO implement methods to create the service
-		
-		//1.) Se debe verificar que exista el prestador de servicios.
-		//2.) Se debe crear el servicio.
-		
+		factory.getServiceDAO().create(service);
+
 	}
 
 }

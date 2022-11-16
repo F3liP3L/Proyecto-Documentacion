@@ -12,7 +12,7 @@ public class ServiceDTOBuilder {
 	private String name;
 	private String description;
 	private boolean state;
-	private SubserviceTypeDTO subSevice;
+	private SubserviceTypeDTO subService;
 	
 	private ServiceDTOBuilder() {
 		super();
@@ -45,13 +45,13 @@ public class ServiceDTOBuilder {
 		return this;
 	}
 
-	public final ServiceDTOBuilder setSubSevice(SubserviceTypeDTO subSevice) {
-		this.subSevice = subSevice;
+	public final ServiceDTOBuilder setSubService(SubserviceTypeDTO subService) {
+		this.subService = subService;
 		return this;
 	}
 	
 	public final ServiceDTO build() {
-		return ServiceDTO.create(id, name, description, state, subSevice);
+		return ServiceDTO.create(id, name, description, state, subService);
 	}
 
 }

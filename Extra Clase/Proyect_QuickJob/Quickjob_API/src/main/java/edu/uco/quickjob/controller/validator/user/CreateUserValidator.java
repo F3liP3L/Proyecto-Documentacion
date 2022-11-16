@@ -30,7 +30,6 @@ public class CreateUserValidator implements Validator<UserDTO> {
 			messages.add(Message.createErrorMessage(Messages.CreateUserValidator.MAIL_IS_INVALID_FORMAT_ERROR));
 		}
 	}
-	
 	private void validateUsername(String username, List<Message> messages) {
 		if (username.length() >= 1 && username.length() <= 30) {
 			messages.add(Message.createErrorMessage(Messages.CreateUserValidator.NAME_IS_INVALID_ERROR));

@@ -28,14 +28,14 @@ public class ServicePostgresqlDAO extends DAORelational implements ServiceDAO {
 			preparedStatement.setString(2, service.getName());
 			preparedStatement.setString(3, service.getDescription());
 			preparedStatement.setBoolean(4, service.isState());
-			preparedStatement.setString(5, service.getSubSevice().getIdAsString());
+			preparedStatement.setString(5, service.getSubService().getIdAsString());
 			
 			preparedStatement.executeUpdate();
 			
 		} catch(final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_PROBLEM_CREATE_QUALIFICATION, exception); 
+			throw DataCustomException.createTechnicalException(Messages.ServicePostgresqlDAO.TECHNICAL_PROBLEM_CREATE_SERVICE, exception); 
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUALIFICATION ,exception);
+			throw DataCustomException.createTechnicalException(Messages.ServicePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_CREATE_SERVICE ,exception);
 		}
 		
 	}

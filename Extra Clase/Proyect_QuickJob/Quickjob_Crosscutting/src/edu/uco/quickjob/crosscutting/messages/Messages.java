@@ -281,6 +281,17 @@ public class Messages {
 		
 	}
 	
+	public static class CreateServiceUseCaseImpl {
+		
+		private CreateServiceUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_SERVICE_EXISTS = " The service is already registered ";
+		public static final String BUSSINES_SERVICE_UNEXPECTED = " There was an unexpected trying to register a service problem";
+		
+	}
+	
 	public static class LoginUserUseCaseImpl {
 		
 		private LoginUserUseCaseImpl() {
@@ -338,6 +349,18 @@ public class Messages {
 		public static final String USER_LOGIN_SUCCESSFULLY = "The user has been login successfully";
 		public static final String USER_LOGIN_ERROR = "There was an error trying login the user";
 		public static final String USER_LOGIN_UNEXPECTED_ERROR = "There was a unexpected problem trying to login the user";
+	}
+	
+	public static class ResponseServiceController {
+		
+		private ResponseServiceController (){
+			super();
+		}
+		
+		public static final String SERVICE_CREATED_SUCCESSFULLY = "The service has been created successfully";
+		public static final String SERVICE_CREATED_ERROR = "There was an error trying created the service";
+		public static final String SERVICE_CREATED_UNEXPECTED_ERROR = "There was a unexpected problem trying to created the service";
+
 	}
 	
 	public static class CreateUserValidator {

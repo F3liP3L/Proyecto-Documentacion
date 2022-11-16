@@ -17,14 +17,14 @@ public final class ServiceDTO {
 	private String name;
 	private String description;
 	private boolean state;
-	private SubserviceTypeDTO subSevice;
+	private SubserviceTypeDTO subService;
 	
 	public ServiceDTO() {
 		setId(getNewUUID());
 		setName(EMPTY);
 		setDescription(EMPTY);
 		setState(true);
-		setSubSevice(getSubserviceTypeDTOBuilder().build());
+		setSubService(getSubserviceTypeDTOBuilder().build());
 	}
 	
 	public ServiceDTO(final UUID id, final String name, final String description, final boolean state, final SubserviceTypeDTO subSevice) {
@@ -32,7 +32,7 @@ public final class ServiceDTO {
 		setName(name);
 		setDescription(description);
 		setState(state);
-		setSubSevice(subSevice);
+		setSubService(subSevice);
 		setState(state);
 	}
 	
@@ -54,11 +54,11 @@ public final class ServiceDTO {
 	public void setDescription(String description) {
 		this.description = applyTrim(description);
 	}
-	public SubserviceTypeDTO getSubSevice() {
-		return subSevice;
+	public SubserviceTypeDTO getSubService() {
+		return subService;
 	}
-	public void setSubSevice(SubserviceTypeDTO subSevice) {
-		this.subSevice = getDefaultIfNull(subSevice, getSubserviceTypeDTOBuilder().build());
+	public void setSubService(SubserviceTypeDTO subService) {
+		this.subService = getDefaultIfNull(subService, getSubserviceTypeDTOBuilder().build());
 	}
 	
 	public boolean isState() {
@@ -69,11 +69,11 @@ public final class ServiceDTO {
 		this.state = state;
 	}
 
-	public static final ServiceDTO create(final UUID id, final String name, final String description, final boolean state,final SubserviceTypeDTO subSevice) {
-		return new ServiceDTO(id, name, description, state ,subSevice);
+	public static final ServiceDTO create(final UUID id, final String name, final String description, final boolean state,final SubserviceTypeDTO subService) {
+		return new ServiceDTO(id, name, description, state ,subService);
 	}
-	public static final ServiceDTO create(final String id, final String name, final String description, final boolean state,final SubserviceTypeDTO subSevice) {
-		return new ServiceDTO(getUUIDFromString(id), name, description, state ,subSevice);
+	public static final ServiceDTO create(final String id, final String name, final String description, final boolean state,final SubserviceTypeDTO subService) {
+		return new ServiceDTO(getUUIDFromString(id), name, description, state ,subService);
 	}
 	
 	public final String getIdAsString() {
