@@ -17,10 +17,11 @@ export class CheckInComponent implements OnInit {
   public ciudades: Ciudad[] = [];
   public mostrarMensaje = false;
   public mensaje: string = '';
+  public mostrarOpciones = false;
 
   formularioRegistro!: FormGroup;
 
-  constructor(private usuarioServicio: UsuarioService, private readonly formBuilder: FormBuilder,) {
+  constructor(private usuarioServicio: UsuarioService, private readonly formBuilder: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -78,13 +79,13 @@ export class CheckInComponent implements OnInit {
     usuario.residenceCity = ciudad;
     documentoIdentificacion.placeOfBirth = ciudad;
 
-    console.log(JSON.stringify(usuario));
-
-
     this.usuarioServicio.guardarUsuario(usuario)
-      .subscribe(usuario => {
+      .toPromise()
+      .then(usuario => {
         this.mostrarMensaje = true;
         this.mensaje = 'Se guardó el usuario con éxito';
+      }).catch(error => {
+
       });
 
 

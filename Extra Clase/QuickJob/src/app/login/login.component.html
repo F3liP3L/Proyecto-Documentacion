@@ -4,11 +4,14 @@
             <img src="assets/img/Logo.png" alt="" class="check">
         </div>
 
-        <form class="formIniciar" action="">
+        <form class="formIniciar" [formGroup]="formularioInicio">
             <h1 class="iniciarSesion">Iniciar Sesion</h1>
+            <div *ngIf="mostrarMensaje" class="alert alert-danger">
+                <a href="#" class="alert-link">{{mensaje}}</a>
+            </div>
             <i class="login fa-regular fa-user"></i>
-            <input class="controls1" type="text" name="correo" placeholder="Correo">
-            <input class="controls1" type="password" name="clave" placeholder="Contraseña">
+            <input class="controls1" type="text" name="correo" placeholder="Correo" formControlName="correo">
+            <input class="controls1" type="password" name="clave" placeholder="Contraseña" formControlName="contraseña">
             <button class="confirmar btn btn-primary" (click)=" redirigirAOpciones()">Confirmar</button>
             <div> <a href="#">¿Olvido su contraseña?</a></div>
         </form>
