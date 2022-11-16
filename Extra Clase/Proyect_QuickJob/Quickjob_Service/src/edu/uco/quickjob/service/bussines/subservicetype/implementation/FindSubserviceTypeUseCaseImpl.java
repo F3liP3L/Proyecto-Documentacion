@@ -16,7 +16,7 @@ public class FindSubserviceTypeUseCaseImpl implements FindSubserviceTypeUseCase 
 	}
 
 	@Override
-	public List<SubserviceTypeDTO> findSubserviceTypeDTO(ServiceTypeDTO serviceType) {
+	public List<SubserviceTypeDTO> findSubserviceTypeDTO(String serviceType) {
 		return factory.getSubserviceTypeDAO().find(serviceType);
 	}
 

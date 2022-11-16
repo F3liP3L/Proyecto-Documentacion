@@ -19,7 +19,7 @@ public class FindSubserviceTypeCommandImpl implements FindSubserviceTypeCommand 
 	private final FindSubserviceTypeUseCaseImpl useCase = new FindSubserviceTypeUseCaseImpl(factory);
 
 	@Override
-	public List<SubserviceTypeDTO> findSubserviceType(ServiceTypeDTO serviceType) {
+	public List<SubserviceTypeDTO> findSubserviceType(String serviceType) {
 		List<SubserviceTypeDTO> result = new ArrayList<>();
 		try {
 			factory.initTransaction();

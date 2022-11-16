@@ -2,8 +2,6 @@ package edu.uco.quickjob.controller;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,23 +20,20 @@ import edu.uco.quickjob.service.command.implementation.FindSubserviceTypeCommand
 @RestController
 @RequestMapping("/api/service")
 public class ServiceController {
-	
-	
+
 	private FindServiceTypeCommand findServiceTypeCommand = new FindServiceTypeCommandImpl();
 	private FindSubserviceTypeCommand findSubserviceTypeCommand = new FindSubserviceTypeCommandImpl();
-	
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/serviceType")
 	public ResponseEntity<List<ServiceTypeDTO>> findServiceType() {
-		return new ResponseEntity<>(findServiceTypeCommand.findServiceType(),HttpStatus.OK);
+		return new ResponseEntity<>(findServiceTypeCommand.findServiceType(), HttpStatus.OK);
 	}
-	
+
 	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping("/subServiceType{serviceType}")
-	public ResponseEntity<List<SubserviceTypeDTO>> findSubserviceType(@PathVariable("serviceType") ServiceTypeDTO serviceType) {
-		return new ResponseEntity<>(findSubserviceTypeCommand.findSubserviceType(serviceType),HttpStatus.OK);
+	@RequestMapping("/subServiceType/{serviceType}")
+	public ResponseEntity<List<SubserviceTypeDTO>> findSubserviceType(@PathVariable("serviceType") String serviceType) {
+		return new ResponseEntity<>(findSubserviceTypeCommand.findSubserviceType(serviceType), HttpStatus.OK);
 	}
-	
-	
 
 }

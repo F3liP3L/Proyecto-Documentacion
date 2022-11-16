@@ -15,13 +15,17 @@
     </header>
     <section>
         <div> <img src="assets/img/servicio.png" alt="sercicio" class="logoServicio"> </div>
-        <form class="formServicio">
+        <form class="formServicio" [formGroup]="formularioServicio">
             <h1 class="ofrecerServicio">Ofrecer Servicio</h1>
-            <select class="controls1" name="categoria" placeholder="Categoria">
-                <option value="categoria">Categoria</option>
+            <select class="controls1" name="categoria" placeholder="Categoria" (change)="cargarSubcategorias()"
+                formControlName="categoria">
+                <option value="" selected="true">Seleccione...</option>
+                <option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.name}}</option>
             </select>
             <select class="controls1" name="subCategoria" placeholder="Sub Categoria">
-                <option value="subCategoria">Sub Categoria</option>
+                <option value="" selected="true">Seleccione...</option>
+                <option *ngFor="let subcategoria of subcategorias" [value]="subcategoria.id">{{subcategoria.name}}
+                </option>
             </select>
             <input class="controls1" type="text" name="servicio" placeholder="Servicio">
             <textarea class="controls1" name="descripcion" cols="30" rows="10"></textarea>

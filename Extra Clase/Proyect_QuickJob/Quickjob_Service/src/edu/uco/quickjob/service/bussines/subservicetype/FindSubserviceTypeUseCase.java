@@ -7,6 +7,6 @@ import edu.uco.quickjob.domain.SubserviceTypeDTO;
 
 public interface FindSubserviceTypeUseCase {
 	
-	List<SubserviceTypeDTO> findSubserviceTypeDTO(ServiceTypeDTO serviceType);
+	List<SubserviceTypeDTO> findSubserviceTypeDTO(String serviceType);
 
 }

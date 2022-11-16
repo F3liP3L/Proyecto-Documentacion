@@ -1,0 +1,15 @@
+INSERT INTO public.tipo_subservicio(
+	codigo, nombre, descripcion, estado, tipo_servicio_codigo)
+	VALUES (uuid_generate_v1(), 'Madera', 'Construcción en madera', true, 'f1eda272-65d4-11ed-b60d-38142819d27a');
+
+INSERT INTO public.tipo_subservicio(
+	codigo, nombre, descripcion, estado, tipo_servicio_codigo)
+	VALUES (uuid_generate_v1(), 'Pvc', 'Construcción en pvc', true, 'f1eda272-65d4-11ed-b60d-38142819d27a');
+
+INSERT INTO public.tipo_subservicio(
+	codigo, nombre, descripcion, estado, tipo_servicio_codigo)
+	VALUES (uuid_generate_v1(), 'Farmacia', 'Servicio de farmacia', true, '2f2cd086-65d5-11ed-b60e-38142819d27a');
+
+INSERT INTO public.tipo_subservicio(
+	codigo, nombre, descripcion, estado, tipo_servicio_codigo)
+	VALUES (uuid_generate_v1(), 'Terapia', 'Servicio de terapia', true, '2f2cd086-65d5-11ed-b60e-38142819d27a');

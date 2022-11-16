@@ -1,4 +1,4 @@
-<body class="Fondo">
+<body class="Fondo" *ngIf="!mostrarOpciones">
     <section>
         <div class="container">
             <img src="assets/img/Logo.png" alt="" class="check">
@@ -8,7 +8,7 @@
         <form [formGroup]="formularioRegistro">
             <h1 class="registrarse">Registrarse</h1>
 
-            <div *ngIf="mostrarMensaje" class="alert alert-success">
+            <div *ngIf="mostrarMensaje" class="alert alert-danger">
                 <a href="#" class="alert-link">{{mensaje}}</a>
             </div>
 

@@ -31,8 +31,6 @@ export class CheckInComponent implements OnInit {
     });
     this.usuarioServicio.obtenerCiudad().subscribe(ciudad => {
       this.ciudades = ciudad;
-      console.log('Las ciudaddes', this.ciudades);
-
     });
 
   }
@@ -43,7 +41,7 @@ export class CheckInComponent implements OnInit {
       apellido: ['', [Validators.required]],
       identificacion: ['', [Validators.required]],
       tipoIdent: [null, [Validators.required]],
-      correo: ['', [Validators.required]],
+      correo: ['', [Validators.required, Validators.email]],
       clave: ['', [Validators.required]],
       fechaNacimiento: ['', [Validators.required]],
       ciudad: [null, [Validators.required]],
@@ -82,9 +80,10 @@ export class CheckInComponent implements OnInit {
     this.usuarioServicio.guardarUsuario(usuario)
       .toPromise()
       .then(usuario => {
-        this.mostrarMensaje = true;
-        this.mensaje = 'Se guardó el usuario con éxito';
+        this.mostrarOpciones = true;
       }).catch(error => {
+        this.mostrarMensaje = true;
+        this.mensaje = error.error.messages[0].content;;
 
       });
 

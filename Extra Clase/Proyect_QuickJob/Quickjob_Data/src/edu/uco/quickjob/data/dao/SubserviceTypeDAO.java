@@ -7,6 +7,6 @@ import edu.uco.quickjob.domain.SubserviceTypeDTO;
 
 public interface SubserviceTypeDAO {
 	
-	List<SubserviceTypeDTO> find(ServiceTypeDTO serviceType);
+	List<SubserviceTypeDTO> find(String serviceType);
 
 }

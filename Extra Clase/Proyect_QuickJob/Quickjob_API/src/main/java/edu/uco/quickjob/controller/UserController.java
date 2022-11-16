@@ -59,12 +59,10 @@ public class UserController {
 		HttpStatus httpStatus = HttpStatus.OK;
 
 		try {
-<<<<<<< HEAD
-			
 			Validator<UserDTO> validator = new CreateUserValidator();
 			List<Message> messages = validator.validate(user);
-			
-			if(!messages.isEmpty()) {
+
+			if (!messages.isEmpty()) {
 				createUserCommand.createUser(user);
 				List<UserDTO> data = new ArrayList<>();
 				data.add(user);
@@ -73,14 +71,7 @@ public class UserController {
 			} else {
 				httpStatus = HttpStatus.BAD_REQUEST;
 				response.setMessages(messages);
-			}		
-=======
-			createUserCommand.createUser(user);
-			List<UserDTO> data = new ArrayList<>();
-			data.add(user);
-			response.setData(data);
-			response.addSuccessMessage(Messages.ResponseUserController.USER_CREATED_SUCCESSFULLY);
->>>>>>> c00869d40478e1f3cde0d633353bcac1425c3c38
+			}
 		} catch (final QuickjobCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
 
@@ -89,11 +80,6 @@ public class UserController {
 			} else {
 				response.addErrorMessage(exception.getMessage());
 			}
-<<<<<<< HEAD
-=======
-
->>>>>>> c00869d40478e1f3cde0d633353bcac1425c3c38
-			exception.printStackTrace();
 
 		} catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;

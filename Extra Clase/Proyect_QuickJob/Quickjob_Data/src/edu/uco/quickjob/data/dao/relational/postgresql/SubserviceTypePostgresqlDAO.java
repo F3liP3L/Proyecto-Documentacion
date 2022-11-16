@@ -9,7 +9,6 @@ import java.util.List;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.helper.ObjectHelper;
-import edu.uco.quickjob.crosscutting.helper.UUIDHelper;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.SubserviceTypeDAO;
 import edu.uco.quickjob.data.dao.relational.DAORelational;
@@ -23,39 +22,41 @@ public class SubserviceTypePostgresqlDAO extends DAORelational implements Subser
 	}
 
 	@Override
-	public List<SubserviceTypeDTO> find(ServiceTypeDTO serviceType) {
-		
+	public List<SubserviceTypeDTO> find(String serviceType) {
+
 		var parameters = new ArrayList<Object>();
 
 		final var sqlBuilder = new StringBuilder();
 
 		createSelectFrom(sqlBuilder);
-		
+
 		createWhere(sqlBuilder, serviceType, parameters);
 
 		createOrderBy(sqlBuilder);
 
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
-	
+
 	private final void createOrderBy(final StringBuilder stringBuilder) {
 		stringBuilder.append("Order By S.nombre ASC, ");
 		stringBuilder.append("         SB.nombre ASC ");
 	}
-	
+
 	private final List<SubserviceTypeDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder, List<Object> parameters) {
-		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())){
+		try (final var preparedStatement = getConnection().prepareStatement(sqlBuilder.toString())) {
 
 			setParameterValues(preparedStatement, parameters);
 
 			return executeQuery(preparedStatement);
 
-		}  catch (final DataCustomException exception) {
+		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_PROBLEM_PREPARED_STATEMENT, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.DepartmentPostgresqlDAO.TECHNICAL_PROBLEM_PREPARED_STATEMENT, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.DepartmentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.DepartmentPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT, exception);
 		}
 	}
 
@@ -65,29 +66,34 @@ public class SubserviceTypePostgresqlDAO extends DAORelational implements Subser
 				preparedStatement.setObject(index + 1, parameters.get(index));
 			}
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.SubserviceTypePostgresqlDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.SubserviceTypePostgresqlDAO.TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.SubserviceTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.SubserviceTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY,
+					exception);
 		}
 	}
 
-	private final List<SubserviceTypeDTO> fillResults (final ResultSet resultset) {
+	private final List<SubserviceTypeDTO> fillResults(final ResultSet resultset) {
 		try {
 			var results = new ArrayList<SubserviceTypeDTO>();
-			while(resultset.next()){
+			while (resultset.next()) {
 				results.add(fillSubServiceTypeDTO(resultset));
-		}
+			}
 			return results;
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.SubserviceTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_SUB_SERVICE_TYPE, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.SubserviceTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_SUB_SERVICE_TYPE, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.SubserviceTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_SUB_SERVICE_TYPE,exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.SubserviceTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_SUB_SERVICE_TYPE, exception);
 		}
 	}
 
-	private final List<SubserviceTypeDTO> executeQuery(PreparedStatement preparedStatement){
+	private final List<SubserviceTypeDTO> executeQuery(PreparedStatement preparedStatement) {
 		try (final var resultSet = preparedStatement.executeQuery()) {
 
 			return fillResults(resultSet);
@@ -95,23 +101,28 @@ public class SubserviceTypePostgresqlDAO extends DAORelational implements Subser
 		} catch (DataCustomException exception) {
 			throw exception;
 		} catch (SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.SubserviceTypePostgresqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY ,exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.SubserviceTypePostgresqlDAO.TECHNICAL_PROBLEM_EXECUTE_QUERY, exception);
 		} catch (Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.SubserviceTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY,exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.SubserviceTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY, exception);
 		}
 	}
 
-
-	private final SubserviceTypeDTO fillSubServiceTypeDTO (final ResultSet resultset) {
+	private final SubserviceTypeDTO fillSubServiceTypeDTO(final ResultSet resultset) {
 		try {
-			ServiceTypeDTO serviceType = ServiceTypeDTO.create(resultset.getString("idServiceType"), resultset.getString("serviceTypeName"));
-			return SubserviceTypeDTO.create(resultset.getString("idSubserviceType") ,serviceType, resultset.getString("subServiceTypeName"));
+			ServiceTypeDTO serviceType = ServiceTypeDTO.create(resultset.getString("idServiceType"),
+					resultset.getString("serviceTypeName"));
+			return SubserviceTypeDTO.create(resultset.getString("idSubserviceType"), serviceType,
+					resultset.getString("subServiceTypeName"));
 		} catch (final DataCustomException exception) {
 			throw exception;
 		} catch (final SQLException exception) {
-			throw DataCustomException.createTechnicalException(Messages.SubserviceTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_SUB_SERVICE_TYPE, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.SubserviceTypePostgresqlDAO.TECHNICAL_PROBLEM_FILL_SUB_SERVICE_TYPE, exception);
 		} catch (final Exception exception) {
-			throw DataCustomException.createTechnicalException(Messages.SubserviceTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_SUB_SERVICE_TYPE, exception);
+			throw DataCustomException.createTechnicalException(
+					Messages.SubserviceTypePostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_FILL_SUB_SERVICE_TYPE, exception);
 		}
 	}
 
@@ -125,14 +136,15 @@ public class SubserviceTypePostgresqlDAO extends DAORelational implements Subser
 		sqlBuilder.append("INNER JOIN tipo_subservicio SB ");
 		sqlBuilder.append("ON S.codigo = SB.tipo_servicio_codigo ");
 	}
-	
-	private final void createWhere(final StringBuilder sqlBuilder, final ServiceTypeDTO serviceType, final List<Object> parameters) {
 
-		if(!ObjectHelper.isNull(serviceType)) {
+	private final void createWhere(final StringBuilder sqlBuilder, final String serviceType,
+			final List<Object> parameters) {
 
-			if(!UUIDHelper.isDefaultUUID(serviceType.getId())) {
-				sqlBuilder.append("WHERE S.codigo = ? ");
-				parameters.add(serviceType.getIdAsString());
+		if (!ObjectHelper.isNull(serviceType)) {
+
+			if (!serviceType.equals("")) {
+				sqlBuilder.append("WHERE SB.tipo_servicio_codigo = ? ");
+				parameters.add(serviceType);
 			}
 		}
 
