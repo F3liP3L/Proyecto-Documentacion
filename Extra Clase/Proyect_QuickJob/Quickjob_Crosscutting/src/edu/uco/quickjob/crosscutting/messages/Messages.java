@@ -369,11 +369,21 @@ public class Messages {
 			super();
 		}
 		
-		public static final String MAIL_IS_DEFAULT_ERROR = "the email you are trying to enter is the default";
+		public static final String MAIL_IS_DEFAULT_ERROR = "The email you are trying to enter is the default";
 		public static final String MAIL_IS_INVALID_FORMAT_ERROR = "The email you are trying to enter has an invalid format";
 		public static final String NAME_IS_INVALID_ERROR = "The name does not meet the required number of characters";
 		public static final String SURNAME_IS_INVALID_ERROR = "The surname does not meet the required number of characters";
 		public static final String PASSWORD_IS_INVALID_ERROR = "the password does not meet the proper length";
+	}
+	
+	public static class CreateServiceValidator {
+		
+		private CreateServiceValidator() {
+			super();
+		}
+		
+		public static final String NAME_IS_INVALID_ERROR = "Name cannot be empty";
+		public static final String DESCRIPTION_IS_INVALID_ERROR = "Description cannot be empty";
 	}
 	
 }

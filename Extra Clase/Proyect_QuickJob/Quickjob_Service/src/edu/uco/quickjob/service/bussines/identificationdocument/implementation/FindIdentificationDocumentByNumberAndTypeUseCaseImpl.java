@@ -20,7 +20,6 @@ public class FindIdentificationDocumentByNumberAndTypeUseCaseImpl implements Fin
 		
 		IdentificationDocumentDTO identificationByNumber = new IdentificationDocumentDTO();
 		identificationByNumber.setIdentificationNumber(identificationDocument.getIdentificationNumber());
-		// identificationByNumber.setIdentificationType(IdentificationTypeDTO.create(identificationByNumber.getIdentificationType().getIdAsString()));
 		boolean exist = false;
 		if (findIdentificationDocumentUseCase.execute(identificationByNumber).isEmpty()) {
 			exist = true;
