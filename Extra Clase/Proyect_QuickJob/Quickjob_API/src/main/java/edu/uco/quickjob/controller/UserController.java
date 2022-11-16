@@ -30,65 +30,64 @@ import edu.uco.quickjob.service.command.implementation.LoginUserCommandImpl;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-	
+
 	private CreateUserCommand createUserCommand = new CreateUserCommandImpl();
 	private FindCityCommand findCityCommand = new FindCityCommandImpl();
 	private FindIdentificationTypeCommand findIdentificationType = new FindIdentificationCommandImpl();
 	private LoginUserCommand loginUserCommand = new LoginUserCommandImpl();
-	
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/identificationType")
 	public ResponseEntity<List<IdentificationTypeDTO>> findIdentificationType() {
-		return new ResponseEntity<>(findIdentificationType.findIndetification(),HttpStatus.OK);
+		return new ResponseEntity<>(findIdentificationType.findIndetification(), HttpStatus.OK);
 	}
-	
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/city")
 	public ResponseEntity<List<CityDTO>> findCiType() {
-		return new ResponseEntity<>(findCityCommand.findCity(),HttpStatus.OK);
+		return new ResponseEntity<>(findCityCommand.findCity(), HttpStatus.OK);
 	}
-	
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping()
-	public ResponseEntity<Response<UserDTO>> createUser(@RequestBody UserDTO user){
-		
+	public ResponseEntity<Response<UserDTO>> createUser(@RequestBody UserDTO user) {
+
 		final Response<UserDTO> response = new Response<>();
 		HttpStatus httpStatus = HttpStatus.OK;
-		
+
 		try {
-			createUserCommand.createUser(user);	
+			createUserCommand.createUser(user);
 			List<UserDTO> data = new ArrayList<>();
 			data.add(user);
 			response.setData(data);
 			response.addSuccessMessage(Messages.ResponseUserController.USER_CREATED_SUCCESSFULLY);
 		} catch (final QuickjobCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
-			
-			if(exception.isTechnicalException()) {
+
+			if (exception.isTechnicalException()) {
 				response.addErrorMessage(Messages.ResponseUserController.USER_CREATED_ERROR);
 			} else {
 				response.addErrorMessage(exception.getMessage());
 			}
-			
+
 			exception.printStackTrace();
-			
+
 		} catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
 			response.addFatalMessage(Messages.ResponseUserController.USER_CREATED_UNEXPECTED_ERROR);
-			
+
 			exception.printStackTrace();
 		}
 		return new ResponseEntity<>(response, httpStatus);
 	}
-	
-	
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/login")
-	public ResponseEntity<Response<UserDTO>> loginUser(@RequestBody UserDTO user){
-		
+	public ResponseEntity<Response<UserDTO>> loginUser(@RequestBody UserDTO user) {
+
 		final Response<UserDTO> response = new Response<>();
 		HttpStatus httpStatus = HttpStatus.OK;
-		
+
 		try {
 			UserDTO userLogin = loginUserCommand.execute(user);
 			List<UserDTO> data = new ArrayList<>();
@@ -97,8 +96,8 @@ public class UserController {
 			response.addSuccessMessage(Messages.ResponseUserController.USER_LOGIN_SUCCESSFULLY);
 		} catch (final QuickjobCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
-			
-			if(exception.isTechnicalException()) {
+
+			if (exception.isTechnicalException()) {
 				response.addErrorMessage(Messages.ResponseUserController.USER_LOGIN_ERROR);
 			} else {
 				response.addErrorMessage(exception.getMessage());
@@ -106,11 +105,10 @@ public class UserController {
 			exception.printStackTrace();
 		} catch (final Exception exception) {
 			httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-			
+
 			exception.printStackTrace();
 		}
 		return new ResponseEntity<>(response, httpStatus);
 	}
-	
 
 }

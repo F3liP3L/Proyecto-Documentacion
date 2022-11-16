@@ -12,7 +12,6 @@ import java.util.UUID;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
 import edu.uco.quickjob.crosscutting.helper.ObjectHelper;
-import edu.uco.quickjob.crosscutting.helper.UUIDHelper;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.UserDAO;
 import edu.uco.quickjob.data.dao.relational.DAORelational;
@@ -175,15 +174,15 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 
 		if (!ObjectHelper.isNull(user)) {
 
-			if (!UUIDHelper.isDefaultUUID(user.getResidenceCity().getId())) {
-				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("U.ciudad_codigo = ? ");
+			if (user.getEmail() != null) {
+				sqlBuilder.append("WHERE U.correo = ? ");
 				setWhere = false;
-				parameters.add(user.getResidenceCity().getIdAsString());
+				parameters.add(user.getEmail());
 			}
 
-			if (user.getEmail() != null) {
-				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("U.correo = ? ");
-				parameters.add(user.getEmail());
+			if (user.getPassword() != null && user.getPassword() != "") {
+				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("U.clave = ? ");
+				parameters.add(user.getPassword());
 			}
 		}
 	}

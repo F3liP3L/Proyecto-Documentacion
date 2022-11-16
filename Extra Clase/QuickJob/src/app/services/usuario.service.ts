@@ -12,7 +12,9 @@ export class UsuarioService {
 
   private urlTipoIdentificacion = 'http://localhost:8080/api/user/identificationType';
   private urlCiudad = 'http://localhost:8080/api/user/city'
-  private urlguardarUsuario = 'http://localhost:8080/api/user/'
+  private urlguardarUsuario = 'http://localhost:8080/api/user'
+  private urlIngresarUsuario = 'http://localhost:8080/api/user/login'
+
   constructor(private http: HttpClient) { }
 
   obtenerTipoIdentificacion(): Observable<IdentificationType[]> {
@@ -23,8 +25,13 @@ export class UsuarioService {
     return this.http.get<Ciudad[]>(this.urlCiudad);
   }
 
-  guardarUsuario(usuario: Usuario): Observable<void> {
-    return this.http.post<void>(this.urlguardarUsuario, usuario);
+  guardarUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(this.urlguardarUsuario, usuario);
+  }
+
+  ingresarUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<Usuario>(this.urlIngresarUsuario, usuario);
+
   }
 }
 
