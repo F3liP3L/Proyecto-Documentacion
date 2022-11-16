@@ -19,5 +19,9 @@ public class FindIdentificationDocumentUseCaseImpl implements FindIdentification
 	public List<IdentificationDocumentDTO> execute(IdentificationDocumentDTO identification) {
 		return factory.getIdentificationDocumentDAO().find(identification);
 	}
+	
+	public static void main(String[] args) {
+		
+	}
 
 }

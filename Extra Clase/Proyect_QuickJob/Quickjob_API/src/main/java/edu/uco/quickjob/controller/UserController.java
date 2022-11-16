@@ -81,6 +81,7 @@ public class UserController {
 		return new ResponseEntity<>(response, httpStatus);
 	}
 	
+	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/login")
 	public ResponseEntity<Response<UserDTO>> loginUser(@RequestBody UserDTO user){
@@ -89,9 +90,9 @@ public class UserController {
 		HttpStatus httpStatus = HttpStatus.OK;
 		
 		try {
-			loginUserCommand.execute(user);
+			UserDTO userLogin = loginUserCommand.execute(user);
 			List<UserDTO> data = new ArrayList<>();
-			data.add(user);
+			data.add(userLogin);
 			response.setData(data);
 			response.addSuccessMessage(Messages.ResponseUserController.USER_LOGIN_SUCCESSFULLY);
 		} catch (final QuickjobCustomException exception) {

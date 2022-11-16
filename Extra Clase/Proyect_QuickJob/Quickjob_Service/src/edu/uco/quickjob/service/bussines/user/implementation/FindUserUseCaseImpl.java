@@ -22,7 +22,7 @@ public class FindUserUseCaseImpl implements FindUserUseCase {
 	
 	public static void main(String[] args) {
 		List<UserDTO> users = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL).getUserDAO().find(null);
-		users.forEach(elem -> System.out.println("the user is id:"  + elem.getIdAsString() + "the mail is: " + elem.getEmail() + " the document identidad: " + elem.getIdentification()));
+		users.forEach(elem -> System.out.println("the user is id:"  + elem.getIdAsString() + " name: " + elem.getName() + " surname: " + elem.getLastName() + "the mail is: " + elem.getEmail() + " the document identidad: " + elem.getIdentification()));
 	}
 
 }

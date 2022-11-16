@@ -33,13 +33,14 @@ public class LoginUserUseCaseImpl implements LoginUserUseCase{
 		if (!isEquals){
 			throw ServiceCustomException.createUserException(Messages.LoginUserUseCaseImpl.BUSSINES_USER_INCORRECT_PASSWORD);
 		}
+		
 		return findUserUseCase.findUser(user).get(0);
 	}
 	
 	public static void main(String[] args) {
 		UserDTO user = UserDTO.create("japofficial@gmail.com");
 		List<UserDTO> users = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL).getUserDAO().find(user);
-		users.forEach(elem -> System.out.println("the user is id:"  + elem.getIdAsString() + "the mail is: " + elem.getEmail() + " the document identidad: " + elem.getIdentification()));
+		users.forEach(elem -> System.out.println("the user is id:"  + elem.getIdAsString() + "the mail is: " +  "the name user is: [" + elem.getName() + "] whith email is: "+ elem.getEmail() + " the document identidad: " + elem.getIdentification()));
 	}
 
 }

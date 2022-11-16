@@ -33,7 +33,7 @@ public class LoginUserCommandImpl implements LoginUserCommand {
 			factory.cancelTransaction();
 			throw ServiceCustomException.createBussinesException(Messages.CreateUserUseCaseImpl.BUSSINES_USER_UNEXPECTED, exception);
 		} finally {
-			factory.closeConnection();
+			// factory.closeConnection();
 		}
 		return userLogin;		
 	}
