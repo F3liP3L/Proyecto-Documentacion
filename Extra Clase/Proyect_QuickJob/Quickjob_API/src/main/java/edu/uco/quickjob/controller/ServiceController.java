@@ -59,7 +59,7 @@ public class ServiceController {
 
 		try {
 			Validator<ServiceDTO> validator = new CreateServiceValidator();
-			List<Message> messages = new ArrayList<>();
+			List<Message> messages = validator.validate(service);
 
 			if (messages.isEmpty()) {
 				createServiceCommand.execute(service);
