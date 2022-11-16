@@ -43,7 +43,7 @@ public class ServiceProviderPostgresqlDAO extends DAORelational implements Servi
 
 	@Override
 	public void update(ServiceProviderDTO serviceProvider) {
-		// TODO.
+		// TODO
 	}
 
 	@Override

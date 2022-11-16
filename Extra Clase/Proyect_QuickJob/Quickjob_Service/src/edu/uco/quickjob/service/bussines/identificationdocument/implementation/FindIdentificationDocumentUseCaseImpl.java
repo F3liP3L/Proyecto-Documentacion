@@ -20,8 +20,5 @@ public class FindIdentificationDocumentUseCaseImpl implements FindIdentification
 		return factory.getIdentificationDocumentDAO().find(identification);
 	}
 	
-	public static void main(String[] args) {
-		
-	}
 
 }

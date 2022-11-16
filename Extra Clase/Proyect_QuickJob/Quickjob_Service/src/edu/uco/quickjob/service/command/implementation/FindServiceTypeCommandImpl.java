@@ -29,7 +29,7 @@ public class FindServiceTypeCommandImpl implements FindServiceTypeCommand {
 		} catch (QuickjobCustomException exception) {
 			factory.cancelTransaction();
 			if(exception.isTechnicalException()) {
-			throw ServiceCustomException.wrapException(null, exception);
+			throw ServiceCustomException.wrapException(Messages.FindServiceTypeUseCaseImpl.BUSSINES_SERVICE_TYPE_UNEXPECTED, exception);
 			}
 		} catch (Exception exception) {
 			factory.cancelTransaction();

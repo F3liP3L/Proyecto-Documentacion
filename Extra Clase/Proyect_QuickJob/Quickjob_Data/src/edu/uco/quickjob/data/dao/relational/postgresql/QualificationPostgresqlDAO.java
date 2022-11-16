@@ -2,6 +2,7 @@ package edu.uco.quickjob.data.dao.relational.postgresql;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
@@ -38,7 +39,7 @@ public class QualificationPostgresqlDAO extends DAORelational implements Qualifi
 
 	@Override
 	public List<QualificationDTO> find(QualificationDTO qualification) {
-		return null;
+		return new ArrayList<>();
 	}
 
 	@Override

@@ -190,7 +190,21 @@ public class UserPostgresqlDAO extends DAORelational implements UserDAO {
 
 	@Override
 	public void update(UserDTO user) {
-		// TODO Auto-generated method stub
+		final var sqlUpdate = "UPDATE public.usuario SET nombres=?, apellidos=?, correo=?, clave=?, ciudad_codigo=? WHERE codigo = ?";
+		try (final var preparedStatement = getConnection().prepareStatement(sqlUpdate)) {
+			preparedStatement.setString(1, user.getName());
+			preparedStatement.setString(2, user.getLastName());
+			preparedStatement.setString(3, user.getEmail());
+			preparedStatement.setString(4, user.getResidenceCity().getIdAsString());
+			preparedStatement.setString(5, user.getIdAsString());
+			
+		} catch (SQLException exception) {
+			throw DataCustomException
+					.createTechnicalException(Messages.UserPostgresqlDAO.TECHNICAL_PROBLEM_UPDATE_USER, exception);
+		} catch (Exception exception) {
+			throw DataCustomException.createTechnicalException(
+					Messages.UserPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_USER, exception);
+		}
 	}
 
 	@Override

@@ -6,20 +6,20 @@ import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.factory.DAOFactory;
 import edu.uco.quickjob.domain.IdentificationDocumentDTO;
 import edu.uco.quickjob.service.bussines.identificationdocument.CreateIdentificationDocumentUseCase;
-import edu.uco.quickjob.service.bussines.identificationdocument.FindIdentificationDocumentUseCase;
+import edu.uco.quickjob.service.bussines.identificationdocument.FindIdentificationDocumentByNumberAndType;
 
 public class CreateIdentificationDocumentUseCaseImpl implements CreateIdentificationDocumentUseCase {
 
 	private final DAOFactory factory;
-	private final FindIdentificationDocumentUseCase findIdentificationDocumentUseCase;
+	private final FindIdentificationDocumentByNumberAndType findDocumentByNumberAndType;
 	
 	public CreateIdentificationDocumentUseCaseImpl(DAOFactory factory) {
 		this.factory = factory;
-		this.findIdentificationDocumentUseCase = new FindIdentificationDocumentUseCaseImpl(factory);
+		this.findDocumentByNumberAndType = new FindIdentificationDocumentByNumberAndTypeUseCaseImpl(factory);
 	}
 	
 	private final void validateIfDocumentIdentificationExist(IdentificationDocumentDTO identificationDocument) {
-		if (!findIdentificationDocumentUseCase.execute(identificationDocument).isEmpty()) {
+		if (!findDocumentByNumberAndType.execute(identificationDocument)) {
 			throw ServiceCustomException.createUserException(Messages.FindDocumentIdentificationUseCaseImpl.BUSSINES_DOCUMENT_IDENTIFICATION_EXISTS);
 		}
 	}

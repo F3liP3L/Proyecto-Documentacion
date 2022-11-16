@@ -66,10 +66,29 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 
 		return prepareAndExecuteQuery(sqlBuilder, parameters);
 	}
+	
 
 	@Override
-	public void update(IdentificationDocumentDTO identificationType) {
-		//
+	public void update(IdentificationDocumentDTO identificationDocument) {
+		final var sqlUpdate = "UPDATE public.documento_identificacion SET nombre=?, apellido=?, fecha_nacimiento=?, fecha_expedimiento=?, lugar_expedicion=?, sexo=?, numero_identificacion=?, ciudad_codigo=?, tipo_identificacion_codigo= ? WHERE codigo ?";
+		try (final var preparedStatement = getConnection().prepareStatement(sqlUpdate)) {
+			preparedStatement.setString(1, identificationDocument.getName());
+			preparedStatement.setString(2, identificationDocument.getSurname());
+			preparedStatement.setDate(3, identificationDocument.getBirthDate());
+			preparedStatement.setDate(4, identificationDocument.getExpeditionDate());
+			preparedStatement.setString(5, identificationDocument.getSex());
+			preparedStatement.setString(6, identificationDocument.getIdentificationNumber());
+			preparedStatement.setString(7, identificationDocument.getPlaceOfBirth().getIdAsString());
+			preparedStatement.setString(8, identificationDocument.getIdentificationType().getIdAsString());
+			preparedStatement.setString(9, identificationDocument.getIdAsString());
+			
+		} catch (SQLException exception) {
+			throw DataCustomException
+					.createTechnicalException(Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_UPDATE_IDENTIFICATION_DOCUMENT, exception);
+		} catch (Exception exception) {
+			throw DataCustomException.createTechnicalException(
+					Messages.IdentificationDocumentPostgresqlDAO.TECHNICAL_PROBLEM_UPDATE_IDENTIFICATION_DOCUMENT, exception);
+		}
 	}
 
 	private final List<IdentificationDocumentDTO> prepareAndExecuteQuery(StringBuilder sqlBuilder,

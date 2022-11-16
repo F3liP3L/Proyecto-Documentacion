@@ -85,8 +85,8 @@ public class Messages {
 		
 		public static final String TECHNICAL_PROBLEM_CREATE_IDENTIFICATION_DOCUMENT = "There was a problem trying to create the desired identification document in PostgresqlDAOFactory";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_IDENTIFICATION_DOCUMENT = "There was an unexpected problem trying to create the identification document in PostgresqlDAOFactory";
-		public static final String TECHNICAL_PROBLEM_UPDATE_USER = "There was a problem trying to update the desired identification document in PostgresqlDAOFactory";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_USER = "There was an unexpected problem trying to create the identification document in PostgresqlDAOFactory";
+		public static final String TECHNICAL_PROBLEM_UPDATE_IDENTIFICATION_DOCUMENT = "There was a problem trying to update the desired identification document in PostgresqlDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_IDENTIFICATION_UPDATE_DOCUMENT = "There was an unexpected problem trying to update the identification document in PostgresqlDAOFactory";
 		public static final String TECHNICAL_PROBLEM_FILL_IDENTIFICATION_DOCUMENT_DTO = "There was a problem filling identification document DTO from the resultSet";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_IDENTIFICATION_DOCUMENT_DTO = "There was an unexpected problem trying to filling identification document DTO from the resultSet";
 		public static final String TECHNICAL_PROBLEM_DELETE_IDENTIFICATION_DOCUMENT_DTO = "There was a problem filling identification document DTO from the resultSet";
@@ -299,8 +299,8 @@ public class Messages {
 			super();
 		}
 		
-		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_EXISTS = " The UUID to convert doesnot have a valid format";
-		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED = " There was an unexpected problem";
+		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_EXISTS = " The identification document already exists, please choose a valid one";
+		public static final String BUSSINES_DOCUMENT_IDENTIFICATION_UNEXPECTED = " unexpected problem when trying to register the identification document";
 		
 	}
 	
@@ -310,7 +310,17 @@ public class Messages {
 			super();
 		}
 		
-		public static final String BUSSINES_SERVICE_TYPE_UNEXPECTED = " There was an unexpected problem";
+		public static final String BUSSINES_SERVICE_TYPE_UNEXPECTED = " There was an unexpected problem in the FindServiceTypeCommand";
+		
+	}
+	
+	public static class FindSubserviceTypeUseCaseImpl {
+		
+		private FindSubserviceTypeUseCaseImpl() {
+			super();
+		}
+		
+		public static final String BUSSINES_SUBSERVICE_TYPE_UNEXPECTED = " There was an unexpected problem in the FindSubserviceCommand";
 		
 	}
 	
@@ -328,6 +338,19 @@ public class Messages {
 		public static final String USER_LOGIN_SUCCESSFULLY = "The user has been login successfully";
 		public static final String USER_LOGIN_ERROR = "There was an error trying login the user";
 		public static final String USER_LOGIN_UNEXPECTED_ERROR = "There was a unexpected problem trying to login the user";
+	}
+	
+	public static class CreateUserValidator {
+		
+		private CreateUserValidator() {
+			super();
+		}
+		
+		public static final String MAIL_IS_DEFAULT_ERROR = "the email you are trying to enter is the default";
+		public static final String MAIL_IS_INVALID_FORMAT_ERROR = "The email you are trying to enter has an invalid format";
+		public static final String NAME_IS_INVALID_ERROR = "The name does not meet the required number of characters";
+		public static final String SURNAME_IS_INVALID_ERROR = "The surname does not meet the required number of characters";
+		public static final String PASSWORD_IS_INVALID_ERROR = "the password does not meet the proper length";
 	}
 	
 }

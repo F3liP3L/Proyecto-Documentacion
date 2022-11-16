@@ -10,8 +10,8 @@ public class MailHelper {
 
 	public static final String DEFAULT_MAIL = "email@mail.com";
 	
-	private static final Pattern VALIDATOR_MAIL = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+	private static final Pattern VALIDATOR_MAIL = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" 
+	+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 	
 	public static boolean isMailValid(String mail) {
 		return VALIDATOR_MAIL.matcher(mail).find();

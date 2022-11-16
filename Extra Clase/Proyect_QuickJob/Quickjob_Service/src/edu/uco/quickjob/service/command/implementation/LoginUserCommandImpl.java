@@ -27,13 +27,13 @@ public class LoginUserCommandImpl implements LoginUserCommand {
 		} catch (QuickjobCustomException exception) {
 			factory.cancelTransaction();
 			if(exception.isTechnicalException()) {
-			throw ServiceCustomException.wrapException(Messages.CreateUserUseCaseImpl.BUSSINES_USER_EXISTS, exception);
+			throw ServiceCustomException.wrapException(Messages.LoginUserUseCaseImpl.BUSSINES_USER_DOESNT_EXISTS, exception);
 			}
 		} catch (Exception exception) {
 			factory.cancelTransaction();
-			throw ServiceCustomException.createBussinesException(Messages.CreateUserUseCaseImpl.BUSSINES_USER_UNEXPECTED, exception);
+			throw ServiceCustomException.createBussinesException(Messages.LoginUserUseCaseImpl.BUSSINES_USER_LOGIN_UNEXPECTED, exception);
 		} finally {
-			// factory.closeConnection();
+			factory.closeConnection();
 		}
 		return userLogin;		
 	}

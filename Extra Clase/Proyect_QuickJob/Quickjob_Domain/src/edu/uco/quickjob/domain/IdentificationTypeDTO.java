@@ -58,4 +58,8 @@ public final class IdentificationTypeDTO {
 	public final String getIdAsString() {
 		return getUUIDAsString(getId());
 	}
+
+	public static final IdentificationTypeDTO create(final String id) {
+		return new IdentificationTypeDTO(getUUIDFromString(id));
+	}
 }

@@ -8,26 +8,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.uco.quickjob.crosscutting.exception.data.DataCustomException;
+import edu.uco.quickjob.crosscutting.helper.ObjectHelper;
+import edu.uco.quickjob.crosscutting.helper.UUIDHelper;
 import edu.uco.quickjob.crosscutting.messages.Messages;
 import edu.uco.quickjob.data.dao.SubserviceTypeDAO;
 import edu.uco.quickjob.data.dao.relational.DAORelational;
 import edu.uco.quickjob.domain.ServiceTypeDTO;
 import edu.uco.quickjob.domain.SubserviceTypeDTO;
 
-public class SubserviceTypePostgresqlDAO extends DAORelational implements SubserviceTypeDAO{
+public class SubserviceTypePostgresqlDAO extends DAORelational implements SubserviceTypeDAO {
 
 	public SubserviceTypePostgresqlDAO(Connection connection) {
 		super(connection);
 	}
 
 	@Override
-	public List<SubserviceTypeDTO> find() {
+	public List<SubserviceTypeDTO> find(ServiceTypeDTO serviceType) {
 		
 		var parameters = new ArrayList<Object>();
 
 		final var sqlBuilder = new StringBuilder();
 
 		createSelectFrom(sqlBuilder);
+		
+		createWhere(sqlBuilder, serviceType, parameters);
 
 		createOrderBy(sqlBuilder);
 
@@ -121,5 +125,16 @@ public class SubserviceTypePostgresqlDAO extends DAORelational implements Subser
 		sqlBuilder.append("INNER JOIN tipo_subservicio SB ");
 		sqlBuilder.append("ON S.codigo = SB.tipo_servicio_codigo ");
 	}
+	
+	private final void createWhere(final StringBuilder sqlBuilder, final ServiceTypeDTO serviceType, final List<Object> parameters) {
 
+		if(!ObjectHelper.isNull(serviceType)) {
+
+			if(!UUIDHelper.isDefaultUUID(serviceType.getId())) {
+				sqlBuilder.append("WHERE S.codigo = ? ");
+				parameters.add(serviceType.getIdAsString());
+			}
+		}
+
+	}
 }

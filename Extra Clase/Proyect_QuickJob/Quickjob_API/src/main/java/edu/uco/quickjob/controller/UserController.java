@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.uco.quickjob.controller.response.Response;
+import edu.uco.quickjob.controller.validator.Validator;
+import edu.uco.quickjob.controller.validator.user.CreateUserValidator;
 import edu.uco.quickjob.crosscutting.exception.QuickjobCustomException;
 import edu.uco.quickjob.crosscutting.messages.Messages;
+import edu.uco.quickjob.crosscutting.messages.enumeration.Message;
 import edu.uco.quickjob.domain.CityDTO;
 import edu.uco.quickjob.domain.IdentificationTypeDTO;
 import edu.uco.quickjob.domain.UserDTO;
@@ -56,11 +59,20 @@ public class UserController {
 		HttpStatus httpStatus = HttpStatus.OK;
 		
 		try {
-			createUserCommand.createUser(user);	
-			List<UserDTO> data = new ArrayList<>();
-			data.add(user);
-			response.setData(data);
-			response.addSuccessMessage(Messages.ResponseUserController.USER_CREATED_SUCCESSFULLY);
+			
+			Validator<UserDTO> validator = new CreateUserValidator();
+			List<Message> messages = validator.validate(user);
+			
+			if(!messages.isEmpty()) {
+				createUserCommand.createUser(user);
+				List<UserDTO> data = new ArrayList<>();
+				data.add(user);
+				response.setData(data);
+				response.addSuccessMessage(Messages.ResponseUserController.USER_CREATED_SUCCESSFULLY);
+			} else {
+				httpStatus = HttpStatus.BAD_REQUEST;
+				response.setMessages(messages);
+			}		
 		} catch (final QuickjobCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
 			
@@ -69,7 +81,6 @@ public class UserController {
 			} else {
 				response.addErrorMessage(exception.getMessage());
 			}
-			
 			exception.printStackTrace();
 			
 		} catch (final Exception exception) {
