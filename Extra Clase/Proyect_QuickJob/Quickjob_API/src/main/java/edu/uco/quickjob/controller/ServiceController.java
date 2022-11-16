@@ -37,7 +37,6 @@ public class ServiceController {
 	private FindSubserviceTypeCommand findSubserviceTypeCommand = new FindSubserviceTypeCommandImpl();
 
 	private CreateServiceCommand createServiceCommand = new CreateServiceCommandImpl();
-	
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/serviceType")
@@ -50,29 +49,29 @@ public class ServiceController {
 	public ResponseEntity<List<SubserviceTypeDTO>> findSubserviceType(@PathVariable("serviceType") String serviceType) {
 		return new ResponseEntity<>(findSubserviceTypeCommand.findSubserviceType(serviceType), HttpStatus.OK);
 	}
-	
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping()
-	public ResponseEntity<Response<ServiceDTO>> createUser(@RequestBody ServiceDTO service) {
+	public ResponseEntity<Response<ServiceDTO>> createService(@RequestBody ServiceDTO service) {
 
 		final Response<ServiceDTO> response = new Response<>();
 		HttpStatus httpStatus = HttpStatus.OK;
 
 		try {
 			Validator<ServiceDTO> validator = new CreateServiceValidator();
-			List<Message> messages = validator.validate(service);
-			
-			//if(!messages.isEmpty()) {
+			List<Message> messages = new ArrayList<>();
+
+			if (messages.isEmpty()) {
 				createServiceCommand.execute(service);
 				List<ServiceDTO> data = new ArrayList<>();
 				data.add(service);
 				response.setData(data);
 				response.addSuccessMessage(Messages.ResponseServiceController.SERVICE_CREATED_SUCCESSFULLY);
-			//} else {
+			} else {
 				httpStatus = HttpStatus.BAD_REQUEST;
 				response.setMessages(messages);
-			// }
-			
+			}
+
 		} catch (final QuickjobCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
 

@@ -14,9 +14,12 @@ export class OptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  regresar() {
+    this.ofrecerServicio = false;
+  }
+
+
   redirigirAOfrecerServicios() {
-    console.log('entré a ofrecer servicio');
-    
     this.ofrecerServicio = true;
   }
 
