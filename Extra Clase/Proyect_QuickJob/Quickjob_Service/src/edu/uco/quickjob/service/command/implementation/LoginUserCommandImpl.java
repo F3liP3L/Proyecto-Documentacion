@@ -11,7 +11,7 @@ import edu.uco.quickjob.service.bussines.user.implementation.LoginUserUseCaseImp
 import edu.uco.quickjob.service.command.LoginUserCommand;
 
 public class LoginUserCommandImpl implements LoginUserCommand {
-	
+
 	private final DAOFactory factory = DAOFactory.getDAOFactory(DAOFactoryType.POSTGRESQL);
 	private final LoginUserUseCase useCase = new LoginUserUseCaseImpl(factory);
 
@@ -19,23 +19,26 @@ public class LoginUserCommandImpl implements LoginUserCommand {
 	public UserDTO execute(UserDTO user) {
 		UserDTO userLogin = null;
 		try {
+			factory.openConnection();
 			factory.initTransaction();
-			 userLogin = useCase.execute(user);
+			userLogin = useCase.execute(user);
 		} catch (ServiceCustomException exception) {
 			factory.cancelTransaction();
 			throw exception;
 		} catch (QuickjobCustomException exception) {
 			factory.cancelTransaction();
-			if(exception.isTechnicalException()) {
-			throw ServiceCustomException.wrapException(Messages.LoginUserUseCaseImpl.BUSSINES_USER_DOESNT_EXISTS, exception);
+			if (exception.isTechnicalException()) {
+				throw ServiceCustomException.wrapException(Messages.LoginUserUseCaseImpl.BUSSINES_USER_DOESNT_EXISTS,
+						exception);
 			}
 		} catch (Exception exception) {
 			factory.cancelTransaction();
-			throw ServiceCustomException.createBussinesException(Messages.LoginUserUseCaseImpl.BUSSINES_USER_LOGIN_UNEXPECTED, exception);
+			throw ServiceCustomException
+					.createBussinesException(Messages.LoginUserUseCaseImpl.BUSSINES_USER_LOGIN_UNEXPECTED, exception);
 		} finally {
 			factory.closeConnection();
 		}
-		return userLogin;		
+		return userLogin;
 	}
 
 }

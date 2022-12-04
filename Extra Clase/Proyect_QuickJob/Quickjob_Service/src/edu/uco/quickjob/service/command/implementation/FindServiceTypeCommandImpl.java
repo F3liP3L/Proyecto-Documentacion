@@ -21,6 +21,7 @@ public class FindServiceTypeCommandImpl implements FindServiceTypeCommand {
 	public List<ServiceTypeDTO> findServiceType() {
 		List<ServiceTypeDTO> result = new ArrayList<>();
 		try {
+			factory.openConnection();
 			factory.initTransaction();
 			result.addAll(useCase.findServiceType());
 		} catch (ServiceCustomException exception) {

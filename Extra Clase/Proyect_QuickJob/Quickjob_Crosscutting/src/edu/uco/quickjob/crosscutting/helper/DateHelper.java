@@ -2,6 +2,7 @@ package edu.uco.quickjob.crosscutting.helper;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class DateHelper {
@@ -28,11 +29,12 @@ public class DateHelper {
 		return Date.valueOf(date);
 	}
 	
-	
-	public static void main(String[] args) {
-		LocalDate fecha = DateHelper.getDefaultDate();
-		
-		System.out.println("the date defect is: " + fecha + "\n this is a date is: " + getLocalDateADate(fecha));
+	public static final LocalDate getDateALocalDate(Date date) {
+		return date.toLocalDate();
 	}
-
+	
+	public static final boolean isOfLegalAge(Date birthDate) {
+		Period period = Period.between(getDateALocalDate(birthDate), currentDate());
+		return !NumberHelper.isLessThan(period.getYears(), 18);
+	}
 }

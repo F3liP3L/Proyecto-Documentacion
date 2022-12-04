@@ -21,6 +21,7 @@ public class FindSubserviceTypeCommandImpl implements FindSubserviceTypeCommand 
 	public List<SubserviceTypeDTO> findSubserviceType(String serviceType) {
 		List<SubserviceTypeDTO> result = new ArrayList<>();
 		try {
+			factory.openConnection();
 			factory.initTransaction();
 			result.addAll(useCase.findSubserviceTypeDTO(serviceType));
 		} catch (ServiceCustomException exception) {

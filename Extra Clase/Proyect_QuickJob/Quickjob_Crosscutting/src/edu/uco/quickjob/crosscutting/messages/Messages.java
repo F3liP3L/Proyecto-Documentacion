@@ -187,6 +187,30 @@ public class Messages {
 		
 	}
 	
+	public static class ResponsePostgresqlDAO {
+		
+		private	ResponsePostgresqlDAO() {
+				super();
+		}
+		
+		public static final String TECHNICAL_PROBLEM_CREATE_RESPONSE = "There was a problem trying to create the desired response in PostgresqlDAOFactory";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_RESPONSE = "There was an unexpected problem trying to create the response in PostgresqlDAOFactory";
+		
+	}
+	
+
+	public static class QuestionPostgresqlDAO {
+	
+	private QuestionPostgresqlDAO() {
+			super();
+	}
+	
+	public static final String TECHNICAL_PROBLEM_CREATE_QUESTION = "There was a problem trying to create the desired question in PostgresqlDAOFactory ";
+	public static final String TECHNICAL_UNEXPECTED_PROBLEM_CREATE_QUESTION = "There was an unexpected problem trying to create the question in PostgresqlDAOFactory";
+	
+}
+
+	
 	public static class CountryPostgresqlDAO {
 		
 		private CountryPostgresqlDAO() {
@@ -277,6 +301,7 @@ public class Messages {
 		}
 		
 		public static final String BUSSINES_USER_EXISTS = " The user is already registered ";
+		public static final String BUSSINES_USER_EXISTS_FOR_MAIL = " The user is already registered with the mail entered";
 		public static final String BUSSINES_USER_UNEXPECTED = " There was an unexpected trying to register a user problem";
 		
 	}
@@ -373,7 +398,8 @@ public class Messages {
 		public static final String MAIL_IS_INVALID_FORMAT_ERROR = "The email you are trying to enter has an invalid format";
 		public static final String NAME_IS_INVALID_ERROR = "The name does not meet the required number of characters";
 		public static final String SURNAME_IS_INVALID_ERROR = "The surname does not meet the required number of characters";
-		public static final String PASSWORD_IS_INVALID_ERROR = "the password does not meet the proper length";
+		public static final String PASSWORD_IS_INVALID_ERROR = "The password does not meet the proper length";
+		public static final String BIRTH_DATE_IS_INVALID_ERROR = "You are not of the appropriate age to register an account.";
 	}
 	
 	public static class CreateServiceValidator {

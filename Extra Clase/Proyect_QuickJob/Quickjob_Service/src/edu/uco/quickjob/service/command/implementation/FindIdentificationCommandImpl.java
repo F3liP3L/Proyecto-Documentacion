@@ -22,6 +22,7 @@ public class FindIdentificationCommandImpl implements FindIdentificationTypeComm
 	public List<IdentificationTypeDTO> findIndetification() {
 		List<IdentificationTypeDTO> result = new ArrayList<>();
 		try {
+			factory.openConnection();
 			factory.initTransaction();
 			result.addAll(useCase.findIdentification());
 		} catch (ServiceCustomException exception) {

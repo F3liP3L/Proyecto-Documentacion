@@ -62,7 +62,7 @@ public class UserController {
 			Validator<UserDTO> validator = new CreateUserValidator();
 			List<Message> messages = validator.validate(user);
 
-			if (!messages.isEmpty()) {
+			if (messages.isEmpty()) {
 				createUserCommand.createUser(user);
 				List<UserDTO> data = new ArrayList<>();
 				data.add(user);

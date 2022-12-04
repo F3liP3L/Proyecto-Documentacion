@@ -8,7 +8,6 @@ import static edu.uco.quickjob.crosscutting.helper.ObjectHelper.getDefaultIfNull
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.EMPTY;
 import static edu.uco.quickjob.crosscutting.helper.StringHelper.applyTrim;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getDefaultUUID;
-import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getNewUUID;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDAsString;
 import static edu.uco.quickjob.crosscutting.helper.UUIDHelper.getUUIDFromString;
 
@@ -29,7 +28,7 @@ public final class IdentificationDocumentDTO {
 	private IdentificationTypeDTO identificationType;
 
 	public IdentificationDocumentDTO() {
-		setId(getNewUUID());
+		setId(getDefaultUUID(id));
 		setName(EMPTY);
 		setSurname(EMPTY);
 		setSex(EMPTY);

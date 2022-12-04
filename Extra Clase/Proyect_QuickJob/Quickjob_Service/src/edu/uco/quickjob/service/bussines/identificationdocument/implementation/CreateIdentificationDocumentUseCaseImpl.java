@@ -19,7 +19,7 @@ public class CreateIdentificationDocumentUseCaseImpl implements CreateIdentifica
 	}
 	
 	private final void validateIfDocumentIdentificationExist(IdentificationDocumentDTO identificationDocument) {
-		if (!findDocumentByNumberAndType.execute(identificationDocument)) {
+		if (findDocumentByNumberAndType.execute(identificationDocument)) {
 			throw ServiceCustomException.createUserException(Messages.FindDocumentIdentificationUseCaseImpl.BUSSINES_DOCUMENT_IDENTIFICATION_EXISTS);
 		}
 	}
@@ -27,11 +27,7 @@ public class CreateIdentificationDocumentUseCaseImpl implements CreateIdentifica
 	@Override
 	public IdentificationDocumentDTO createIdentificationDocument(IdentificationDocumentDTO identificatinDocumentDTO) {
 		
-		// 1.) Verificar si existe un documento de identificacion con el mismo numero.
-		
 		validateIfDocumentIdentificationExist(identificatinDocumentDTO);
-		
-		// 2.) Crear el documento de identificacion.
 		
 		identificatinDocumentDTO.setId(UUIDHelper.getNewUUID());
 		

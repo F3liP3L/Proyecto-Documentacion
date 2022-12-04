@@ -17,6 +17,7 @@ public class CreateIdentificationDocumentCommandImpl implements CreateIdentifica
 	@Override
 	public IdentificationDocumentDTO createIdentificationDocument(IdentificationDocumentDTO identificatinDocumentDTO) {
 		try {
+			factory.openConnection();
 			factory.initTransaction();
 			return useCase.createIdentificationDocument(identificatinDocumentDTO);
 		} catch (ServiceCustomException exception) {

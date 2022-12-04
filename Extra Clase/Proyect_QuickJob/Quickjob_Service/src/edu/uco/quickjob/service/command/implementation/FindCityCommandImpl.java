@@ -21,6 +21,7 @@ public class FindCityCommandImpl implements FindCityCommand {
 	public List<CityDTO> findCity() {
 		List<CityDTO> result = new ArrayList<>();
 		try {
+			factory.openConnection();
 			factory.initTransaction();
 			result.addAll(useCase.findCity());
 		} catch (ServiceCustomException exception) {

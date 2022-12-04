@@ -26,16 +26,10 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
 	@Override
 	public void execute(UserDTO user) {
 
-		// 1.) Se debe verificar que no exista el mismo usuario.
-
 		validateUserExits(user);
-
-		// 2.) Registrar la informacion de su documento de identificacion.
 
 		IdentificationDocumentDTO identificationDocument = createIdentificationDocumentUseCase
 				.createIdentificationDocument(user.getIdentification());
-
-		// 3.) se debe crear el usuario.
 
 		user.setIdentification(identificationDocument);
 		user.setId(UUIDHelper.getNewUUID());
@@ -44,10 +38,9 @@ public class CreateUserUseCaseImpl implements CreateUserUseCase {
 	}
 
 	private void validateUserExits(UserDTO user) {
-
 		boolean exist = findUserByEmailUseCase.execute(user.getEmail());
 		if (exist) {
-			throw ServiceCustomException.createUserException(Messages.CreateUserUseCaseImpl.BUSSINES_USER_EXISTS);
+			throw ServiceCustomException.createUserException(Messages.CreateUserUseCaseImpl.BUSSINES_USER_EXISTS_FOR_MAIL);
 		}
 	}
 }

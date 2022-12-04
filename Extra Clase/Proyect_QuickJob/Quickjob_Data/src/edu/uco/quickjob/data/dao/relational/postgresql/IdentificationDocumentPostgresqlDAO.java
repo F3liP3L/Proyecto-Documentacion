@@ -282,7 +282,7 @@ public class IdentificationDocumentPostgresqlDAO extends DAORelational implement
 				parameters.add(identificationDocument.getIdAsString());
 			}
 
-			if (UUIDHelper.isDefaultUUID(identificationDocument.getIdentificationType().getId())) {
+			if (!UUIDHelper.isDefaultUUID(identificationDocument.getIdentificationType().getId())) {
 				sqlBuilder.append(setWhere ? "WHERE " : "AND ").append("DI.tipo_identificacion_codigo = ? ");
 				parameters.add(identificationDocument.getIdentificationType().getIdAsString());
 			}

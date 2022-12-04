@@ -14,6 +14,8 @@ import edu.uco.quickjob.data.dao.CountryDAO;
 import edu.uco.quickjob.data.dao.DepartmentDAO;
 import edu.uco.quickjob.data.dao.IdentificationDocumentDAO;
 import edu.uco.quickjob.data.dao.IdentificationTypeDAO;
+import edu.uco.quickjob.data.dao.QuestionDAO;
+import edu.uco.quickjob.data.dao.ResponseDAO;
 import edu.uco.quickjob.data.dao.ServiceDAO;
 import edu.uco.quickjob.data.dao.ServiceProviderDAO;
 import edu.uco.quickjob.data.dao.ServiceTypeDAO;
@@ -24,6 +26,8 @@ import edu.uco.quickjob.data.dao.relational.postgresql.CountryPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.DepartmentPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.IdentificationDocumentPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.IdentificationTypePostgresqlDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.QuestionPostgresqlDAO;
+import edu.uco.quickjob.data.dao.relational.postgresql.ResponsePostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.ServicePostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.ServiceProviderPostgresqlDAO;
 import edu.uco.quickjob.data.dao.relational.postgresql.ServiceTypePostgresqlDAO;
@@ -35,11 +39,11 @@ public class PostgresqlDAOFactory extends DAOFactory {
 private Connection connection;
 	
 	PostgresqlDAOFactory(){
-		openConnection();
+		super();
 	}
 
 	@Override
-	protected void openConnection() {
+	public void openConnection() {
 		String url = "jdbc:postgresql://localhost/quickjob";
 		String user = "postgres";
 		String password = "Nomic230s";
@@ -136,5 +140,15 @@ private Connection connection;
 	@Override
 	public ServiceProviderDAO getServiceProviderDAO() {
 		return new ServiceProviderPostgresqlDAO(connection);
+	}
+
+	@Override
+	public QuestionDAO getQuestionDAO() {
+		return new QuestionPostgresqlDAO(connection);
+	}
+
+	@Override
+	public ResponseDAO getReponseDAO() {
+		return new ResponsePostgresqlDAO(connection);
 	}
 }

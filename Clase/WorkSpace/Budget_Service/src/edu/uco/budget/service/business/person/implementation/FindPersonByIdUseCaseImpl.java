@@ -23,7 +23,6 @@ public class FindPersonByIdUseCaseImpl implements FindPersonById{
 		if (!results.isEmpty()) {
 			return results.get(0);
 		}
-		
 		return new PersonDTO();
 	}
 	

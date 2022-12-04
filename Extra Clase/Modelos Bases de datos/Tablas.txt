@@ -135,18 +135,14 @@ ALTER TABLE servicio ADD CONSTRAINT servicio_pk PRIMARY KEY ( codigo );
 
 CREATE TABLE tipo_identificacion (
     codigo      CHARACTER VARYING(50) NOT NULL,
-    nombre      CHARACTER VARYING(50) NOT NULL,
-    descripcion CHARACTER VARYING(50) NOT NULL,
-    estado      BOOLEAN NOT NULL
+    nombre      CHARACTER VARYING(50) NOT NULL
 );
 
 ALTER TABLE tipo_identificacion ADD CONSTRAINT tipo_identificacion_pk PRIMARY KEY ( codigo );
 
 CREATE TABLE tipo_servicio (
     codigo      CHARACTER VARYING(50) NOT NULL,
-    nombre      CHARACTER VARYING(100) NOT NULL,
-    descripcion CHARACTER VARYING(100) NOT NULL,
-    estado      BOOLEAN NOT NULL
+    nombre      CHARACTER VARYING(100) NOT NULL
 );
 
 ALTER TABLE tipo_servicio ADD CONSTRAINT tipo_servicio_pk PRIMARY KEY ( codigo );
@@ -154,8 +150,6 @@ ALTER TABLE tipo_servicio ADD CONSTRAINT tipo_servicio_pk PRIMARY KEY ( codigo )
 CREATE TABLE tipo_subservicio (
     codigo               CHARACTER VARYING(50) NOT NULL,
     nombre               CHARACTER VARYING(100) NOT NULL,
-    descripcion          CHARACTER VARYING(100) NOT NULL,
-    estado               BOOLEAN NOT NULL,
     tipo_servicio_codigo CHARACTER VARYING(50) NOT NULL
 );
 
@@ -163,8 +157,8 @@ ALTER TABLE tipo_subservicio ADD CONSTRAINT tipo_subservicio_pk PRIMARY KEY ( co
 
 CREATE TABLE usuario (
     codigo                    CHARACTER VARYING(50) NOT NULL,
-    nombre                    CHARACTER VARYING(100) NOT NULL,
-    descripcion               CHARACTER VARYING(100),
+    nombres                 CHARACTER VARYING(100) NOT NULL,
+    apellidos              CHARACTER VARYING(100),
     correo                    CHARACTER VARYING(100) NOT NULL,
     clave                     CHARACTER VARYING(50) NOT NULL,
     ciudad_codigo             CHARACTER VARYING(50) NOT NULL,

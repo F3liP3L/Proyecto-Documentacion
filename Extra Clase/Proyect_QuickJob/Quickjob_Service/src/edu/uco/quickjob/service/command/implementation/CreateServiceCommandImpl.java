@@ -18,6 +18,7 @@ public class CreateServiceCommandImpl implements CreateServiceCommand {
 	@Override
 	public void execute(ServiceDTO service) {
 		try {
+			factory.openConnection();
 			factory.initTransaction();
 			useCase.execute(service);
 			factory.confirmTransaction();

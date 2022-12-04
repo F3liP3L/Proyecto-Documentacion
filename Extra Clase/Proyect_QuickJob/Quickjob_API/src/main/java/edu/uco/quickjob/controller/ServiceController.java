@@ -71,7 +71,6 @@ public class ServiceController {
 				httpStatus = HttpStatus.BAD_REQUEST;
 				response.setMessages(messages);
 			}
-
 		} catch (final QuickjobCustomException exception) {
 			httpStatus = HttpStatus.BAD_REQUEST;
 

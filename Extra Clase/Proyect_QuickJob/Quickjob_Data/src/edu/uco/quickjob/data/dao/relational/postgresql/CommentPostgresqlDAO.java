@@ -43,7 +43,6 @@ public class CommentPostgresqlDAO extends DAORelational implements CommentDAO{
 
 	@Override
 	public List<CommentDTO> find(CommentDTO comment) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -63,7 +62,6 @@ public class CommentPostgresqlDAO extends DAORelational implements CommentDAO{
 		} catch (Exception exception) {
 			throw DataCustomException.createTechnicalException(Messages.QualificationPostgresqlDAO.TECHNICAL_UNEXPECTED_PROBLEM_UPDATE_QUALIFICATION, exception);
 		}
-		
 	}
 
 	@Override
