@@ -1,0 +1,7 @@
+INSERT INTO public.tipo_servicio(
+	codigo, nombre, descripcion, estado)
+	VALUES (uuid_generate_v1(), 'Construcción', 'Para ofrecer servicio de construcción', true);
+
+INSERT INTO public.tipo_servicio(
+	codigo, nombre, descripcion, estado)
+	VALUES (uuid_generate_v1(), 'Medicina', 'Para ofrecer servicio de medicina', true);

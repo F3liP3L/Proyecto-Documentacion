@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.uco.quickjob</groupId>
+  <artifactId>Quickjob_Service</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Quickjob_Service</name>
+  <description>Componente encargado de asegurar la logica de negocio de la aplicacion Budget, garantizando que cada caso de uso cumpla con las restricciones definidas.</description>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>19</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>edu.uco.quickjob</groupId>
+  		<artifactId>Quickjob_Data</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	 	<dependency>
+  		<groupId>edu.uco.quickjob</groupId>
+  		<artifactId>Quickjob_Domain</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>edu.uco.quickjob</groupId>
+  		<artifactId>Quickjob_Crosscutting</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+</project>

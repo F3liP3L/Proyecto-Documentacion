@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="38083AD6-4988-F5AB-14C0-261AA66F9403" name="tipo_servicio">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:20:10 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="954A786A-59A1-DD49-C5B4-1E2B535816DE">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:20:31 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="3BD70F67-209C-F051-5EBF-80DF6ACF51CF">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:20:59 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="04F144D1-CB1D-4A23-4AF0-2224E1BA1594" name="tipo_servicio PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:20:42 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>954A786A-59A1-DD49-C5B4-1E2B535816DE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

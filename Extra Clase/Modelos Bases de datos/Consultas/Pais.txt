@@ -1,0 +1,11 @@
+INSERT INTO public.pais(
+	codigo, nombre)
+	VALUES (uuid_generate_v1(),	'Venezuela');
+	
+INSERT INTO public.pais(
+	codigo, nombre)
+	VALUES (uuid_generate_v1(),	'Perú');
+	
+INSERT INTO public.pais(
+	codigo, nombre)
+	VALUES (uuid_generate_v1(),	'Colombia');

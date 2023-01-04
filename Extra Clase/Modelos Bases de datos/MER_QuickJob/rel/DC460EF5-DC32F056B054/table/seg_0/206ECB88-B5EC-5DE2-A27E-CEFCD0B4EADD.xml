@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="206ECB88-B5EC-5DE2-A27E-CEFCD0B4EADD" name="usuario">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>94C72E88-237B-1DCF-1E65-4CD1D3D9BA31</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="codigo" id="3C3E713E-AAC3-75D6-1825-795F687F42DB">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>AA3E8874-6520-DB96-E2EC-FF4023BE35B8</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="154CFB82-9EA4-708A-7C2C-23310CA3C59E">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>AA2AD8CF-7497-7EE6-A7D6-90D89C30EF83</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripcion" id="79CB4E24-613B-A0D2-AF22-90F46FD02ED6">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>19AC8222-A10A-1609-7AFD-F98F8BC3CF12</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="02A666AF-DC87-2AE7-8EAC-21B61B384C0E">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>827C9699-5C72-9A5A-723B-3822B7DF2218</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="clave" id="E0C4DAFA-6447-1C4C-A9B0-6957DDDBB6EA">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>BE34CC63-A9A7-C975-1911-63BD720A74D4</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ciudad_codigo" id="8410D178-0FAC-8694-4EC1-ACADA4953D83">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>21FF9855-DC23-1FD3-B15F-A8667F91EC65</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9A074799-965A-B5A7-E3E7-FAFB0EA440B3" referredColumn="3732FD8C-52FE-17C2-F366-A6FBCCECCC9B"/>
+</associations>
+</Column>
+<Column name="doc_identificacion_codigo" id="225C337C-72E7-85EF-433F-BF162619A833">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-11 04:42:43 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="80A89C3E-F090-86E1-247F-53A730222FA3" referredColumn="78667601-B32B-3D7D-BA58-6E98022762B3"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2C8C13D3-A04D-6B0D-F483-40F5786AE5E0" name="usuario_PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>63B71664-66CD-C0D6-474D-551F578D87ED</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C3E713E-AAC3-75D6-1825-795F687F42DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B4161A95-E77D-D096-66EE-7E4018A49EC0" name="usuario_ciudad_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:36:24 UTC</createdTime>
+<generatorID>435CC4F8-1FE9-0DE4-D730-0D100C4EB05B</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8410D178-0FAC-8694-4EC1-ACADA4953D83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DAB955FC-80DB-C50F-C298-44FB1DB5F71F" name="usuario_documento_identificacion_FK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-11-11 04:42:43 UTC</createdTime>
+<generatorID>E5AB4BD9-6A8B-A2D7-F871-5EAB65C53961</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="225C337C-72E7-85EF-433F-BF162619A833"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

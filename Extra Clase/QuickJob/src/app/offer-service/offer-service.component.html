@@ -1,0 +1,41 @@
+<body class="Fondo">
+    <header>
+        <nav class="navbar bg-light">
+            <div>
+                <img src="assets/img/Logo.png" alt="Logo QuickJob" class="logo">
+            </div>
+
+            <div class="">
+                <button class="btn btn-primary" (click)="regresar()">Regresar</button>
+                <button class="btn btn-primary">Ir al perfil</button>
+                <button class="btn btn-primary">Cerrar sesión</button>
+            </div>
+
+        </nav>
+    </header>
+    <section>
+        <div> <img src="assets/img/servicio.png" alt="sercicio" class="logoServicio"> </div>
+        <form class="formServicio" [formGroup]="formularioServicio">
+            <h1 class="ofrecerServicio">Ofrecer Servicio</h1>
+            <div *ngIf="mostrarMensajeExito" class="alert alert-success">
+                <a href="#" class="alert-link">{{mensajeExito}}</a>
+            </div>
+            <div *ngIf="mostrarMensajeError" class="alert alert-danger">
+                <a href="#" class="alert-link">{{mensajeError}}</a>
+            </div>
+            <select class="controls1" name="categoria" placeholder="Categoria" (change)="cargarSubcategorias()"
+                formControlName="categoria">
+                <option value="" selected="true">Seleccione...</option>
+                <option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.name}}</option>
+            </select>
+            <select class="controls1" name="subCategoria" placeholder="Sub Categoria" formControlName="subcategoria">
+                <option value="" selected="true">Seleccione...</option>
+                <option *ngFor="let subcategoria of subcategorias" [value]="subcategoria.id">{{subcategoria.name}}
+                </option>
+            </select>
+            <input class="controls1" type="text" name="servicio" placeholder="Servicio" formControlName="servicio">
+            <textarea class="controls1" name="descripcion" cols="30" rows="10" formControlName="descripcion"></textarea>
+            <button class="publicarServicio btn btn-primary" (click)="publicarServicio()">Publicar Servicio</button>
+        </form>
+    </section>
+</body>

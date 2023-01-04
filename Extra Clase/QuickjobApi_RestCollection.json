@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "fb03170d-ff60-4956-977a-d341a12eedfa",
+		"name": "QuickjobApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find Identification Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/identificationType",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"identificationType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Happy\",\r\n  \"lastName\": \"Lora\",\r\n  \"email\": \"elHappy7@gmail.com\",\r\n  \"password\": \"54acf243\",\r\n  \"identification\": {\r\n    \"name\": \"Miguel\",\r\n    \"surname\": \"Lora\",\r\n    \"birthDate\": \"2000-10-01\",\r\n    \"identificationNumber\": \"10547654124\",\r\n    \"identificationType\": {\r\n      \"id\": \"58e3699a-9b21-404a-bd8b-721bdff9779e\"\r\n    },\r\n    \"placeOfBirth\": {\r\n        \"id\": \"e9eef6ec-19dc-4829-960a-4bcdc0d9c53e\"\r\n    }\r\n  },\r\n  \"residenceCity\": {\r\n    \"id\": \"db66dcbc-a5a1-4418-b5aa-a4700c34f0f7\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find User",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Find City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user/city",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user",
+						"city"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Service Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/service/serviceType",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"service",
+						"serviceType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Subservice Type",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create Service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"construccion de mueble\",\r\n    \"description\": \"realizo construccion de muebles en roble, con excelente calidad\",\r\n    \"state\": true,\r\n    \"subSevice\": {\r\n        \"id\": \"26cfacc1-bc59-4b2b-8f8e-9466c3296ce1\"\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/service",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"service"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0D03044B-B24A-5F88-AF80-5DD0096643D2" name="pregunta">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:49:16 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="codigo" id="21651BF9-F75D-F194-BF0C-1449794BBA6A">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:49:21 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="306FD781-F357-DB28-395B-409C7790EA24">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:49:40 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo1" id="D2CA3B2B-EDF9-B812-D560-F146B8AE980B">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 05:33:46 UTC</createdTime>
+<generatorID>CA656CED-B8F0-36F8-CF24-C77C507ED8E9</generatorID>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<referedAttribute>49648701-92C8-9E6E-4CF1-052DA4B9D425</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0F3CC113-0698-43A8-DE43-5BA261778241" name="pregunta PK">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:49:38 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>21651BF9-F75D-F194-BF0C-1449794BBA6A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

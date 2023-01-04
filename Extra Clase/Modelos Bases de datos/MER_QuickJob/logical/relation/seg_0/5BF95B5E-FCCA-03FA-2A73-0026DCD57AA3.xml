@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="departamento_ciudad" directorySegmentName="seg_0" id="5BF95B5E-FCCA-03FA-2A73-0026DCD57AA3">
+<createdBy>Felipe</createdBy>
+<createdTime>2022-10-21 03:59:02 UTC</createdTime>
+<ownerDesignName>MER_QuickJob</ownerDesignName>
+<engineerTo>
+<item key="DC460EF5-33F6-B573-874E-DC32F056B054" value="true"/>
+</engineerTo>
+<sourcePk>83AA9352-A786-90AC-F379-F8FD11A504D3</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>F6DF4BD3-C655-BC44-0B0E-7CEC3FA1524B</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2E9CC3FB-014E-0EB2-A2D0-DFAEE1F2D40C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

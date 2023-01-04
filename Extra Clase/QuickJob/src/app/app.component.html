@@ -1,0 +1,35 @@
+<body class="body" *ngIf="!conocenos && !registrarse && !iniciarSesion">
+    <header>
+        <nav class="navbar bg-light">
+            <div>
+                <img src="assets/img/Logo.png" alt="Logo QuickJob" class="logo">
+            </div>
+
+            <div>
+                <button (click)="redirigirAIniciarSesion()" class="btn btn-primary">Iniciar Sesión</button>
+                <button (click)="redirigirARegistrarse()" class="btn btn-primary">Registrarse</button>
+            </div>
+
+        </nav>
+    </header>
+    <section>
+        <div class="portada">
+            <div class="row">
+                <div class="texPortada">
+                    <h1 class="title">Camellando<br>Ando</h1>
+                    <p>Estas buscando un lugar <br> apto para publicar tus <br> capacidades y sacar <br> provecho de
+                        ella?</p>
+                    <button (click)="redirigirAConocenos()" class="btn btn-info">Conocenos</button>
+
+
+                </div>
+                <div class="imgPortada">
+                    <img src="assets/img/pagina1.png" alt="" class="imgPortada">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<app-about-us *ngIf="conocenos"></app-about-us>
+<app-check-in *ngIf="registrarse"></app-check-in>
+<app-login *ngIf="iniciarSesion"></app-login>

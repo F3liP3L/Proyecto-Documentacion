@@ -1,0 +1,65 @@
+<body class="Fondo" *ngIf="!mostrarOpciones">
+    <section>
+        <div class="container">
+            <img src="assets/img/Logo.png" alt="" class="check">
+        </div>
+
+
+        <form [formGroup]="formularioRegistro">
+            <h1 class="registrarse">Registrarse</h1>
+
+            <div *ngIf="mostrarMensaje" class="alert alert-danger">
+                <a href="#" class="alert-link">{{mensaje}}</a>
+            </div>
+
+            <input class="controls" type="text" name="nombre" placeholder="Nombre" formControlName="nombre">
+            <div *ngIf="formularioRegistro.controls['nombre'].invalid && formularioRegistro.controls['nombre'].touched">
+                Este campo es obligatorio.
+            </div>
+            <input class="controls" type="text" name="apellido" placeholder="Apellido" formControlName="apellido">
+            <div
+                *ngIf="formularioRegistro.controls['apellido'].invalid && formularioRegistro.controls['apellido'].touched">
+                Este campo es obligatorio.
+            </div>
+            <input class="controls" type="text" name="identificacion" placeholder="Numero Identificacion"
+                formControlName="identificacion">
+            <div
+                *ngIf="formularioRegistro.controls['identificacion'].invalid && formularioRegistro.controls['identificacion'].touched">
+                Este campo es obligatorio.
+            </div>
+            <select class="controls" name="tipoIdent" placeholder="Tipo Identificacion" formControlName="tipoIdent">
+                <option value="" selected="true">Seleccione...</option>
+                <option *ngFor="let tipo of tipoIdentificacion" [value]="tipo.id">{{tipo.name}}</option>
+            </select>
+            <div
+                *ngIf="formularioRegistro.controls['tipoIdent'].invalid && formularioRegistro.controls['tipoIdent'].touched">
+                Este campo es obligatorio.
+            </div>
+            <input class="controls" type="text" name="correo" placeholder="Correo Electronico" formControlName="correo">
+            <div *ngIf="formularioRegistro.controls['correo'].invalid && formularioRegistro.controls['correo'].touched">
+                Este campo es obligatorio.
+            </div>
+            <input class="controls" type="password" name="clave" placeholder="Contraseña" formControlName="clave">
+            <div *ngIf="formularioRegistro.controls['clave'].invalid && formularioRegistro.controls['clave'].touched">
+                Este campo es obligatorio.
+            </div>
+            <legend>Fecha Nacimiento</legend>
+            <input class="controls" type="date" name="fechaNacimiento" formControlName="fechaNacimiento">
+            <div
+                *ngIf="formularioRegistro.controls['fechaNacimiento'].invalid && formularioRegistro.controls['fechaNacimiento'].touched">
+                Este campo es obligatorio.
+            </div>
+            <select class="controls" name="ciudad" placeholder="Ciudad" formControlName="ciudad">
+                <option value="" selected="true">Seleccione...</option>
+                <option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ciudad.name}}</option>
+            </select>
+            <div *ngIf="formularioRegistro.controls['ciudad'].invalid && formularioRegistro.controls['ciudad'].touched">
+                Este campo es obligatorio.
+            </div>
+            <button (click)="registrarse()" class="btn btn-primary">Registrarse</button>
+        </form>
+    </section>
+
+</body>
+
+<app-option *ngIf="mostrarOpciones"></app-option>

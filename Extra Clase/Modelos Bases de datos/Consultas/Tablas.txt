@@ -1,0 +1,261 @@
+--   tipo:     Postgresql
+
+
+-- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+
+-- predefined type, no DDL - XMLTYPE
+
+CREATE TABLE calificacion (
+    codigo          CHARACTER VARYING(50) NOT NULL,
+    puntuacion      INTEGER NOT NULL,
+    cliente_codigo  CHARACTER VARYING(50) NOT NULL,
+    servicio_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE calificacion ADD CONSTRAINT calificacion_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE ciudad (
+    codigo              CHARACTER VARYING(50) NOT NULL,
+    nombre              CHARACTER VARYING(50) NOT NULL,
+    departamento_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE ciudad ADD CONSTRAINT ciudad_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE cliente (
+    codigo         CHARACTER VARYING(50) NOT NULL,
+    usuario_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+CREATE UNIQUE INDEX cliente__idx ON
+    cliente (
+        usuario_codigo
+    ASC );
+
+ALTER TABLE cliente ADD CONSTRAINT cliente_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE comentario (
+    codigo            CHARACTER VARYING(50) NOT NULL,
+    nombre            CHARACTER VARYING(50) NOT NULL,
+    descripcion       CHARACTER VARYING(100) NOT NULL,
+    fecha_publicacion DATE NOT NULL,
+    cliente_codigo    CHARACTER VARYING(50) NOT NULL,
+    servicio_codigo   CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE comentario ADD CONSTRAINT comentario_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE departamento (
+    codigo      CHARACTER VARYING(50) NOT NULL,
+    nombre      CHARACTER VARYING(50) NOT NULL,
+    pais_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE departamento ADD CONSTRAINT departamento_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE detalle_servicio_ofrecido (
+    prestador_servicio_codigo CHARACTER VARYING(50) NOT NULL,
+    servicio_codigo           CHARACTER VARYING(50) NOT NULL,
+    fecha_publicacion         DATE NOT NULL
+);
+
+--  ERROR: PK name length exceeds maximum allowed length(30) 
+ALTER TABLE detalle_servicio_ofrecido ADD CONSTRAINT prestadorservicios_ofrece_servicio_pk PRIMARY KEY ( prestador_servicio_codigo,
+                                                                                                         servicio_codigo );
+
+CREATE TABLE detalle_servicio_usado (
+    cliente_codigo  CHARACTER VARYING(50) NOT NULL,
+    servicio_codigo CHARACTER VARYING(50) NOT NULL,
+    fecha_uso       DATE NOT NULL
+);
+
+ALTER TABLE detalle_servicio_usado ADD CONSTRAINT cliente_usa_servicio_pk PRIMARY KEY ( cliente_codigo,
+                                                                                        servicio_codigo );
+
+CREATE TABLE documento_identificacion (
+    codigo                     CHARACTER VARYING(50) NOT NULL,
+    nombre                     CHARACTER VARYING(100) NOT NULL,
+    apellido                   CHARACTER VARYING(100) NOT NULL,
+    fecha_nacimiento           DATE NOT NULL,
+    fecha_expedimiento         DATE,
+    lugar_expedicion           CHARACTER VARYING(100),
+    sexo                       CHARACTER VARYING(50),
+    numero_identificacion      CHARACTER VARYING(50) NOT NULL,
+    lugar_nacimiento           CHARACTER VARYING(50) NOT NULL,
+    tipo_identificacion_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE documento_identificacion ADD CONSTRAINT documento_identificacion_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE pais (
+    codigo CHARACTER VARYING(50) NOT NULL,
+    nombre CHARACTER VARYING(100) NOT NULL
+);
+
+ALTER TABLE pais ADD CONSTRAINT pais_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE pregunta (
+    codigo         CHARACTER VARYING(50) NOT NULL,
+    descripcion    CHARACTER VARYING(100) NOT NULL,
+    cliente_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE pregunta ADD CONSTRAINT pregunta_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE prestador_servicio (
+    codigo         CHARACTER VARYING(50) NOT NULL,
+    usuario_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+CREATE UNIQUE INDEX prestador_servicio__idx ON
+    prestador_servicio (
+        usuario_codigo
+    ASC );
+
+ALTER TABLE prestador_servicio ADD CONSTRAINT prestador_servicio_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE respuesta (
+    codigo                    CHARACTER VARYING(50) NOT NULL,
+    descripcion               CHARACTER VARYING(100) NOT NULL,
+    pregunta_codigo           CHARACTER VARYING(50) NOT NULL,
+    prestador_servicio_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE respuesta ADD CONSTRAINT respuesta_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE servicio (
+    codigo                  CHARACTER VARYING(50) NOT NULL,
+    nombre                  CHARACTER VARYING(100) NOT NULL,
+    descripcion             CHARACTER VARYING(100) NOT NULL,
+    estado                  CHARACTER VARYING(100) NOT NULL,
+    tipo_subservicio_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE servicio ADD CONSTRAINT servicio_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE tipo_identificacion (
+    codigo      CHARACTER VARYING(50) NOT NULL,
+    nombre      CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE tipo_identificacion ADD CONSTRAINT tipo_identificacion_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE tipo_servicio (
+    codigo      CHARACTER VARYING(50) NOT NULL,
+    nombre      CHARACTER VARYING(100) NOT NULL
+);
+
+ALTER TABLE tipo_servicio ADD CONSTRAINT tipo_servicio_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE tipo_subservicio (
+    codigo               CHARACTER VARYING(50) NOT NULL,
+    nombre               CHARACTER VARYING(100) NOT NULL,
+    tipo_servicio_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE tipo_subservicio ADD CONSTRAINT tipo_subservicio_pk PRIMARY KEY ( codigo );
+
+CREATE TABLE usuario (
+    codigo                    CHARACTER VARYING(50) NOT NULL,
+    nombres                 CHARACTER VARYING(100) NOT NULL,
+    apellidos              CHARACTER VARYING(100),
+    correo                    CHARACTER VARYING(100) NOT NULL,
+    clave                     CHARACTER VARYING(50) NOT NULL,
+    ciudad_codigo             CHARACTER VARYING(50) NOT NULL,
+    doc_identificacion_codigo CHARACTER VARYING(50) NOT NULL
+);
+
+ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( codigo );
+
+ALTER TABLE calificacion
+    ADD CONSTRAINT calificacion_cliente_fk FOREIGN KEY ( cliente_codigo )
+        REFERENCES cliente ( codigo );
+
+ALTER TABLE calificacion
+    ADD CONSTRAINT calificacion_servicio_fk FOREIGN KEY ( servicio_codigo )
+        REFERENCES servicio ( codigo );
+
+ALTER TABLE ciudad
+    ADD CONSTRAINT ciudad_departamento_fk FOREIGN KEY ( departamento_codigo )
+        REFERENCES departamento ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE detalle_servicio_usado
+    ADD CONSTRAINT cliente_usa_servicio_cliente_fk FOREIGN KEY ( cliente_codigo )
+        REFERENCES cliente ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE detalle_servicio_usado
+    ADD CONSTRAINT cliente_usa_servicio_servicio_fk FOREIGN KEY ( servicio_codigo )
+        REFERENCES servicio ( codigo );
+
+ALTER TABLE cliente
+    ADD CONSTRAINT cliente_usuario_fk FOREIGN KEY ( usuario_codigo )
+        REFERENCES usuario ( codigo );
+
+ALTER TABLE comentario
+    ADD CONSTRAINT comentario_cliente_fk FOREIGN KEY ( cliente_codigo )
+        REFERENCES cliente ( codigo );
+
+ALTER TABLE comentario
+    ADD CONSTRAINT comentario_servicio_fk FOREIGN KEY ( servicio_codigo )
+        REFERENCES servicio ( codigo );
+
+ALTER TABLE departamento
+    ADD CONSTRAINT departamento_pais_fk FOREIGN KEY ( pais_codigo )
+        REFERENCES pais ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE documento_identificacion
+    ADD CONSTRAINT documento_identificacion_ciudad_fk FOREIGN KEY ( lugar_nacimiento )
+        REFERENCES ciudad ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE documento_identificacion
+    ADD CONSTRAINT documento_identificacion_tipo_identificacion_fk FOREIGN KEY ( tipo_identificacion_codigo )
+        REFERENCES tipo_identificacion ( codigo );
+
+ALTER TABLE pregunta
+    ADD CONSTRAINT pregunta_cliente_fk FOREIGN KEY ( cliente_codigo )
+        REFERENCES cliente ( codigo );
+
+ALTER TABLE prestador_servicio
+    ADD CONSTRAINT prestador_servicio_usuario_fk FOREIGN KEY ( usuario_codigo )
+        REFERENCES usuario ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE detalle_servicio_ofrecido
+    ADD CONSTRAINT prestadorservicios_ofrece_servicio_prestador_servicio_fk FOREIGN KEY ( prestador_servicio_codigo )
+        REFERENCES prestador_servicio ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE detalle_servicio_ofrecido
+    ADD CONSTRAINT prestadorservicios_ofrece_servicio_servicio_fk FOREIGN KEY ( servicio_codigo )
+        REFERENCES servicio ( codigo );
+
+ALTER TABLE respuesta
+    ADD CONSTRAINT respuesta_pregunta_fk FOREIGN KEY ( pregunta_codigo )
+        REFERENCES pregunta ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE respuesta
+    ADD CONSTRAINT respuesta_prestador_servicio_fk FOREIGN KEY ( prestador_servicio_codigo )
+        REFERENCES prestador_servicio ( codigo );
+
+ALTER TABLE servicio
+    ADD CONSTRAINT servicio_tipo_subservicio_fk FOREIGN KEY ( tipo_subservicio_codigo )
+        REFERENCES tipo_subservicio ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE tipo_subservicio
+    ADD CONSTRAINT tipo_subservicio_tipo_servicio_fk FOREIGN KEY ( tipo_servicio_codigo )
+        REFERENCES tipo_servicio ( codigo );
+
+ALTER TABLE usuario
+    ADD CONSTRAINT usuario_ciudad_fk FOREIGN KEY ( ciudad_codigo )
+        REFERENCES ciudad ( codigo );
+
+--  ERROR: FK name length exceeds maximum allowed length(30) 
+ALTER TABLE usuario
+    ADD CONSTRAINT usuario_documento_identificacion_fk FOREIGN KEY ( doc_identificacion_codigo )
+        REFERENCES documento_identificacion ( codigo );

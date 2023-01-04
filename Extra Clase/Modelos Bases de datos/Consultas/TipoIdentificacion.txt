@@ -1,0 +1,12 @@
+INSERT INTO public.tipo_identificacion(
+	codigo, nombre)
+	VALUES (uuid_generate_v1(),'Cédula de ciudadania');
+	
+	INSERT INTO public.tipo_identificacion(
+	codigo, nombre)
+	VALUES (uuid_generate_v1(),'Cédula de extranjeria');
+			
+	
+	INSERT INTO public.tipo_identificacion(
+	codigo, nombre)
+	VALUES (uuid_generate_v1(),'Pasaporte');
