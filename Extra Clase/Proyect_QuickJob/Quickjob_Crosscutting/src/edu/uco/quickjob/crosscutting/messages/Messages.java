@@ -12,7 +12,7 @@ public class Messages {
 			super();
 		}
 		
-		public static final String TECHNICAL_SQLSERVER_NOT_IMPLEMENTED = "DAOFactory for Postgresql is not implemented yet";
+		public static final String TECHNICAL_SQLSERVER_NOT_IMPLEMENTED = "DAOFactory for SQLServer is not implemented yet";
 		public static final String TECHNICAL_MONGODB_NOT_IMPLEMENTED = "DAOFactory for MongoDB is not implemented yet";
 		public static final String TECHNICAL_CASSANDRA_NOT_IMPLEMENTED = "DAOFactory for Cassandra is not implemented yet";
 		public static final String TECHNICAL_MARIADB_NOT_IMPLEMENTED = "DAOFactory for MariaDB is not implemented yet";
@@ -114,12 +114,12 @@ public class Messages {
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_FILL_SERVICE_PROVIDER_DTO = "There was an unexpected problem trying to filling serviceProviderDTO from the resultSet";
 		public static final String TECHNICAL_PROBLEM_DELETE_SERVICE_PROVIDER_DTO = "There was a problem filling serviceProviderDTO from the resultSet";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_DELETE_SERVICE_PROVIDER_DTO = "There was an unexpected problem trying to filling serviceProviderDTO from the resultSet";
-		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific department";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
-		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_PROBLEM_EXECUTE_QUERY = "There was a problem trying to execute query to find the specific serviceProvider";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_EXECUTE_QUERY = "There was an unexpected problem trying to execute query to find the specific serviceProvider";
+		public static final String TECHNICAL_PROBLEM_SET_PARAMETERS_VALUES_QUERY = "There was a problem trying to execute query to find the specific serviceProvider";
 		public static final String TECHNICAL_PROBLEM_PREPARED_STATEMENT = "There was a problem trying to prepare the sql statement";
 		public static final String TECHNICAL_UNEXPECTED_PROBLEM_PREPARED_STATEMENT = "There was an unexpected problem trying to prepare the sql statement";
-		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific department";
+		public static final String TECHNICAL_UNEXPECTED_PROBLEM_SET_PARAMATERS_VALUES_QUERY = "There was an unexpected problem trying to execute query to find the specific serviceProvider";
 	}
 	
 	
